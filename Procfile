@@ -1,1 +1,1 @@
-web: gunicorn secondscoop.wsgi
+web: gunicorn secondscoop.wsgi.application
