@@ -48,7 +48,7 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.name}"
 
 
-class Reservations(models.Model):
+class Reservation(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_reservations"
     )

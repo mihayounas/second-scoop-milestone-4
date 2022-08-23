@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Reservations
+from .models import Post, Comment, Reservation
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -24,12 +24,12 @@ class CommentAdmin(admin.ModelAdmin):
         queryset.update(approved=True)
 
 
-@admin.register(Reservations)
-class ReservationsAdmin(admin.ModelAdmin):
+@admin.register(Reservation)
+class ReservationAdmin(admin.ModelAdmin):
     list_display = ('author', 'created_on')
     list_filter = ('approved', 'created_on')
     search_fields = ('name', 'email', 'body')
-    actions = ['approve_reservations']
+    actions = ['approve_reservation']
 
-    def approve_reservations(self, request, queryset):
+    def approve_reservation(self, request, queryset):
         queryset.update(approved=True)
