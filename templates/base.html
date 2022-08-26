@@ -1,10 +1,11 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html class="h-100">
 
 <head>
-    <title>CodeStar Blog</title>
+    <title>Second Scoop</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -22,16 +23,26 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-dark dark-bg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">c<span class="red-o">o</span>de<span class="thin">|star</span></span></span></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><span id="logo-name">Second Sc<img src="/static/images/scoop1.png" alt="two-scoops" id="scoops">p</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" id="home" href="{% url 'home' %}">Home</a>
+                    </li>
+
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link" id="menu" href="#">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="event" href="#">Event Reservation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="contact" href="#">Contact Us</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -47,26 +58,37 @@
                     {% endif %}
                 </ul>
                 <span class="navbar-text text-muted">
-                    adventures of a software developer
+                    Ready for next scoop?
                 </span>
+                <span><a class="nav-link" href="#">Blog</a></span>
             </div>
         </div>
     </nav>
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}
-        <!-- Content Goes here -->
+        <div><img src="" alt="bg-img" id="main-img"></div>
+        <div class="welcome-message">
+            <h2>Welcome to Second Scoop!</h2>
+            <p>Feel free to explore our delicious recipes or if you would like to learn more about the experience ,join us on our Blog !</p>
+        </div>
         {% endblock content %}
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">Made by Code Instituters</p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
+    <footer class="footer mt-auto py-3 dark-bg" id="footer-text">
+        <p class="m-0 text-center">Second Scoop 2022</p>
+        <p class="m-0 text-center ">Follow us: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
             <i class="fab fa-instagram-square ms-3"></i>
             <i class="fab fa-youtube-square ms-3"></i></p>
     </footer>
+
+
+    <!--Font Awesome script below-->
+    <script src="https://kit.fontawesome.com/e8e79d1989.js" crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>
