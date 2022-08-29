@@ -137,3 +137,52 @@ nav ul li a {
     color: pink;
 
 }
+
+/* Styling the sign up forms */
+.sign-up {
+    color: pink;
+}
+
+#sign {
+    color: pink;
+    border: 2px solid aqua;
+    text-align: center;
+}
+
+#sign:hover {
+    background-color: aqua;
+    color: black;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.link {
+    color: aqua;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: rgb(209, 41, 173);
+}
+
+#id_username,
+#id_email,
+#id_password1,
+#id_password2 {
+    width: 450px;
+    background-color: aqua;
+
+}
+
+/* Post image styled */
+.card-img-top {
+    width: 300px;
+    height: 300px;
+}
+
+.card-body {
+    background-color: pink;
+    width: 508px;
+    height: 452px;
+}
