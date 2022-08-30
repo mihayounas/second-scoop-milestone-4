@@ -10,14 +10,14 @@ body {
 #logo-name {
     color: pink;
     font-family: 'Dancing Script', cursive;
-    font-size: 80px;
+    font-size: 70px;
     background-color: rgb(26, 25, 25);
 
 
 }
 
 #scoops {
-    height: 70px;
+    height: 60px;
 }
 
 /* Style the nav bar and it's content*/
@@ -29,7 +29,7 @@ body {
 #contact {
     color: pink;
     font-family: 'lato', sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     border: solid 2px grey;
     border-radius: 10px;
 }
@@ -38,8 +38,6 @@ body {
 .nav-link {
     font-family: 'lato', sans-serif;
     font-size: 20px;
-
-    font-size: 25px;
     color: pink
 }
 
