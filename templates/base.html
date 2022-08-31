@@ -25,19 +25,18 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark dark-bg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span id="logo-name">Second Sc<img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1661808623/second-scoop/scoop1_imup10.png" alt="two-scoops" id="scoops">p</span></a>
+            <a class="navbar-brand" href="{% url 'homepage' %}"><span id="logo-name">Second Sc<img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1661808623/second-scoop/scoop1_imup10.png" alt="two-scoops" id="scoops">p</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item ">
-                        <a class="nav-link active" aria-current="page" id="home" href="{% url 'home' %}">Blog</a>
+                        <a class="nav-link active" aria-current="page" id="home" href="{% url 'homepage' %}">Home</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link" id="menu" href="#">Menu</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" id="event" href="#">Event Reservation</a>
                     </li>
@@ -59,11 +58,13 @@
                 </ul>
                 <span class="navbar-text text-muted">
                     Ready for next scoop?
+
             </div>
+            <span><a class="nav-link" href="{% url 'post_view' %} " id='blog'>Blog</a></span>
         </div>
     </nav>
 
-    <main class="flex-shrink-0 main-bg">
+    <main class=" flex-shrink-0 main-bg">
         {% block content %}
         <div><img src="" alt="bg-img" id="main-img"></div>
         <div class="welcome-message">
@@ -81,7 +82,13 @@
             <i class="fab fa-instagram-square ms-3"></i>
             <i class="fab fa-youtube-square ms-3"></i></p>
     </footer>
-
+    <script>
+        setTimeout(function() {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2500);
+    </script>
 
     <!--Font Awesome script below-->
     <script src="https://kit.fontawesome.com/e8e79d1989.js" crossorigin="anonymous"></script>
