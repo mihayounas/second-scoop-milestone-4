@@ -118,7 +118,8 @@ nav ul li a {
     padding: 40px;
     text-align: center;
     opacity: 0.8;
-
+    border: 2px solid black;
+    color: black
 }
 
 #img-container {
@@ -188,4 +189,32 @@ nav ul li a {
     background-color: pink;
     width: 508px;
     height: 452px;
+}
+
+
+/* First page Buttons styled */
+#button1,
+#button2 {
+    background-color: rgb(221, 123, 139);
+    margin-top: 80px;
+    border: 2px solid black;
+
+}
+
+#button1:hover,
+#button2:hover {
+    color: black;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+#button1 {
+    margin-right: 20px;
+}
+
+#btn-a,
+#btn2-a {
+    text-decoration: none;
+    color: white;
 }
