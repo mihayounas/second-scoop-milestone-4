@@ -2,14 +2,29 @@
 
 {% block content %}
 
-<div><img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1662031325/second-scoop/Screenshot_2022-09-01_at_12.21.08_duz08x.png" alt="'ice-cream" id="main-img"></div>
-<div class='welcome-message'>
+<div><img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1662041712/second-scoop/backgr_clffdn.jpg" alt="'ice-cream" id="main-img"></div>
+
+<!-- USED SWIPER to create slideshow -->
+<div class="container-slide">
     <h2><span style="font-family: 'Dancing Script', cursive;font-size:50px;">W</span>elcome <span style="font-family: 'Dancing Script', cursive;font-size:50px;">t</span>o <span style="font-family: 'Dancing Script', cursive;font-size:50px;">S</span>econd<span style="font-family: 'Dancing Script', cursive;font-size:50px;">S</span>coop!</h2>
-    <p>Feel free to explore our delicious recipes or if you would like to learn more about the experience ,join us on our Blog !</p>
     <button type="button" class="btn btn-primary" id="button1"><a href="{% url 'post_view' %}" id="btn-a"><span style="font-family: 'Dancing Script', cursive;font-size:20px;">R</span>ead our <span style="font-family: 'Dancing Script', cursive;font-size:20px;">B</span>log</a></button>
     <button type=" button" class="btn btn-primary" id="button2"><a href="{% url 'account_signup' %}" id="btn2-a"><span style="font-family: 'Dancing Script', cursive;font-size:20px;">R</span>egister with <span style="font-family: 'Dancing Script', cursive;font-size:20px;">U</span>s</a>
     </button>
-</div>
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide"><img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1661808661/second-scoop/sccopi2_fai9nn.jpg"></div>
+            <div class="swiper-slide"><img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1661808648/second-scoop/scoop7_wquhph.jpg"></div>
+            <div class="swiper-slide"><img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1661808642/second-scoop/scoop5_kd8fkd.jpg"></div>
+            ...
+        </div>
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
 
 
-{%endblock%}
+    </div>
+
+    {%endblock%}

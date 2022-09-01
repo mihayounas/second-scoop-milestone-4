@@ -8,7 +8,7 @@ body {
 }
 
 #logo-name {
-    color: pink;
+    color: rgb(241, 97, 197);
     font-family: 'Dancing Script', cursive;
     font-size: 70px;
     background-color: rgb(26, 25, 25);
@@ -27,26 +27,26 @@ body {
 #event,
 #login,
 #contact {
-    color: pink;
+    color: white;
     font-family: 'lato', sans-serif;
-    font-size: 15px;
-    border: solid 2px grey;
+    font-size: 20px;
+    border: solid 1px rgb(241, 97, 197);
     border-radius: 10px;
 }
 
 #blog {
-    color: pink
+    color: rgb(241, 97, 197)
 }
 
 .navbar-text,
 .nav-link {
     font-family: 'lato', sans-serif;
     font-size: 20px;
-    color: pink
+    color: rgb(241, 97, 197)
 }
 
 .nav-link:hover {
-    color: pink;
+    color: rgb(241, 97, 197);
     -webkit-transform: scale(1.3);
     -ms-transform: scale(1.3);
     transform: scale(1.3);
@@ -58,7 +58,7 @@ body {
 #login:hover,
 #contact:hover,
 #blog:hover {
-    color: pink;
+    color: rgb(241, 97, 197);
     -webkit-transform: scale(1.3);
     -ms-transform: scale(1.3);
     transform: scale(1.3);
@@ -73,7 +73,7 @@ nav ul li a {
 }
 
 #footer-text {
-    color: pink;
+    color: rgb(241, 97, 197);
     font-family: 'lato', sans-serif;
     font-size: 20px;
     margin-bottom: -250px;
@@ -84,43 +84,16 @@ nav ul li a {
 /* Create style the background image effect*/
 #main-img {
     width: 1500px;
-    height: 850px;
-    padding-top: 20px;
+    height: 900px;
     padding-bottom: 20px;
     padding-left: 120px;
     padding-right: 20px;
     align-items: center;
     animation-name: hero-zoom;
-    animation-duration: 5s;
-    animation-fill-mode: forwards;
     border-radius: 30px;
 }
 
-@keyframes hero-zoom {
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.1);
-    }
-}
-
-/* Create the welcome message */
-
-.welcome-message {
-    background-color: pink;
-    margin-top: -800px;
-    width: 400px;
-    height: 450px;
-    margin-left: 200px;
-    border-radius: 20px;
-    padding: 40px;
-    text-align: center;
-    opacity: 0.8;
-    border: 2px solid black;
-    color: black
-}
+/* Post styling  */
 
 #img-container {
     width: 580px;
@@ -138,7 +111,7 @@ nav ul li a {
 
 .post-title,
 .post-subtitle {
-    color: pink;
+    color: rgb(241, 97, 197);
 
 }
 
@@ -196,8 +169,10 @@ nav ul li a {
 #button1,
 #button2 {
     background-color: rgb(221, 123, 139);
-    margin-top: 80px;
+    margin-top: 0px;
     border: 2px solid black;
+    margin-bottom: 10px;
+
 
 }
 
@@ -217,4 +192,33 @@ nav ul li a {
 #btn2-a {
     text-decoration: none;
     color: white;
+}
+
+/* Slider*/
+
+
+.container-slide {
+    color: rgb(209, 41, 173);
+    margin-top: -900px;
+    width: 800px;
+    height: 400px;
+    margin-left: 350px;
+    text-align: center;
+    border: 3px solid white;
+}
+
+.swiper-slide img {
+    width: 650px;
+    height: 380px;
+    border: 2px solid black
+}
+
+.swiper .swiper-button-prev,
+.swiper-button-next {
+    color: rgb(209, 41, 173)
+}
+
+.swiper {
+    border: 25px dotted white;
+    width: 710px;
 }
