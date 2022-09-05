@@ -79,5 +79,10 @@ class PostLike(View):
 
 
 def homepage(request):
-    """ A view to return the homepage page """
+    """ A view to go to the homepage page """
     return render(request, './homepage.html')
+
+
+def menu(request):
+    """ A view to go to the menu page """
+    return render(request, './menu.html')

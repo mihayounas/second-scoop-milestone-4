@@ -168,12 +168,16 @@ nav ul li a {
 
 
 /* First page Buttons styled */
-#button1,
-#button2 {
-    background-color: rgb(221, 123, 139);
-    margin-top: 0px;
-    border: 2px solid black;
+#button1 {
+    background-color: black;
+    font-family: 'lato', sans-serif;
+    font-size: 20px;
+    border: solid 1px rgb(241, 97, 197);
+    border-radius: 10px;
+    padding: 5px 20px;
+    transition: 0.1s;
     margin-bottom: 10px;
+    ;
 
 
 }
@@ -243,4 +247,14 @@ nav ul li a {
     border-bottom-right-radius: 30px;
     background-color: black;
 
+}
+
+/* MENU PAGE STYLE */
+#menu-page-title {
+    color: white;
+    text-align: center;
+}
+
+.col-sm {
+    color: white;
 }
