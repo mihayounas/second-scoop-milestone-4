@@ -32,6 +32,8 @@ body {
     font-size: 20px;
     border: solid 1px rgb(241, 97, 197);
     border-radius: 10px;
+    padding: 5px 20px;
+    transition: 0.1s;
 }
 
 #blog {
@@ -90,7 +92,7 @@ nav ul li a {
     padding-right: 20px;
     align-items: center;
     animation-name: hero-zoom;
-    border-radius: 30px;
+
 }
 
 /* Post styling  */
@@ -200,16 +202,16 @@ nav ul li a {
 .container-slide {
     color: rgb(209, 41, 173);
     margin-top: -900px;
-    width: 800px;
+    width: 750px;
     height: 400px;
     margin-left: 450px;
     text-align: center;
 }
 
 .swiper-slide img {
-    width: 650px;
-    height: 300px;
-    border: 2px solid black;
+    width: 630px;
+    height: 330px;
+    border: 2px solid white;
     margin-top: 20px;
     margin-bottom: 20px;
     background-color: black;
@@ -219,27 +221,26 @@ nav ul li a {
 
 .swiper .swiper-button-prev,
 .swiper-button-next {
-    color: rgb(209, 41, 173)
+    color: white;
 }
 
 .swiper {
-    border: 20px dotted white;
-    width: 650px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    margin-left: 20px;
-    margin-right: 20px;
+    border-style: dotted;
+    border-color: white;
+    border-width: 18px;
+    width: 700px;
+
+
 }
 
 .frame {
     border: 2px solid white;
-    position: fixed;
-    padding: 40px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    position: sticky;
+    padding: 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: black;
 
 }
