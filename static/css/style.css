@@ -91,7 +91,6 @@ nav ul li a {
     padding-left: 120px;
     padding-right: 20px;
     align-items: center;
-    animation-name: hero-zoom;
 
 }
 
@@ -250,20 +249,30 @@ nav ul li a {
 }
 
 /* MENU PAGE STYLE */
+#main-container {
+    background-image: url("https://res.cloudinary.com/df4j1glpo/image/upload/v1662374379/second-scoop/icecreamy_woaomc.webp");
+    background-repeat: no-repeat;
+    width: 1500px;
+}
+
 .container {
-    border: 10px dotted rgb(209, 41, 173);
+
     padding: 5px;
+    width: 900px;
+    background-color: black;
 }
 
 #menu-page-title {
     color: white;
     text-align: center;
+    margin-top: -900px;
+
 }
 
 .col-sm {
     color: white;
     border: 6px solid white;
-
+    margin: 8px;
 }
 
 .container h4 {
@@ -277,13 +286,25 @@ nav ul li a {
 
 #container1 .row .pink-bg {
     background-color: rgb(209, 41, 173);
+
 }
 
 #container2 .row .pink-bg {
     background-color: rgb(209, 41, 173);
+
 }
 
 .container img {
-    width: 215px;
-    height: 130px;
+    width: 245px;
+    height: 150px;
+
+}
+
+#menu-backgr-img {
+    width: 1500px;
+    height: 900px;
+    padding-bottom: 20px;
+    padding-left: 120px;
+    padding-right: 20px;
+    align-items: center;
 }
