@@ -250,6 +250,11 @@ nav ul li a {
 }
 
 /* MENU PAGE STYLE */
+.container {
+    border: 10px dotted rgb(209, 41, 173);
+    padding: 5px;
+}
+
 #menu-page-title {
     color: white;
     text-align: center;
@@ -257,4 +262,28 @@ nav ul li a {
 
 .col-sm {
     color: white;
+    border: 6px solid white;
+
+}
+
+.container h4 {
+    text-align: center;
+    font-size: 23px;
+}
+
+.container p {
+    text-align: center;
+}
+
+#container1 .row .pink-bg {
+    background-color: rgb(209, 41, 173);
+}
+
+#container2 .row .pink-bg {
+    background-color: rgb(209, 41, 173);
+}
+
+.container img {
+    width: 215px;
+    height: 130px;
 }
