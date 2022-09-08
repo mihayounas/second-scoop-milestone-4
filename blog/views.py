@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, ReservationForm
 
 
 class PostList(generic.ListView):
@@ -86,3 +86,39 @@ def homepage(request):
 def menu(request):
     """ A view to go to the menu page """
     return render(request, './menu.html')
+
+
+def Reserve(View):
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comments = post.comments.filter(approved=True).order_by("-created_on")
+
+        return render(
+            request,
+            "reservations.html",
+            {
+                "reservation_form": ReservationForm()
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+
+        queryset = Post.objects.filter(status=1)
+        reservations_form = ReservationsForm(data=request.POST)
+        if reservations_form.is_valid():
+            reservations_form.instance.email = request.user.email
+            reservations_form.instance.name = request.user.username
+            reservation = reservations_form.save(commit=False)
+            reservations.post = post
+            reservations.save()
+        else:
+            reservations_form = ReservationsForm
+
+        return render(
+            request,
+            "reservations.html",
+            {
+                "reservations_form": reservations_form,
+            },
+        )

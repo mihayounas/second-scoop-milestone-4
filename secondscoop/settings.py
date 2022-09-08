@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_summernote',
     'blog',
+    'djreservation'
 ]
 
 SITE_ID = 1
@@ -80,7 +81,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'djreservation.middleware.ReservationMiddleware',
 ]
+
+DEFAULT_FROM_EMAIL = "admin@example.com"
+EMAIL_HOST = "localhost"
+EMAIL_PORT = "1025"
 
 ROOT_URLCONF = 'secondscoop.urls'
 
