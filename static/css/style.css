@@ -307,5 +307,11 @@ nav ul li a {
 
 
 /* FORM STYLING */
+.form-group {
+    color: rgb(209, 41, 173);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-#reserve {}
+}

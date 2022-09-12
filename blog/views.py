@@ -98,10 +98,9 @@ def reservations(request):
                 reservation = reservations_form.save(commit=False)
                 reservations_form = ReservationForm()
                 # optimized the code
-                guest = Profile.objects.get(user=request.user)
-                reservation.name = guest.name
-                reservation.surname = guest.surname
-                reservation.phone = guest.phone
+                author = Profile.objects.get(user=request.user)
+                reservation.name = author.name
+                reservation.phone = author.phone
                 reservation.email = request.user.email
                 reservation.save()
             else:

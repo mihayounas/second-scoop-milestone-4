@@ -1,12 +1,26 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <div>
-    <form method="post" id='reserve'>
-        {{ reservations_form }}
-        {% csrf_token %}
-        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+    <form method="post">
+        <div class="form-group">
+            {{ reservations_form | crispy }}
+            {% csrf_token %}
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    <h2>Heyy</h2>
+    {% else %}
+    <div>
+        <h2>You need to be logged in to book a reservation.</h2>
+        <a class="nav-link" href="{% url 'account_signup' %}">Register?</a>
+        <a class="nav-link" href="{% url 'account_login' %}">Login?</a>
+
+    </div>
+    {% endif %}
 </div>
 {%endblock%}

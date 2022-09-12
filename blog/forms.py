@@ -11,4 +11,4 @@ class CommentForm(forms.ModelForm):
 class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
-        fields = ['name', 'surname', 'email', 'event', 'date', 'message', ]
+        fields = ['name', 'phone', 'event', 'date', 'message', ]
