@@ -88,42 +88,19 @@ def menu(request):
     return render(request, './menu.html')
 
 
-def Reserve(View):
-    def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        reservations = post.reservations.filter(
-            approved=True).order_by("-created_on")
-
-        return render(
-            request,
-            "reservations.html",
-            {
-                "reservation_form": ReservationForm(),
-
-            },
-        )
-
-    def post(self, request, slug, *args, **kwargs):
-
-        queryset = Post.objects.filter(status=1)
-        reservations_form = ReservationsForm(data=request.POST)
+def reservations(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        reservations_form = ReservationForm(request.POST)
+        # check whether it's valid:
         if reservations_form.is_valid():
-            reservations_form.instance.email = request.user.email
-            reservations_form.instance.name = request.user.username
-            reservation = reservations_form.save(commit=False)
-            reservations.post = post
-            reservations.save()
-        else:
-            reservations_form = ReservationsForm(request)
+            # process the data in form.cleaned_data as required
+            # redirect to a new URL:
+            return HttpResponseRedirect('/Thank you for your request we will get back to you soon/')
 
-        return render(
-            request,
-            "reservations.html",
-            {
-                "reservations_form": reservations_form,
-                "reservations": reservations,
-            },
-        )
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        reservations_form = ReservationForm()
 
-        return HttpResponseRedirect(reverse('reservations', args=[request]))
+    return render(request, 'reservations.html', {'reservations_form': reservations_form})
