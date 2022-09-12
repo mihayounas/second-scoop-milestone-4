@@ -52,9 +52,11 @@ class Reservation(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_reservations"
     )
+    name = models.CharField(max_length=80)
+    surname = models.CharField(max_length=80)
+    email = models.EmailField()
     event = models.CharField(max_length=80)
     date = models.DateField()
-    email = models.EmailField()
     message = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)

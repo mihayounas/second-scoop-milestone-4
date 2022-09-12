@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div id="reserve">
-    <form method="post">
+<div>
+    <form method="post" id='reserve'>
         {{ reservations_form }}
         {% csrf_token %}
         <button type="submit" class="btn btn-signup btn-lg">Submit</button>

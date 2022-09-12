@@ -176,9 +176,6 @@ nav ul li a {
     padding: 5px 20px;
     transition: 0.1s;
     margin-bottom: 10px;
-    ;
-
-
 }
 
 #button1:hover,
@@ -200,8 +197,6 @@ nav ul li a {
 }
 
 /* Slider*/
-
-
 .container-slide {
     color: rgb(209, 41, 173);
     margin-top: -900px;
@@ -309,6 +304,8 @@ nav ul li a {
     align-items: center;
 }
 
-#reserve {
-    color: red
-}
+
+
+/* FORM STYLING */
+
+#reserve {}
