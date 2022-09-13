@@ -84,7 +84,7 @@ MIDDLEWARE = [
     'djreservation.middleware.ReservationMiddleware',
 ]
 
-DEFAULT_FROM_EMAIL = "admin@example.com"
+DEFAULT_FROM_EMAIL = "mail@example.com"
 EMAIL_HOST = "localhost"
 EMAIL_PORT = "1025"
 

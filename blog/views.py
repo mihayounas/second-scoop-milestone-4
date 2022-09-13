@@ -89,28 +89,18 @@ def menu(request):
 
 
 def reservations(request):
-    reservations_form = ReservationForm()
-    # if this is a POST request we need to process the form data
+    form = ReservationForm(request.POST or None)
     if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('thank_you')
+    context = {
+        'form': form
+    }
 
-        if reservations_form.is_valid():
-            if request.user.is_authenticated:
-                reservation = reservations_form.save(commit=False)
-                reservations_form = ReservationForm()
-                # optimized the code
-                author = Profile.objects.get(user=request.user)
-                reservation.name = author.name
-                reservation.phone = author.phone
-                reservation.email = request.user.email
-                reservation.save()
-            else:
-                reservation = reservations_form.save()  # removed duplicate save
-
-        n = reservation.pk
-        return redirect('thank_you', n)
-    return render(request, 'reservations.html', {'reservations_form': reservations_form})
+    return render(request, './reservations.html', context)
 
 
 def thanks(request):
     """ A view to go to the menu page """
-    return render(request, './thank-you.html')
+    return render(request, './thank_you.html')

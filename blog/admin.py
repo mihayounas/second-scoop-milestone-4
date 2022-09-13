@@ -33,3 +33,4 @@ class ReservationAdmin(admin.ModelAdmin):
 
     def approve_reservation(self, request, queryset):
         queryset.update(approved=True)
+        reservation_form.save()
