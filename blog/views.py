@@ -89,16 +89,31 @@ def menu(request):
 
 
 def reservations(request):
-    form = ReservationForm(request.POST or None)
-    if request.method == 'POST':
-        if form.is_valid():
-            form.save()
-            return redirect('thank_you')
-    context = {
-        'form': form
-    }
+    def post(self, request, slug, *args, **kwargs):
 
-    return render(request, './reservations.html', context)
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, reservation=reservation)
+        reservations_form = ReservationForm(request.POST or None)
+        if request.method == 'POST':
+            if reservations_form.is_valid():
+                reservations_form.email = request.user.email
+                reservations_form.name = request.user.username
+                reservations_form = reservations_form.save(commit=False)
+                reservation.post = post
+                reservation.save()
+            else:
+                reservations_form = ReservationForm()
+
+            return render(
+                request,
+                "thank_you.html",
+                {
+                    "post": post,
+                    'reservations_form': reservations_form
+                },
+            )
+
+    return render(request, './reservations.html')
 
 
 def thanks(request):
