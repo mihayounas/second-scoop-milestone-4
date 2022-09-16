@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+import datetime
 
 
 # Create your models here.
@@ -48,20 +49,16 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.name}"
 
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    surname = models.CharField(max_length=100)
+    phone = models.CharField(max_length=9)
+
+
 class Reservation(models.Model):
-    author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_reservations"
-    )
-    name = models.CharField(max_length=80)
-    event = models.CharField(max_length=80)
-    phone = models.CharField(max_length=12)
-    date = models.DateField()
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=9)
+    date = models.DateTimeField()
+    event = models.CharField(max_length=100)
     message = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
-
-    class Meta:
-        ordering = ["created_on"]
-
-    def __str__(self):
-        return f"Reservation for {self.event} by {self.author} on {self.date} with message: {self.message}"

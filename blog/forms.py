@@ -8,7 +8,12 @@ class CommentForm(forms.ModelForm):
         fields = ('body',)
 
 
-class ReservationForm(forms.ModelForm):
+class Booking(forms.ModelForm):
+
     class Meta:
         model = Reservation
-        fields = ['name', 'phone', 'event', 'date', 'message', ]
+        fields = ('name', 'phone',
+                  'event', 'date', 'message')
+        widgets = {
+            'date': forms.DateInput(attrs={'class': 'datepicker'}),
+        }

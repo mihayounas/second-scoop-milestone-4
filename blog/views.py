@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, reverse
+from django.contrib.auth import authenticate
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
-from .forms import CommentForm, ReservationForm
+from .models import Post, Reservation
+from .forms import CommentForm, Booking
+import datetime
 
 
 class PostList(generic.ListView):
@@ -88,32 +90,14 @@ def menu(request):
     return render(request, './menu.html')
 
 
-def reservations(request):
-    def post(self, request, slug, *args, **kwargs):
+def reservation(request, *args, **kwargs):
+    reservations_form = Booking(request.POST or None)
+    if reservations_form.is_valid():
+        reservations_form.save()
+        return render(request, './thank_you.html')
 
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, reservation=reservation)
-        reservations_form = ReservationForm(request.POST or None)
-        if request.method == 'POST':
-            if reservations_form.is_valid():
-                reservations_form.email = request.user.email
-                reservations_form.name = request.user.username
-                reservations_form = reservations_form.save(commit=False)
-                reservation.post = post
-                reservation.save()
-            else:
-                reservations_form = ReservationForm()
-
-            return render(
-                request,
-                "thank_you.html",
-                {
-                    "post": post,
-                    'reservations_form': reservations_form
-                },
-            )
-
-    return render(request, './reservations.html')
+    context = {'reservations_form': reservations_form}
+    return render(request, './reservations.html', context)
 
 
 def thanks(request):
