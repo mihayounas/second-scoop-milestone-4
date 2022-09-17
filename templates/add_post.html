@@ -1,5 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <h1>Add post</h1>
+{% else %}
+<div>
+    <h2>You need to be logged in to book a reservation.</h2>
+    <a class="nav-link" href="{% url 'account_signup' %}">Register?</a>
+    <a class="nav-link" href="{% url 'account_login' %}">Login?</a>
+
+</div>
+{% endif %}
 {%endblock%}
