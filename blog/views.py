@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.contrib.auth import authenticate
 from django.views import generic, View
+from django.views.generic import CreateView
 from django.http import HttpResponseRedirect
 from .models import Post, Reservation
 from .forms import CommentForm, Booking
@@ -103,3 +104,9 @@ def reservation(request, *args, **kwargs):
 def thanks(request):
     """ A view to go to the menu page """
     return render(request, './thank_you.html')
+
+
+class AddPost(CreateView):
+    model = Post
+    template_name = 'add_post.html'
+    fields = '__all__'
