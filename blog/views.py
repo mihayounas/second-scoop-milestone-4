@@ -1,9 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.contrib.auth import authenticate
 from django.views import generic, View
-from django.views.generic import CreateView
 from django.http import HttpResponseRedirect
-from .models import Post, Reservation
+from .models import Post, Reservation, CreatePost
 from .forms import CommentForm, Booking, NewPost
 import datetime
 
@@ -106,11 +105,20 @@ def thanks(request):
     return render(request, './thank_you.html')
 
 
-def create_post(request, *args, **kwargs):
-    post_form = NewPost(request.POST or None)
-    if post_form.is_valid():
-        post_form.save()
-        return render(request, './thank_you.html')
+class AddPosts(View):
+    def get(self, request, *args, **kwargs):
+        post = get_object_or_404()
 
-    context = {'post_form': post_form}
-    return render(request, './add_post.html', context)
+    def create_post(request, *args, **kwargs):
+        post_form = NewPost(data=request.POST)
+        if post_form.is_valid():
+            post_form.instance.title = request.user.title
+            post_form.instance.img_field = request.user.img_field
+            post_form.instance.content = request.user.content
+            new = post_form.save(commit=False)
+            new.post = post
+            new.save()
+        else:
+            post_form = NewPost()
+        context = {'post_form': post_form}
+        return render(request, './add_post.html', context)
