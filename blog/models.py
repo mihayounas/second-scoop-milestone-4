@@ -62,3 +62,9 @@ class Reservation(models.Model):
     date = models.DateTimeField()
     event = models.CharField(max_length=100)
     message = models.TextField()
+
+
+class CreatePost(models.Model):
+    title = models.CharField(max_length=150, unique=True)
+    content = models.TextField()
+    img_field = models.ImageField()

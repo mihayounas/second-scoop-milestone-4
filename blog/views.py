@@ -4,7 +4,7 @@ from django.views import generic, View
 from django.views.generic import CreateView
 from django.http import HttpResponseRedirect
 from .models import Post, Reservation
-from .forms import CommentForm, Booking
+from .forms import CommentForm, Booking, NewPost
 import datetime
 
 
@@ -106,7 +106,11 @@ def thanks(request):
     return render(request, './thank_you.html')
 
 
-class AddPost(CreateView):
-    model = Post
-    template_name = 'add_post.html'
-    fields = '__all__'
+def create_post(request, *args, **kwargs):
+    post_form = NewPost(request.POST or None)
+    if post_form.is_valid():
+        post_form.save()
+        return render(request, './thank_you.html')
+
+    context = {'post_form': post_form}
+    return render(request, './add_post.html', context)
