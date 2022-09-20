@@ -13,10 +13,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='CreatePost',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=150, unique=True)),
                 ('content', models.TextField()),
-                ('img_field', models.ImageField(upload_to='')),
+                ('img_field', models.ImageField(
+                    upload_to='cloudinary://493494235994288:zTTpGxQKi__Q5xN5tStvSY1DDRA@df4j1glpo')),
             ],
         ),
     ]
