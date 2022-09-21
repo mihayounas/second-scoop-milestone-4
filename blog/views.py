@@ -106,11 +106,11 @@ def reservation(request, *args, **kwargs):
     return render(request, './reservations.html', context)
 
 
-def create_post(request, *args, **kwargs):
+def create_post(request):
     post_form = NewPost(request.POST or None)
     if post_form.is_valid():
         post_form.save()
-        return render(request, './thank_you.html')
+        return render(request, './index.html')
 
     context = {'post_form': post_form}
     return render(request, './add_post.html', context)
