@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+{% for posts in new_post_list %}
+<div class="col-md-4">
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="image-container">
+                {{ posts.img_field}}
+                <div class="image-flash">
+                    <p>Title: {{ posts.title }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {%endblock%}

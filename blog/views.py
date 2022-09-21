@@ -4,7 +4,7 @@ from django.views import generic, View
 from django.views.generic import CreateView
 from django.http import HttpResponseRedirect
 from .models import Post, Reservation
-from .forms import CommentForm, Booking, NewPost
+from .forms import CommentForm, Booking, NewPost, CreatePost
 import datetime
 
 
@@ -110,7 +110,13 @@ def create_post(request):
     post_form = NewPost(request.POST or None)
     if post_form.is_valid():
         post_form.save()
-        return render(request, './index.html')
+        return render(request, 'new_posts.html')
 
     context = {'post_form': post_form}
     return render(request, './add_post.html', context)
+
+
+class NewPostList(generic.ListView):
+    model = CreatePost
+    template_name = "new_posts.html"
+    paginate_by = 6

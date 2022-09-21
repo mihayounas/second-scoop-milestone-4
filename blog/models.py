@@ -68,4 +68,4 @@ class CreatePost(models.Model):
     title = models.CharField(max_length=150, unique=True)
     content = models.TextField()
     img_field = models.ImageField(
-        upload_to='cloudinary://493494235994288:zTTpGxQKi__Q5xN5tStvSY1DDRA@df4j1glpo', blank=True)
+        upload_to='images', blank=True)
