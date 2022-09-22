@@ -1,17 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class='headline'>
+    <h1 style="font-size: 40px;">Welcome to our Blog!</h1>
+    <h2 style="font-size: 40px;">Check out real opinions and experiences to discover your favourite flavour!
+    </h2>
+    <p style="font-size: 30px;">If you love our recipes or have suggestions </p>
+    <p style="font-size: 30px;">, please feel free to share it with us!</p>
+</div>
 
 <div class="container-fluid">
     <div class="row">
 
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
-            <div class="row">
+            <div class="row" id="row-post">
                 {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
-                        <div class="card-body">
+                        <div class="card-body mb-4">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top" src="https://res.cloudinary.com/df4j1glpo/image/upload/v1661808637/second-scoop/scoop9_q0hsep.webp">
@@ -27,7 +34,7 @@
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
 
-                            <hr />
+
                             <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
                         </div>
@@ -39,7 +46,7 @@
             <div class="row">
                 {% endif %}
                 {% endfor %}
-                <a href="{% url 'add_new_post' %}">CREATE NEW POST</a>
+                <a href="{% url 'add_new_post' %}" class="creating-post">CREATE NEW POST</a>
             </div>
         </div>
     </div>

@@ -1,4 +1,6 @@
 from django.db import models
+from django.shortcuts import render, get_object_or_404, reverse
+from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
@@ -22,7 +24,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
-        User, related_name='blogpost_like', blank=True)
+        User, related_name='post_like', blank=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -34,7 +36,7 @@ class Post(models.Model):
         return self.likes.count()
 
     def get_absolute_url(self):
-        return reverse('thanks', args=(str(self.id)))
+        return reverse('thanks')
 
 
 class Comment(models.Model):
