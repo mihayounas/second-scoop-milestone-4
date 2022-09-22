@@ -39,13 +39,8 @@
             <div class="row">
                 {% endif %}
                 {% endfor %}
-                <a href="{% url 'add_post' %}">CREATE NEW POST</a>
+                <a href="{% url 'add_new_post' %}">CREATE NEW POST</a>
             </div>
-
-
-
-
-
         </div>
     </div>
     {% if is_paginated %}

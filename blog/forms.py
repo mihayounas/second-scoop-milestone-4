@@ -1,4 +1,4 @@
-from .models import Comment, Reservation, CreatePost
+from .models import Comment, Reservation
 from django import forms
 
 
@@ -17,9 +17,3 @@ class Booking(forms.ModelForm):
         widgets = {
             'date': forms.DateInput(attrs={'class': 'datepicker'}),
         }
-
-
-class NewPost(forms.ModelForm):
-    class Meta:
-        model = CreatePost
-        fields = {'title', 'content', 'img_field'}
