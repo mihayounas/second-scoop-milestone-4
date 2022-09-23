@@ -1,17 +1,20 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 {% load crispy_forms_tags %}
 
+<!-- Every post can be seen by clicking on it and will didplay more information -->
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
+                <!-- Post title-->
                 <h1 class="post-title">{{ post.title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
+                <!-- Post author-->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
+                <!-- The featured image URL-->
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1661808637/second-scoop/scoop9_q0hsep.webp" width="100%">
                 {% else %}

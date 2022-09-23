@@ -1,8 +1,10 @@
 {% extends "base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
-
 {% block content %}
 {% if user.is_authenticated %}
+
+<!-- Reservations request form -->
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">

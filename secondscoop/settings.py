@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_summernote',
     'blog',
-    'djreservation'
+    'djreservation',
 ]
 
 SITE_ID = 1

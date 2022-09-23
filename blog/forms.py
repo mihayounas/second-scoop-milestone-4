@@ -1,4 +1,4 @@
-from .models import Comment, Reservation
+from .models import Comment, Reservation, Contact
 from django import forms
 
 
@@ -17,3 +17,9 @@ class Booking(forms.ModelForm):
         widgets = {
             'date': forms.DateInput(attrs={'class': 'datepicker'}),
         }
+
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ('name', 'email', 'message')

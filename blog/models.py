@@ -71,3 +71,12 @@ class Reservation(models.Model):
 
     def get_absolute_url(self):
         return reverse('thanks')
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+
+    def get_absolute_url(self):
+        return reverse('thanks')

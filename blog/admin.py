@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, Reservation
+from .models import Post, Comment, Reservation, Contact
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -33,3 +33,14 @@ class ReservationAdmin(admin.ModelAdmin):
     def approve_reservation(self, request, queryset):
         queryset.update(approved=True)
         reservation_form.save()
+
+
+@admin.register(Contact)
+class ContactUs(admin.ModelAdmin):
+    list_display = ('name', 'email', 'message')
+    search_fields = ('name', 'email', 'message')
+    actions = ['respond_message']
+
+    def respond_message(self, request, queryset):
+        respond = models.CharField(max_length=100)
+        return(respond)

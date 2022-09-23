@@ -425,7 +425,8 @@ nav ul li a {
         315px;
 }
 
-.btn-signup {
+.btn-signup,
+.send-btn {
     width: 130px;
     height: 45px;
     color: white;
@@ -435,6 +436,12 @@ nav ul li a {
     border-radius: 10px;
     margin-bottom: 10px;
     transition: 0.1s;
+    background-color: black;
+}
+
+.send-btn:hover {
+    background-color: black;
+    border: solid 1px rgb(241, 97, 197);
 }
 
 /* STYLE SIGN IN FORM*/
@@ -445,19 +452,61 @@ nav ul li a {
 
 #id_name,
 #id_phone,
-
-#id_message {
-    width: 380px;
+#id_message,
+#id_email {
+    width: 360px;
     margin-left: 10px;
+    border-radius: 10px;
+    background-color: pink;
 
 }
 
 #id_event {
     width: 378px;
     margin-left: 18px;
+    border-radius: 10px;
+
 }
 
 #id_date {
     width: 380px;
     margin-left: 25px;
+    border-radius: 10px;
+}
+
+.contact-container {
+    border-style: dotted;
+    border-color: white;
+    border-width: 18px;
+    border-radius: 10%;
+
+
+}
+
+.top-wrap,
+.wrap-under {
+    border: 2px solid white;
+    border-radius: 10%;
+
+}
+
+.google-maps {
+
+    margin-top: -170px;
+    margin-left: 60px
+}
+
+.form-style {
+    margin-left: 550px;
+    margin-top: -200px;
+
+}
+
+.contact-container .container {
+    width: 330px;
+    margin-left: 890px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+    color: rgb(241, 97, 197);
 }

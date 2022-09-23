@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate
 from django.views import generic, View
 from django.views.generic import CreateView
 from django.http import HttpResponseRedirect
-from .models import Post, Reservation
+from .models import Post, Reservation, Contact
 from .forms import CommentForm, Booking
 import datetime
 
@@ -92,7 +92,7 @@ def menu(request):
 
 
 def thanks(request):
-    """ A view to go to the menu page """
+    """ A view to go to the thanks page """
     return render(request, './thank_you.html')
 
 
@@ -106,3 +106,9 @@ class AddPostView(CreateView):
     model = Post
     template_name = 'new_posts.html'
     fields = ['title', 'author', 'slug', 'featured_image', 'content']
+
+
+class ContactAdmin(CreateView):
+    model = Contact
+    template_name = 'contact.html'
+    fields = ['name', 'email', 'message']
