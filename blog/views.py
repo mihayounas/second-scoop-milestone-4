@@ -96,14 +96,10 @@ def thanks(request):
     return render(request, './thank_you.html')
 
 
-def reservation(request, *args, **kwargs):
-    reservations_form = Booking(request.POST or None)
-    if reservations_form.is_valid():
-        reservations_form.save()
-        return render(request, './thank_you.html')
-
-    context = {'reservations_form': reservations_form}
-    return render(request, './reservations.html', context)
+class ReservationRequest(CreateView):
+    model = Reservation
+    template_name = 'reservations.html'
+    fields = ['name', 'phone', 'date', 'event', 'message']
 
 
 class AddPostView(CreateView):

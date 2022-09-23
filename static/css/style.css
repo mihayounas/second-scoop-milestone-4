@@ -212,7 +212,8 @@ nav ul li a {
 }
 
 /* First page Buttons styled */
-#button1 {
+#button1,
+#reservation-btn {
     background-color: black;
     font-family: 'lato', sans-serif;
     font-size: 20px;
@@ -440,4 +441,23 @@ nav ul li a {
 #id_login,
 #id_password {
     background-color: aqua;
+}
+
+#id_name,
+#id_phone,
+
+#id_message {
+    width: 380px;
+    margin-left: 10px;
+
+}
+
+#id_event {
+    width: 378px;
+    margin-left: 18px;
+}
+
+#id_date {
+    width: 380px;
+    margin-left: 25px;
 }

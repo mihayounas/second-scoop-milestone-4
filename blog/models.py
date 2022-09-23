@@ -68,3 +68,6 @@ class Reservation(models.Model):
     date = models.DateTimeField()
     event = models.CharField(max_length=100)
     message = models.TextField()
+
+    def get_absolute_url(self):
+        return reverse('thanks')
