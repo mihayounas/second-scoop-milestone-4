@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<h2>Thank you</h2>
+
+<div id="thanks-container">
+    <h2>Thank you, we will get back to you soon!</h2>
+    <h3>Feel free to discover more on our</h3><a class="nav-link" href="{% url 'post_view' %} ">Blog</a><img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1664058515/second-scoop/backyicy_irssbh.jpg" id="thanks-page">
+</div>
 {%endblock%}

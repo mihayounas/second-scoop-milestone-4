@@ -162,28 +162,54 @@ nav ul li a {
 
 .card-title {
     font-size: 20px;
+    color: black;
+    text-decoration: none;
+
 }
 
 .card-text {
     font-size: 13px;
+    color: rgb(241, 97, 197);
+
 }
 
 .card-body {
     background-color: pink;
-    width: 500px;
-    height: 270px;
+    width: 420px;
+    height: 230px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border: 13px solid white;
 }
 
 .card {
-    height: 280px;
-    background-color: aqua;
+    width: 460px;
+    height: 290px;
+    background-color: black;
+    border: 10px dotted white;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+#card-main {
+    border: 5px solid white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 500px;
+    height: 320px;
+    margin-right: 5px;
+    margin-left: 20px;
+}
+
+#row-post {
+    margin-top: -50px;
 }
 
 .headline {
     padding: 50px;
-    color: aqua;
+    color: rgb(241, 97, 197);
     font-family: 'Dancing Script', cursive;
-
     text-align: center;
 }
 
@@ -213,7 +239,8 @@ nav ul li a {
 
 /* First page Buttons styled */
 #button1,
-#reservation-btn {
+#reservation-btn,
+#contact-btn {
     background-color: black;
     font-family: 'lato', sans-serif;
     font-size: 20px;
@@ -222,7 +249,10 @@ nav ul li a {
     padding: 5px 20px;
     transition: 0.1s;
     margin-bottom: 10px;
+
 }
+
+
 
 #button1:hover,
 #button2:hover {
@@ -373,37 +403,7 @@ nav ul li a {
     margin-top: -630px;
 }
 
-.btn-primary {
-    z-index: 99999;
-    background-color: rgb(209, 41, 173);
-    padding: 10px 25px;
-    margin-top: 10px;
-}
-
-#id_name,
-#id_phone,
-#id_event,
-#id_date,
-#id_message {
-    background-color: pink;
-    width: 380px;
-}
-
-#form-position {
-    margin-top: 50px;
-}
-
-#id_message {
-    height: 250px;
-}
-
-
-/* STYLE REGISTRATION FORM*/
-.container {
-    color: pink;
-    font-family: 'lato', sans-serif;
-    font-size: 17px;
-}
+/* STYLE SIGN IN FORM*/
 
 #id_username {
     width:
@@ -444,21 +444,108 @@ nav ul li a {
     border: solid 1px rgb(241, 97, 197);
 }
 
-/* STYLE SIGN IN FORM*/
 #id_login,
 #id_password {
     background-color: aqua;
 }
 
+/* Map styled */
+
+.google-maps {
+    margin-top: -140px;
+    margin-left: 60px;
+
+}
+
+/* Contact Section */
+
+.form-style {
+    margin-left: 550px;
+    margin-top: -200px;
+}
+
+
+#contact-container {
+    margin-left: -100px;
+    width: 300px;
+    margin-top: 30px;
+
+
+}
+
+.container h3 {
+    margin-left: -100px;
+}
+
+/* Contact and reservation Button styled */
+
+#contact-btn,
+#reservation-btn {
+    margin-left: 245px;
+}
+
+#img-contact {
+    height: 900px;
+    width: 1500px;
+    margin-left: 50px;
+    margin-bottom: 160px;
+}
+
+#main-c {
+    margin-top: -960px;
+    position: relative;
+    z-index: 9999;
+    opacity: 0.8;
+    border-radius: 10px;
+
+}
+
+/* Reservation Page */
+.btn-primary {
+    z-index: 99999;
+    background-color: rgb(209, 41, 173);
+    padding: 10px 25px;
+    margin-top: 10px;
+}
+
 #id_name,
 #id_phone,
-#id_message,
+#id_event,
+#id_date,
+#id_message {
+    background-color: pink;
+    width: 380px;
+}
+
+#form-position {
+    margin-top: 50px;
+}
+
+#id_message {
+    height: 250px;
+}
+
+.container {
+    color: pink;
+    font-family: 'lato', sans-serif;
+    font-size: 17px;
+}
+
+#id_name,
+#id_phone,
 #id_email {
-    width: 360px;
-    margin-left: 10px;
+    width: 375px;
+    margin-left: 25px;
     border-radius: 10px;
     background-color: pink;
 
+}
+
+#id_message {
+    width: 370px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: pink;
 }
 
 #id_event {
@@ -474,39 +561,43 @@ nav ul li a {
     border-radius: 10px;
 }
 
-.contact-container {
-    border-style: dotted;
-    border-color: white;
-    border-width: 18px;
-    border-radius: 10%;
-
-
+#reservations-pg {
+    clear: both;
+    background-size: cover;
+    background-position: center;
+    height: 900px;
 }
 
-.top-wrap,
-.wrap-under {
-    border: 2px solid white;
-    border-radius: 10%;
-
-}
-
-.google-maps {
-
-    margin-top: -170px;
-    margin-left: 60px
-}
-
-.form-style {
-    margin-left: 550px;
-    margin-top: -200px;
-
-}
-
-.contact-container .container {
-    width: 330px;
-    margin-left: 890px;
+#reservations-form {
+    opacity: 0.8;
+    margin-top: -970px;
     border-radius: 10px;
-    margin-top: 30px;
+
+}
+
+/*Thank you page*/
+#thanks-page {
+    clear: both;
+    background-size: cover;
+    background-position: center;
+    width: 1500px;
+    margin-left: 50px;
+}
+
+#thanks-container {
+    color: rgb(209, 41, 173);
     text-align: center;
-    color: rgb(241, 97, 197);
+}
+
+#thanks-container a {
+    color: white;
+    font-family: 'lato', sans-serif;
+    font-size: 20px;
+    border: solid 1px rgb(241, 97, 197);
+    border-radius: 10px;
+    padding: 5px 20px;
+    transition: 0.1s;
+    width: 150px;
+    margin-left: 700px;
+    margin-bottom: 10px;
 }
