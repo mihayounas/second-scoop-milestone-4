@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.contrib.auth import authenticate
 from django.views import generic, View
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 from django.http import HttpResponseRedirect
 from .models import Post, Reservation, Contact
 from .forms import CommentForm, Booking
@@ -112,3 +112,9 @@ class ContactAdmin(CreateView):
     model = Contact
     template_name = 'contact.html'
     fields = ['name', 'email', 'message']
+
+
+class UpdatePost(UpdateView):
+    model = Post
+    template = 'update_posts.html'
+    fields = ['title', 'featured_image', 'content']
