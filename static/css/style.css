@@ -230,7 +230,8 @@ nav ul li a {
 }
 
 .creating-post:hover,
-.btn:hover {
+.btn:hover,
+#updates {
     color: rgb(241, 97, 197);
     -webkit-transform: scale(1.3);
     -ms-transform: scale(1.3);
@@ -251,6 +252,7 @@ nav ul li a {
     margin-bottom: 10px;
 
 }
+
 
 
 
@@ -426,7 +428,8 @@ nav ul li a {
 }
 
 .btn-signup,
-.send-btn {
+.send-btn,
+#updates {
     width: 130px;
     height: 45px;
     color: white;
@@ -600,4 +603,9 @@ nav ul li a {
     width: 150px;
     margin-left: 700px;
     margin-bottom: 10px;
+}
+
+/* Update post button */
+#updates {
+    margin-left: 225px;
 }

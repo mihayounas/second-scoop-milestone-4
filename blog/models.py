@@ -36,7 +36,7 @@ class Post(models.Model):
         return self.likes.count()
 
     def get_absolute_url(self):
-        return reverse('thanks')
+        return reverse('post_view')
 
 
 class Comment(models.Model):

@@ -21,7 +21,7 @@
                 <img src=" {{ post.featured_image.url }}" width="100%">
                 {% endif %}
             </div>
-
+            <a href="{% url 'update_post' post.pk %}" class="post-link">Edit</a>
         </div>
     </div>
 </div>

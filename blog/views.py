@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.contrib.auth import authenticate
 from django.views import generic, View
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from .models import Post, Reservation, Contact
 from .forms import CommentForm, Booking
 import datetime
+from django.urls import reverse_lazy
 
 
 class PostList(generic.ListView):
@@ -116,5 +117,11 @@ class ContactAdmin(CreateView):
 
 class UpdatePost(UpdateView):
     model = Post
-    template = 'update_posts.html'
+    template_name = 'update_posts.html'
     fields = ['title', 'featured_image', 'content']
+
+
+class DeletePost(DeleteView):
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('post_view')

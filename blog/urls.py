@@ -10,5 +10,7 @@ urlpatterns = [
     path('<slug:slug>', views.PostDetail.as_view(), name="post_detail"),
     path('<slug:slug>', views.PostLike.as_view(), name="post_like"),
     path('add_new_post/', views.AddPostView.as_view(), name='add_new_post'),
-    path('contact/', views.ContactAdmin.as_view(), name='contact')
+    path('contact/', views.ContactAdmin.as_view(), name='contact'),
+    path('update/<int:pk>', views.UpdatePost.as_view(), name='update_post'),
+    path('<int:pk>/delete', views.DeletePost.as_view(), name='delete_post')
 ]
