@@ -26,7 +26,8 @@ body {
 #menu,
 #event,
 #login,
-#contact {
+#contact,
+#reservations_view {
     color: white;
     font-family: 'lato', sans-serif;
     font-size: 20px;
@@ -34,6 +35,12 @@ body {
     border-radius: 10px;
     padding: 5px 20px;
     transition: 0.1s;
+}
+
+#reservations_view {
+    width: 300px;
+    margin-left: 50px;
+    margin-bottom: 10px;
 }
 
 #blog {
@@ -240,6 +247,8 @@ nav ul li a {
 
 /* First page Buttons styled */
 #button1,
+#button2,
+#button3,
 #reservation-btn,
 #contact-btn {
     background-color: black;
@@ -250,14 +259,19 @@ nav ul li a {
     padding: 5px 20px;
     transition: 0.1s;
     margin-bottom: 10px;
+    margin-top: 20px;
 
 }
 
+#button2 {
 
+    margin-right: 15px;
 
+}
 
 #button1:hover,
-#button2:hover {
+#button2:hover,
+#button3:hover {
     color: black;
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);

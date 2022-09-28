@@ -103,6 +103,12 @@ class ReservationRequest(CreateView):
     fields = ['name', 'phone', 'date', 'event', 'message']
 
 
+class ReservationsView(CreateView):
+    model = Reservation
+    template_name = 'reservations_details.html'
+    fields = ['date', 'event', 'approved', 'message']
+
+
 class AddPostView(CreateView):
     model = Post
     template_name = 'new_posts.html'

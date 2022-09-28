@@ -4,8 +4,10 @@
 {% block content %}
 {% if user.is_authenticated %}
 
+
 <!-- Reservations request form -->
-<div id="reservations-pg">
+<div><a class="nav-link" id="reservations_view" href="{% url 'reservations_view' %}">Check your reservations here</a></div>
+<div id=" reservations-pg">
     <img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1664053287/second-scoop/icec_jlz2ec.png" id="img-contact">
     <div class="container" id="reservations-form">
         <div class="row">
@@ -36,4 +38,5 @@
         </div>
     </div>
     {% endif %}
+
     {%endblock%}

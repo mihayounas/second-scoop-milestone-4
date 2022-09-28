@@ -21,16 +21,16 @@
     </div>
 </div>
 {% else %}
-<div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 mt-3 offset-md-2" style="text-align: center">
-                <h2>You need to be logged in to edit the post.</h2>
-                <a class="nav-link" href="{% url 'account_signup' %}">Register?</a>
-                <a class="nav-link" href="{% url 'account_login' %}">Login?</a>
-            </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2" style="text-align: center">
+            <h2>You need to be logged in to edit the post.</h2>
+            <a class="nav-link" href="{% url 'account_signup' %}">Register?</a>
+            <a class="nav-link" href="{% url 'account_login' %}">Login?</a>
         </div>
     </div>
-    {% endif %}
-    {% endif %}
-    {%endblock%}
+</div>
+{% endif %}
+{% endif %}
+{%endblock%}

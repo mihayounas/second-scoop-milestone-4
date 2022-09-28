@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% if user.is_authenticated %}
+
+<li>{{ booking.name }}</li>
 
 
+</ul>
 
-{% endblock content %}
+{%endif%}
+{%endblock%}
