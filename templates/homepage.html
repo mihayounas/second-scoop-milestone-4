@@ -1,21 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-{% if user.is_authenticated %}
-<div class="dropdown" style="margin-top:-50px;margin-left:60px">
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-        Your Account
-    </a>
 
-    <div class="dropdown-menu">
-        <a class="btn btn-primary dropdown-item" href="{% url 'reservations_view' %}"><span style="font-family: 'Dancing Script', cursive;font-size:15px;">C</span>heck your <span style="font-family: 'Dancing Script', cursive;font-size:20px;">R</span>eservations</a>
-        <a class="btn btn-primary dropdown-item" href="{% url 'contact' %}"><span style="font-family: 'Dancing Script', cursive;font-size:15px;">C</span>heck your <span style="font-family: 'Dancing Script', cursive;font-size:20px;">M</span>essages</a>
-        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-    </div>
-</div>
-{% else %}
-<div> <a href="#" data-toggle="modal" data-target="#myModal" id="btn-d"><span style="font-family: 'Dancing Script', cursive;font-size:20px;">L</span>ogIn</span>/<span style="font-family: 'Dancing Script', cursive;font-size:20px;">R</span>egister</span></a></div>
-{% endif %}
 <div><img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1662374379/second-scoop/icecreamy_woaomc.webp" alt="'ice-cream" id="main-img" style="margin-top:20px;"></div>
 
 <!-- USED SWIPER to create slideshow -->
@@ -72,13 +58,5 @@
                     <div class="swiper-button-next"></div>
                 </div>
 
-                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-                <script type="text/javascript">
-                    $(window).on('load', function() {
-                        $('#myModal').modal('show');
-                    });
-                </script>
                 {%endblock%}

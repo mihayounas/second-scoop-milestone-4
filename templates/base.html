@@ -44,7 +44,25 @@
                     <li class="nav-item">
                         <a class="nav-link" id="contact" href="{% url 'contact' %}">Contact Us</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <div class="dropdown nav-link">
+                            <a id="account" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                Your Account
+                            </a>
 
+                            <div class="dropdown-menu">
+                                <a class="btn btn-primary dropdown-item" href="{% url 'reservations_view' %}"><span style="font-family: 'Dancing Script', cursive;font-size:15px;">C</span>heck your <span style="font-family: 'Dancing Script', cursive;font-size:20px;">R</span>eservations</a>
+                                <a class="btn btn-primary dropdown-item" href="{% url 'contact' %}"><span style="font-family: 'Dancing Script', cursive;font-size:15px;">C</span>heck your <span style="font-family: 'Dancing Script', cursive;font-size:20px;">M</span>essages</a>
+                                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                            </div>
+                        </div>
+                        {% else %}
+                        <div id="btn-d" class="nav-link"><a href="#" data-toggle="modal" data-target="#myModal">
+                                <span>LogIn/Register</span>
+                            </a></div>
+                        {% endif %}
+                    </li>
                 </ul>
                 <span class="navbar-text text-muted">
                     Ready for next scoop?
@@ -61,6 +79,7 @@
             <h2>Welcome to Second Scoop!</h2>
             <p>Feel free to explore our delicious recipes or if you would like to learn more about the experience ,join us on our Blog !</p>
         </div>
+
         {% endblock content %}
     </main>
 
@@ -108,6 +127,15 @@
                 prevEl: '.swiper-button-prev',
             },
 
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(window).on('load', function() {
+            $('#myModal').modal('show');
         });
     </script>
 </body>
