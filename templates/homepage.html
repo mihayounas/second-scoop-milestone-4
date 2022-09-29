@@ -1,16 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+{% if user.is_authenticated %}
+<div class="dropdown" style="margin-top:-50px;margin-left:60px">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+        Your Account
+    </a>
 
-<div> <a href="#" data-toggle="modal" data-target="#myModal" id="btn-d"><span style="font-family: 'Dancing Script', cursive;font-size:20px;">P</span>rofile</span></a></div>
-<div><img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1662374379/second-scoop/icecreamy_woaomc.webp" alt="'ice-cream" id="main-img"></div>
+    <div class="dropdown-menu">
+        <a class="btn btn-primary dropdown-item" href="{% url 'reservations_view' %}"><span style="font-family: 'Dancing Script', cursive;font-size:15px;">C</span>heck your <span style="font-family: 'Dancing Script', cursive;font-size:20px;">R</span>eservations</a>
+        <a class="btn btn-primary dropdown-item" href="{% url 'contact' %}"><span style="font-family: 'Dancing Script', cursive;font-size:15px;">C</span>heck your <span style="font-family: 'Dancing Script', cursive;font-size:20px;">M</span>essages</a>
+        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+    </div>
+</div>
+{% else %}
+<div> <a href="#" data-toggle="modal" data-target="#myModal" id="btn-d"><span style="font-family: 'Dancing Script', cursive;font-size:20px;">L</span>ogIn</span>/<span style="font-family: 'Dancing Script', cursive;font-size:20px;">R</span>egister</span></a></div>
+{% endif %}
+<div><img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1662374379/second-scoop/icecreamy_woaomc.webp" alt="'ice-cream" id="main-img" style="margin-top:20px;"></div>
 
 <!-- USED SWIPER to create slideshow -->
 <div class="container-slide">
     <h2><span style="font-family: 'Dancing Script', cursive;font-size:50px;">W</span>elcome <span style="font-family: 'Dancing Script', cursive;font-size:50px;">t</span>o <span style="font-family: 'Dancing Script', cursive;font-size:50px;">S</span>econd<span style="font-family: 'Dancing Script', cursive;font-size:50px;">S</span>coop!</h2>
     <button type="button" class="btn btn-primary" id="button1"><a href="{% url 'post_view' %}" id="btn-a"><span style="font-family: 'Dancing Script', cursive;font-size:20px;">R</span>ead our <span style="font-family: 'Dancing Script', cursive;font-size:20px;">B</span>log</a></button>
-    <button type="button" class="btn btn-primary" id="button2"><a href="{% url 'reservations_view' %}" id="btn-b"><span style="font-family: 'Dancing Script', cursive;font-size:20px;">C</span>heck your <span style="font-family: 'Dancing Script', cursive;font-size:20px;">R</span>eservations</a></button>
-    <button type="button" class="btn btn-primary" id="button3"><a href="{% url 'contact' %}" id="btn-c"><span style="font-family: 'Dancing Script', cursive;font-size:20px;">C</span>heck your <span style="font-family: 'Dancing Script', cursive;font-size:20px;">M</span>essages</a></button>
     <div class="container-fluid signup-container">
         {% if user.is_authenticated %}
         <div class="row signup-row">
@@ -28,21 +39,18 @@
                                     <a class="nav-link" href="{% url 'account_signup' %}">New User Register</a>
                                     <a class="nav-link" href="{% url 'account_login' %}">User Login</a>
                                     <a class="nav-link" href="{% url 'account_login' %}">Admin Login</a>
-
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
                 {% endif %}
 
                 <!-- Slider main container -->
-                <div class=" frame">
+                <div class="frame">
                     <div class=" swiper">
                         <div class="swiper-wrapper">
                             <!-- Slides -->

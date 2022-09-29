@@ -43,7 +43,7 @@
                         <a href="{% url 'delete_post' post.pk %}" class="post-link">Delete Post</a>
                     </div>
                 </div>
-                {% if forloop.counter | divisibleby:3 %}
+                {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
                 {% endif %}

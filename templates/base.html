@@ -44,18 +44,7 @@
                     <li class="nav-item">
                         <a class="nav-link" id="contact" href="{% url 'contact' %}">Contact Us</a>
                     </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
+
                 </ul>
                 <span class="navbar-text text-muted">
                     Ready for next scoop?
@@ -72,7 +61,6 @@
             <h2>Welcome to Second Scoop!</h2>
             <p>Feel free to explore our delicious recipes or if you would like to learn more about the experience ,join us on our Blog !</p>
         </div>
-
         {% endblock content %}
     </main>
 
