@@ -2,9 +2,10 @@
 {% load static %}
 {% block content %}
 {% if user.is_authenticated %}
+{% for reservation in reservations_list %}
+<li>{{ reservation.event }}</li>
 
-<li>{{ booking.name }}</li>
-
+{%endfor%}
 
 </ul>
 

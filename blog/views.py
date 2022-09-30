@@ -131,3 +131,19 @@ class DeletePost(DeleteView):
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('post_view')
+
+
+class ReservationsList(generic.ListView):
+    model = Reservation
+    queryset = Reservation.objects.filter(status=1).order_by("-approved")
+    template_name = "reservations_details.html"
+
+
+class ReservationsDetail(View):
+
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Reservation.objects.filter(status=1)
+
+        return render(
+            request,
+            "reservations_details.html")
