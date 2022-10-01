@@ -135,15 +135,10 @@ class DeletePost(DeleteView):
 
 class ReservationsList(generic.ListView):
     model = Reservation
-    queryset = Reservation.objects.filter(status=1).order_by("-approved")
     template_name = "reservations_details.html"
 
 
-class ReservationsDetail(View):
-
-    def get(self, request, slug, *args, **kwargs):
-        queryset = Reservation.objects.filter(status=1)
-
-        return render(
-            request,
-            "reservations_details.html")
+class UpdateReservations(UpdateView):
+    model = Reservation
+    template_name = "update_reservation.html"
+    fields = ['phone', 'date', 'event', 'message']

@@ -28,7 +28,8 @@ body {
 #login,
 #contact,
 #reservations_view,
-#account {
+#account,
+#add_reservations {
     color: white;
     font-family: 'lato', sans-serif;
     font-size: 20px;
@@ -652,6 +653,31 @@ nav ul li a {
     margin-left: 225px;
 }
 
+/* Reservations view styled*/
+
+.reservation-container {
+    width: 800px;
+    display: block;
+    border: 20px dotted white;
+    padding: 10px;
+}
+
+.reservation-wraper {
+    border: 2px solid white;
+    width: 830px;
+    margin-left: 400px;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+#add_reservations {
+    width: 400px;
+    margin-left: 600px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 /* Media Queries */
 /* For larger to medium screens size from 1200px wide and down */
 @media screen and (min-width: 1200px) {
@@ -679,6 +705,7 @@ nav ul li a {
         font-size: smaller;
     }
 }
+
 
 /* For medium screen sizes from 950px wide and down */
 

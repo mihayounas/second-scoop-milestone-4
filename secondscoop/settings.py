@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'blog',
     'djreservation',
+    'bootstrap_datepicker_plus',
 ]
 
 SITE_ID = 1

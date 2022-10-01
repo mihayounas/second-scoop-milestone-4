@@ -1,13 +1,29 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{% if user.is_authenticated %}
-{% for reservation in reservations_list %}
-<li>{{ reservation.event }}</li>
+<div><a class="nav-link" id="add_reservations" href=" {% url 'reservations' %}">Add New Reservation Request</a></div>
 
-{%endfor%}
+<div class="reservation-wraper">
+    <div class='reservation-container'>
+        {% if user.is_authenticated %}
+        {% for reservation in object_list %}
+        <ul class="list-group">
+            <li class="list-group-item">{{ reservation.name }}
+                {{ reservation.date }}
+                {{ reservation.event }}
+                {% if reservation.approved == True %}
+                <i class="fa-sharp fa-solid fa-check" style="color:green"></i>
+                {%endif%}
+                <a href="{% url 'update_reservations' %}">Edit</a><br />
+            </li>
 
-</ul>
+            <!-- If object_list is empty  -->
+            {% empty %}
+            <li>No Reservation have been made</li>
+            {% endfor %}
 
-{%endif%}
+        </ul>
+        {%endif%}
+    </div>
+</div>
 {%endblock%}

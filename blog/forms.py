@@ -1,5 +1,6 @@
 from .models import Comment, Reservation, Contact
 from django import forms
+from bootstrap_datepicker_plus.widgets import DatePickerInput
 
 
 class CommentForm(forms.ModelForm):
@@ -15,7 +16,7 @@ class Booking(forms.ModelForm):
         fields = ('name', 'phone',
                   'event', 'date', 'message')
         widgets = {
-            'date': forms.DateInput(attrs={'class': 'datepicker'}),
+            'date': DatePickerInput(format='%d-%m-%Y'),
         }
 
 
@@ -23,3 +24,5 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ('name', 'email', 'message')
+
+
