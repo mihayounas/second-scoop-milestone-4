@@ -6,7 +6,7 @@
 <div class="reservation-wraper">
     <div class='reservation-container'>
         {% if user.is_authenticated %}
-        {% for reservation in user.object_list %}
+        {% for reservation in object_list %}
         <ul class="list-group">
             <li class="list-group-item">{{ reservation.name }}
                 {{ reservation.date }}
@@ -17,11 +17,8 @@
                 <a href="{% url 'update_reservations' reservation.pk %}">Edit</a>
                 <a href="{% url 'delete_reservations' reservation.pk %}">Delete</a>
             </li>
-
+            {%endfor%}
             <!-- If object_list is empty  -->
-            {% empty %}
-            <li>No Reservation have been made</li>
-            {% endfor %}
 
         </ul>
         {%endif%}

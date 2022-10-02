@@ -6,6 +6,7 @@ from django.urls import reverse
 from cloudinary.models import CloudinaryField
 import datetime
 from phone_field import PhoneField
+from django.core.validators import RegexValidator
 
 
 # Create your models here.
@@ -63,17 +64,15 @@ class Profile(models.Model):
     phone = models.CharField(max_length=9)
 
 
-
 class Reservation(models.Model):
     name = models.CharField(max_length=100)
-    date= models.DateTimeField()
-    phone = PhoneField(blank=True)
+    date = models.DateTimeField()
+    phone = models.CharField(max_length=11, validators=[RegexValidator(
+        "^((\+44)|(0)) ?\d{4} ?\d{6}$"
+    )])
     event = models.CharField(max_length=100)
     message = models.TextField()
     approved = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.phone + '|' + self.date + '|' + self.event + '|' + self.approved
 
     def get_absolute_url(self):
         return reverse('thanks')

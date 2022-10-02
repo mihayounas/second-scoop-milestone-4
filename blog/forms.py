@@ -11,6 +11,7 @@ class CommentForm(forms.ModelForm):
 class DateInput(forms.DateInput):
     input_type = 'date'
 
+
 class Booking(forms.ModelForm):
 
     class Meta:

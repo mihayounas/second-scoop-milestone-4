@@ -109,6 +109,22 @@ class ReservationsView(CreateView):
     fields = ['date', 'event', 'approved', 'message']
 
 
+class ReservationsList(generic.ListView):
+    model = Reservation
+    template_name = "reservations_details.html"
+
+
+class UpdateReservations(UpdateView):
+    model = Reservation
+    template_name = "update_reservation.html"
+    fields = ['phone', 'date', 'event', 'message']
+
+
+class DeleteReservations(DeleteView):
+    model = Reservation
+    template_name = 'delete_reservations.html'
+    success_url = reverse_lazy('reservations_details')
+
 class AddPostView(CreateView):
     model = Post
     template_name = 'new_posts.html'
@@ -133,18 +149,3 @@ class DeletePost(DeleteView):
     success_url = reverse_lazy('post_view')
 
 
-class ReservationsList(generic.ListView):
-    model = Reservation
-    template_name = "reservations_details.html"
-
-
-class UpdateReservations(UpdateView):
-    model = Reservation
-    template_name = "update_reservation.html"
-    fields = ['phone', 'date', 'event', 'message']
-
-
-class DeleteReservations(DeleteView):
-    model = Reservation
-    template_name = 'delete_reservations.html'
-    success_url = reverse_lazy('reservations_details')
