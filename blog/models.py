@@ -66,8 +66,8 @@ class Profile(models.Model):
 
 class Reservation(models.Model):
     name = models.CharField(max_length=100)
-    date_field = models.DateTimeField()
-    phone = models.IntegerField(null=True)
+    date= models.DateTimeField()
+    phone = PhoneField(blank=True)
     event = models.CharField(max_length=100)
     message = models.TextField()
     approved = models.BooleanField(default=False)

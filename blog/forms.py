@@ -16,9 +16,9 @@ class Booking(forms.ModelForm):
     class Meta:
         model = Reservation
         fields = ('name', 'phone',
-                  'event', 'date_field', 'message')
+                  'event', 'date', 'message')
         widgets = {
-            'date_field': DateInput(),
+            'date': DateInput(),
         }
 
 

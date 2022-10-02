@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterField(
             model_name='reservation',
-            name='date_field',
+            name='date',
             field=models.DateField(),
         ),
     ]
