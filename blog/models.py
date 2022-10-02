@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
 import datetime
+from phone_field import PhoneField
 
 
 # Create your models here.
@@ -62,13 +63,13 @@ class Profile(models.Model):
     phone = models.CharField(max_length=9)
 
 
+
 class Reservation(models.Model):
     name = models.CharField(max_length=100)
-    phone = models.CharField(max_length=12)
-    date = models.DateField()
+    date_field = models.DateTimeField()
+    phone = models.IntegerField(null=True)
     event = models.CharField(max_length=100)
     message = models.TextField()
-    status = models.IntegerField(choices=STATUS, default=0)
     approved = models.BooleanField(default=False)
 
     def __str__(self):

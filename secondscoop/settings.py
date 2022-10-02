@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'blog',
     'djreservation',
     'bootstrap_datepicker_plus',
+    'phone_field',
 ]
 
 SITE_ID = 1

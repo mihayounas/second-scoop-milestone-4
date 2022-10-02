@@ -142,3 +142,9 @@ class UpdateReservations(UpdateView):
     model = Reservation
     template_name = "update_reservation.html"
     fields = ['phone', 'date', 'event', 'message']
+
+
+class DeleteReservations(DeleteView):
+    model = Reservation
+    template_name = 'delete_reservations.html'
+    success_url = reverse_lazy('reservations_details')
