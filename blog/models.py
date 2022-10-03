@@ -6,7 +6,7 @@ from django.urls import reverse
 from cloudinary.models import CloudinaryField
 import datetime
 from phone_field import PhoneField
-from django.core.validators import RegexValidator
+from django.core.validators import RegexValidator, MinValueValidator
 
 
 # Create your models here.
@@ -66,7 +66,11 @@ class Profile(models.Model):
 
 class Reservation(models.Model):
     name = models.CharField(max_length=100)
-    date = models.DateTimeField()
+
+    date = models.DateField(blank=False, null=False, validators=[MinValueValidator(datetime.date.today), RegexValidator(
+        "(\d{4})-(\d{2})-(\d{2})"
+    )])
+
     phone = models.CharField(max_length=11, validators=[RegexValidator(
         "^((\+44)|(0)) ?\d{4} ?\d{6}$"
     )])

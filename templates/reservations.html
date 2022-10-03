@@ -3,8 +3,6 @@
 {% load crispy_forms_tags %}
 {% block content %}
 {% if user.is_authenticated %}
-
-
 <!-- Reservations request form -->
 <div><a class="nav-link" id="reservations_view" href="{% url 'reservations_view' %}">Check your reservations here</a></div>
 <div id=" reservations-pg">
@@ -20,11 +18,10 @@
                 <form class="login" method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
+
                     <button class="btn btn-secondary" id="reservation-btn">Send Request</button>
                 </form>
             </div>
-
-
         </div>
     </div>
     {% else %}

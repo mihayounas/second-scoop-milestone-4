@@ -123,7 +123,8 @@ class UpdateReservations(UpdateView):
 class DeleteReservations(DeleteView):
     model = Reservation
     template_name = 'delete_reservations.html'
-    success_url = reverse_lazy('reservations_details')
+    success_url = reverse_lazy('reservations_view')
+
 
 class AddPostView(CreateView):
     model = Post
@@ -147,5 +148,3 @@ class DeletePost(DeleteView):
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('post_view')
-
-
