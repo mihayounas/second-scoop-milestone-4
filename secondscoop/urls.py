@@ -23,6 +23,8 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path("accounts/", include("allauth.urls")),
     path('reservations/', include('djreservation.urls'))
-    
+
 
 ]
+handler404 = "blog.views.error404_view"
+handler500 = "blog.views.error500_view"

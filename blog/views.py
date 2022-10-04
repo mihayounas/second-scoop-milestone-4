@@ -148,3 +148,11 @@ class DeletePost(DeleteView):
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('post_view')
+
+
+def error404_view(request, exception):
+    return render(request, 'error.html', status=404)
+
+
+def error500_view(request):
+    return render(request, 'error.html', status=500)

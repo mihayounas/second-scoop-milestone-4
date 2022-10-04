@@ -1,6 +1,7 @@
 from . import views
 from django.urls import path
 
+
 urlpatterns = [
     path('', views.homepage, name='homepage'),
     path('menu', views.menu, name='menu'),
@@ -11,7 +12,7 @@ urlpatterns = [
          name="reservations_view"),
     path('delete/<int:pk>',
          views.UpdateReservations.as_view(), name='update_reservations'),
-         path('edit/<int:pk>',
+    path('edit/<int:pk>',
          views.DeleteReservations.as_view(), name='delete_reservations'),
     path('thanks', views.thanks, name='thanks'),
     path('post_view', views.PostList.as_view(), name="post_view"),
@@ -22,3 +23,6 @@ urlpatterns = [
     path('update/<int:pk>', views.UpdatePost.as_view(), name='update_post'),
     path('<int:pk>/delete', views.DeletePost.as_view(), name='delete_post')
 ]
+
+
+
