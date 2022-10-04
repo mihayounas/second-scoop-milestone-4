@@ -15,6 +15,7 @@
             <form class="login" method="POST">
                 {% csrf_token %}
                 <strong>Are you sure?</strong><br />
+                <a href="{% url 'post_view' %}">Cancel</a>
                 <button class="btn btn-secondary" id="updates">Delete Post</button>
             </form>
         </div>
