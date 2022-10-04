@@ -47,8 +47,8 @@
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <div class="dropdown nav-link">
-                            <a id="account" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Your Account
+                            <a id="account" class="btn btn-secondary dropdown-toggle text-capitalize" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                {{ user.username }}'s Account
                             </a>
 
                             <div class="dropdown-menu">

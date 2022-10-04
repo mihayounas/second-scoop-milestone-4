@@ -6,9 +6,8 @@
 <div class="reservation-wraper">
     <div class='reservation-container'>
         {% if user.is_authenticated %}
-
         {% for reservation in object_list %}
-
+        {% if request.user == reservation.user %}
         <ul class="list-group">
             <li class="list-group-item">{{ reservation.name }} | <span> Requested date:{{ reservation.date }}</span> | <span> Event :{{ reservation.event }}</span>
                 {% if reservation.approved == True %}
@@ -19,12 +18,11 @@
                 <a href="{% url 'update_reservations' reservation.pk %}">Edit</a>
                 <a href="{% url 'delete_reservations' reservation.pk %}">Delete</a>
             </li>
-
+            {%endif%}
             {%endfor%}
-
-            <!-- If object_list is empty  -->
-
         </ul>
+
+
         {%endif%}
     </div>
 </div>

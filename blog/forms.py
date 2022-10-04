@@ -20,7 +20,7 @@ class Booking(forms.ModelForm):
         fields = ('name', 'phone',
                   'event', 'date', 'message')
 
-       
+
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
