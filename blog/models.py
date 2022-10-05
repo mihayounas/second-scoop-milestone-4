@@ -58,6 +58,8 @@ class Comment(models.Model):
 
 
 class Profile(models.Model):
+    user_profile = models.OneToOneField(
+        User, on_delete=models.CASCADE, null=True, default='1')
     name = models.CharField(max_length=100)
     surname = models.CharField(max_length=100)
     phone = models.CharField(max_length=9)
@@ -67,7 +69,7 @@ class Reservation(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="reservation_request", null=True)
     name = models.CharField(max_length=100)
-    date = models.DateField(blank=False, null=False, validators=[MinValueValidator(datetime.date.today), RegexValidator(
+    date = models.DateField(null=False, validators=[MinValueValidator(datetime.date.today), RegexValidator(
         "(\d{4})-(\d{2})-(\d{2})"
     )])
 

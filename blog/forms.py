@@ -1,6 +1,7 @@
 from .models import Comment, Reservation, Contact
 from django import forms
 from datetime import datetime
+from django.contrib.admin import widgets
 
 
 class CommentForm(forms.ModelForm):
@@ -19,6 +20,7 @@ class Booking(forms.ModelForm):
         model = Reservation
         fields = ('name', 'phone',
                   'event', 'date', 'message')
+        
 
 
 class ContactForm(forms.ModelForm):

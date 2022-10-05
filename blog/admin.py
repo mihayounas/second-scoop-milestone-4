@@ -43,4 +43,4 @@ class ContactUs(admin.ModelAdmin):
 
     def respond_message(self, request, queryset):
         respond = models.CharField(max_length=100)
-        return(respond)
+        return (respond)

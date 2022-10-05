@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
-from .models import Post, Reservation, Contact
+from .models import Post, Reservation, Contact, Profile
 from .forms import CommentForm, Booking
 import datetime
 from django.urls import reverse_lazy
@@ -102,6 +102,12 @@ class ReservationRequest(CreateView):
     template_name = 'reservations.html'
     fields = ['name', 'phone', 'date', 'event', 'message']
 
+    # Adding the user here - Ger
+    def form_valid(self, form):
+        """ adding the username automatically for the reservation """
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
 
 class ReservationsView(CreateView):
     model = Reservation
@@ -112,6 +118,11 @@ class ReservationsView(CreateView):
 class ReservationsList(generic.ListView):
     model = Reservation
     template_name = "reservations_details.html"
+
+    # simplified the queryset here - Ger
+    def get_queryset(self):
+        user = self.request.user
+        return Reservation.objects.filter(user=user)
 
 
 class UpdateReservations(UpdateView):
