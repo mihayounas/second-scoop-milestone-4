@@ -99,10 +99,11 @@ def thanks(request):
 
 class ReservationRequest(CreateView):
     model = Reservation
+    form_class = Booking
     template_name = 'reservations.html'
-    fields = ['name', 'phone', 'date', 'event', 'message']
 
     # Adding the user here - Ger
+
     def form_valid(self, form):
         """ adding the username automatically for the reservation """
         form.instance.user = self.request.user

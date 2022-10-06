@@ -37,6 +37,9 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+    def __str__(self):
+        return self.author
+
     def get_absolute_url(self):
         return reverse('post_view')
 
@@ -72,7 +75,6 @@ class Reservation(models.Model):
     date = models.DateField(null=False, validators=[MinValueValidator(datetime.date.today), RegexValidator(
         "(\d{4})-(\d{2})-(\d{2})"
     )])
-
     phone = models.CharField(max_length=11, validators=[RegexValidator(
         "^((\+44)|(0)) ?\d{4} ?\d{6}$"
     )])

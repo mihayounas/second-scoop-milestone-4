@@ -1,4 +1,4 @@
-from .models import Comment, Reservation, Contact
+from .models import Comment, Reservation, Contact, Post
 from django import forms
 from datetime import datetime
 from django.contrib.admin import widgets
@@ -20,10 +20,14 @@ class Booking(forms.ModelForm):
         model = Reservation
         fields = ('name', 'phone',
                   'event', 'date', 'message')
-        
+        widgets = {
+            'date': DateInput(),
+        }
 
 
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ('name', 'email', 'message')
+
+
