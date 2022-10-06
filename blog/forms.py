@@ -1,4 +1,4 @@
-from .models import Comment, Reservation, Contact, Post
+from .models import Comment, Reservation, Contact
 from django import forms
 from datetime import datetime
 from django.contrib.admin import widgets

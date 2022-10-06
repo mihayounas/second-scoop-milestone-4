@@ -29,7 +29,8 @@ body {
 #contact,
 #reservations_view,
 #account,
-#add_reservations {
+#add_reservations,
+#messages_view {
     color: white;
     font-family: 'lato', sans-serif;
     font-size: 20px;
@@ -39,7 +40,8 @@ body {
     transition: 0.1s;
 }
 
-#reservations_view {
+#reservations_view,
+#messages_view {
     width: 300px;
     margin-left: 50px;
     margin-bottom: 10px;
@@ -278,7 +280,8 @@ nav ul li a {
 #reservation-btn,
 #contact-btn,
 #btn-d,
-.dropdown-toggle {
+.dropdown-toggle,
+#messages-btn {
     background-color: black;
     font-family: 'lato', sans-serif;
     font-size: 20px;
@@ -526,7 +529,8 @@ nav ul li a {
 /* Contact and reservation Button styled */
 
 #contact-btn,
-#reservation-btn {
+#reservation-btn,
+#messages-btn {
     margin-left: 245px;
 }
 
@@ -614,7 +618,8 @@ nav ul li a {
     height: 900px;
 }
 
-#reservations-form {
+#reservations-form,
+#messages-form {
     opacity: 0.8;
     margin-top: -970px;
     border-radius: 10px;
@@ -688,7 +693,8 @@ nav ul li a {
     #login,
     #contact,
     #reservations_view,
-    #account {
+    #account,
+    #messages_view {
         font-size: medium;
     }
 }
@@ -701,7 +707,8 @@ nav ul li a {
     #login,
     #contact,
     #reservations_view,
-    #account {
+    #account,
+    #messages_view {
         font-size: smaller;
     }
 }

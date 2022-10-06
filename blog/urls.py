@@ -20,9 +20,11 @@ urlpatterns = [
     path('<slug:slug>', views.PostLike.as_view(), name="post_like"),
     path('add_new_post/', views.AddPostView.as_view(), name='add_new_post'),
     path('contact/', views.ContactAdmin.as_view(), name='contact'),
+    path('editing/<int:pk>',
+         views.UpdateMessages.as_view(), name='update_messages'),
+     path('deleting/<int:pk>',
+         views.DeleteMessages.as_view(), name='delete_messages'),
+    path('messages/', views.MessagesList.as_view(), name='message_list'),
     path('update/<int:pk>', views.UpdatePost.as_view(), name='update_post'),
     path('<int:pk>/delete', views.DeletePost.as_view(), name='delete_post')
 ]
-
-
-

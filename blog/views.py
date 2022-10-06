@@ -4,12 +4,16 @@ from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from .models import Post, Reservation, Contact, Profile
-from .forms import CommentForm, Booking
+from .forms import CommentForm, Booking, ContactForm
 import datetime
 from django.urls import reverse_lazy
 
 
 class PostList(generic.ListView):
+    """
+    This view is showing the list of posts on the blog
+    giving information about each post.
+    """
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
@@ -17,6 +21,11 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
+    """
+    After clicking on a post this will help diplaying
+    all the post details allwing you to add a comment 
+    or like.
+    """
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -71,6 +80,9 @@ class PostDetail(View):
 
 
 class PostLike(View):
+    """
+    Allowing post likes
+    """
 
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
@@ -80,6 +92,33 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class AddPostView(CreateView):
+    """
+    A view to add a new post.
+    """
+    model = Post
+    template_name = 'new_posts.html'
+    fields = ['title', 'author', 'slug', 'featured_image', 'content']
+
+
+class UpdatePost(UpdateView):
+    """
+    A view to edit and update a post.
+    """
+    model = Post
+    template_name = 'update_posts.html'
+    fields = ['title', 'featured_image', 'content']
+
+
+class DeletePost(DeleteView):
+    """
+    A view to delete a post.
+    """
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('post_view')
 
 
 def homepage(request):
@@ -98,6 +137,11 @@ def thanks(request):
 
 
 class ReservationRequest(CreateView):
+    """
+    A view which will create reservation form page 
+    to request a resrvations,this will send a reservation
+    to admin for approval.
+    """
     model = Reservation
     form_class = Booking
     template_name = 'reservations.html'
@@ -111,12 +155,17 @@ class ReservationRequest(CreateView):
 
 
 class ReservationsView(CreateView):
+
     model = Reservation
     template_name = 'reservations_details.html'
     fields = ['date', 'event', 'approved', 'message']
 
 
 class ReservationsList(generic.ListView):
+    """
+    This view will display all the reservations for a current
+    user and offering details about each reservations.
+    """
     model = Reservation
     template_name = "reservations_details.html"
 
@@ -127,39 +176,66 @@ class ReservationsList(generic.ListView):
 
 
 class UpdateReservations(UpdateView):
+    """
+    A view to edit and update a reservations.
+    """
     model = Reservation
     template_name = "update_reservation.html"
     fields = ['phone', 'date', 'event', 'message']
 
 
 class DeleteReservations(DeleteView):
+    """
+    A view to delete a reservations.
+    """
     model = Reservation
     template_name = 'delete_reservations.html'
     success_url = reverse_lazy('reservations_view')
 
 
-class AddPostView(CreateView):
-    model = Post
-    template_name = 'new_posts.html'
-    fields = ['title', 'author', 'slug', 'featured_image', 'content']
-
-
 class ContactAdmin(CreateView):
+    """
+    A view to display contact form for messages to admin.
+    """
     model = Contact
+    form_class = ContactForm
     template_name = 'contact.html'
+
+    def form_valid(self, form):
+        """ adding the username automatically for the message """
+        form.instance.client = self.request.user
+        return super().form_valid(form)
+
+
+class MessagesList(generic.ListView):
+    """
+    A view to display  the created messages to user.
+    """
+    model = Contact
+    template_name = "message_view.html"
+
+    # simplified the queryset here - Ger
+    def get_queryset(self):
+        client = self.request.user
+        return Contact.objects.filter(client=client)
+
+
+class UpdateMessages(UpdateView):
+    """
+    A view to edit and update a message.
+    """
+    model = Contact
+    template_name = "edit_messages.html"
     fields = ['name', 'email', 'message']
 
 
-class UpdatePost(UpdateView):
-    model = Post
-    template_name = 'update_posts.html'
-    fields = ['title', 'featured_image', 'content']
-
-
-class DeletePost(DeleteView):
-    model = Post
-    template_name = 'delete_post.html'
-    success_url = reverse_lazy('post_view')
+class DeleteMessages(DeleteView):
+    """
+    A view to delete messages.
+    """
+    model = Contact
+    template_name = 'delete_messages.html'
+    success_url = reverse_lazy('message_list')
 
 
 def error404_view(request, exception):
