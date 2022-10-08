@@ -9,7 +9,12 @@
     </h2>
     <p style="font-size: 30px;">If you love our recipes or have suggestions </p>
     <p style="font-size: 30px;">, please feel free to share it with us!</p>
+    <div class="row">
+        <!-- Create new post option -->
+        <a href="{% url 'add_new_post' %}" class="creating-post">CREATE NEW POST</a>
+    </div>
 </div>
+
 
 <div class="container-fluid">
     <div class="row">
@@ -35,18 +40,16 @@
                             <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
                         </div>
-                        <a href="{% url 'update_post' post.pk %}" class="post-link">Edit</a>
-                        <a href="{% url 'delete_post' post.pk %}" class="post-link">Delete Post</a>
+                        <div><span id="post_edit"><a href="{% url 'update_post' post.pk %}" class="post-link">Edit</a></span>
+                            <span id="post_delete"><a href="{% url 'delete_post' post.pk %}" class="post-link">Delete Post</a></span></div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
+                {% if forloop.counter|divisibleby:4 %}
             </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-                <!-- Create new post option -->
-                <a href="{% url 'add_new_post' %}" class="creating-post">CREATE NEW POST</a>
-            </div>
+
+            {% endif %}
+            {% endfor %}
+
         </div>
     </div>
     {% if is_paginated %}

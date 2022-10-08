@@ -14,12 +14,7 @@
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL-->
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1661808637/second-scoop/scoop9_q0hsep.webp" width="100%">
-                {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
-                {% endif %}
+
             </div>
             <a href="{% url 'update_post' post.pk %}" class="post-link">Edit</a>
         </div>

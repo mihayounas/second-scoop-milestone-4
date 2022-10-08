@@ -75,6 +75,7 @@ class Reservation(models.Model):
     phone = models.CharField(max_length=11, validators=[RegexValidator(
         "^((\+44)|(0)) ?\d{4} ?\d{6}$"
     )])
+    number_of_people = models.PositiveIntegerField()
     event = models.CharField(max_length=100)
     message = models.TextField()
     approved = models.BooleanField(default=False)

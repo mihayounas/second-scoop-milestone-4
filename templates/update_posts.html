@@ -21,16 +21,11 @@
     </div>
 </div>
 {% else %}
-<div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 mt-3 offset-md-2" style="text-align: center">
-                <h2>You need to be logged in to edit the post.</h2>
-                <a class="nav-link" href="{% url 'account_login' %}">Login?</a>
-            </div>
-        </div>
-    </div>
+<div class="alert alert-danger" role="alert">
+    Access denied!
+    Back to previous <a href="{% url 'post_view' %}" style="color:red"> Page </a> or <a href="{% url 'add_new_post' %}" style="color:red">CREATE NEW POST</a>
+</div>
 
-    {% endif %}
-    {% endif %}
-    {%endblock%}
+{% endif %}
+{% endif %}
+{%endblock%}

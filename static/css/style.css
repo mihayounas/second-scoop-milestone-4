@@ -151,6 +151,8 @@ nav ul li a {
 
 }
 
+
+
 /* Styling the sign up forms */
 .sign-up {
     color: pink;
@@ -189,29 +191,24 @@ nav ul li a {
 }
 
 /* STYLE POST PAGE */
-.card-img-top {
-    width: 220px;
-    height: 150px;
-    margin-left: 130px;
-}
 
 .card-title {
-    font-size: 20px;
+    font-size: 17px;
     color: black;
     text-decoration: none;
 
 }
 
 .card-text {
-    font-size: 13px;
+    font-size: 11px;
     color: rgb(241, 97, 197);
 
 }
 
 .card-body {
     background-color: pink;
-    width: 420px;
-    height: 230px;
+    width: 250px;
+    height: 130px;
     border-radius: 10px;
     margin-left: 10px;
     margin-top: 5px;
@@ -219,10 +216,10 @@ nav ul li a {
 }
 
 .card {
-    width: 460px;
-    height: 290px;
+    width: 300px;
+    height: 150px;
     background-color: black;
-    border: 10px dotted white;
+    border: 7px dotted white;
     border-radius: 10px;
     margin-top: 5px;
 }
@@ -231,21 +228,33 @@ nav ul li a {
     border: 5px solid white;
     border-radius: 10px;
     margin-bottom: 10px;
-    width: 500px;
-    height: 320px;
+    width: 330px;
+    height: 215px;
     margin-right: 5px;
     margin-left: 20px;
+
 }
 
 #row-post {
     margin-top: -50px;
+    margin-left: 70px;
 }
 
 .headline {
-    padding: 50px;
+    padding: 43px;
     color: rgb(241, 97, 197);
     font-family: 'Dancing Script', cursive;
     text-align: center;
+}
+
+#post_edit a,
+#post_delete a {
+    text-decoration: none;
+    color: rgb(241, 97, 197);
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 10px;
+    ;
 }
 
 /* CREATE NEW POST BUTTON STYLED */
@@ -261,6 +270,7 @@ nav ul li a {
     border-radius: 10px;
     padding: 10px 20px;
     transition: 0.1s;
+    margin-left: 70px;
 
 }
 
