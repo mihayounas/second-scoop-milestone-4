@@ -4,7 +4,7 @@ from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from .models import Post, Reservation, Contact, Profile
-from .forms import CommentForm, Booking, ContactForm
+from .forms import CommentForm, Booking, ContactForm, PostForm
 import datetime
 from django.urls import reverse_lazy
 
@@ -100,7 +100,12 @@ class AddPostView(CreateView):
     """
     model = Post
     template_name = 'new_posts.html'
-    fields = ['title', 'author', 'slug', 'featured_image', 'content']
+    fields = ['title', 'slug', 'featured_image', 'content']
+
+    def form_valid(self, form):
+        """ adding the username automatically for the reservation """
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 class UpdatePost(UpdateView):
