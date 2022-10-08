@@ -100,7 +100,7 @@ class AddPostView(CreateView):
     """
     model = Post
     template_name = 'new_posts.html'
-    fields = ['title', 'slug', 'featured_image', 'content']
+    fields = ['title',  'slug', 'featured_image', 'content']
 
     def form_valid(self, form):
         """ adding the username automatically for the reservation """

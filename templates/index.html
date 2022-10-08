@@ -26,8 +26,12 @@
                 <div class="col-md-4" id="card-main">
                     <div class="card mb-4">
                         <div class="card-body mb-4">
-                            <div class="image-container">
-
+                            <div style="height:80px;width:200px" class="image-container">
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img class="card-img-top" src="https://res.cloudinary.com/df4j1glpo/image/upload/v1665263427/media/second-scoop/bubble_sukbmc.jpg">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
