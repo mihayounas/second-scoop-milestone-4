@@ -10,8 +10,17 @@
             <div class="col-md-6 masthead-text">
                 <!-- Post title-->
                 <h1 class="post-title">{{ post.title }}</h1>
+
                 <!-- Post author-->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+            </div>
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                <!-- The featured image URL goes in the src attribute -->
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1665263427/media/second-scoop/bubble_sukbmc.jpg" width="100%">
+                {% else %}
+                <img src=" {{ post.featured_image.url }}" width="100%">
+                {% endif %}
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
 
@@ -24,7 +33,7 @@
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
+            <div class="card-body" id="post-details-card">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">
@@ -67,7 +76,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="col-md-8 card mb-4  mt-3 " id="post_comments">
             <h3>Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
@@ -100,7 +109,7 @@
 
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">
+                <form method=" post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>

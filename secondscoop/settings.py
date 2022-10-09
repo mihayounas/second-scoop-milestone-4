@@ -169,12 +169,7 @@ USE_TZ = True
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'df4j1glpo',
-    'API_KEY': '493494235994288',
-    'API_SECRET': 'zTTpGxQKi__Q5xN5tStvSY1DDRA',
-}
+ 
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
