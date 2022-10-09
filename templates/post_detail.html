@@ -76,7 +76,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 " id="post_comments">
+        <div class="col card mb-4  mt-3 left  top " id="post_comments">
             <h3>Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
@@ -97,8 +97,8 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 card mb-4  mt-3 ">
-            <div class="card-body">
+        <div id="comments-outer">
+            <div class="card-body" id="leave-comments">
                 <!-- For later -->
                 {% if commented %}
                 <div class="alert alert-success" role="alert">

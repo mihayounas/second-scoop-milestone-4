@@ -214,14 +214,29 @@ nav ul li a {
     border: 13px solid white;
 }
 
-#post-details-card {
+#post-details-card,
+#post_comments {
     width: 100%;
     margin: 0;
     color: rgb(241, 97, 197);
 }
 
+#comments-outer {
+    border: 8px dotted white;
+    width: 455px;
+    border-radius: 10px;
+
+}
+
 #post_comments {
-    background-color: red;
+    height: 200px;
+}
+
+#leave-comments {
+    width: 400px;
+    height: 450px;
+    text-align: center;
+    border: 4px solid white;
 }
 
 .card {
