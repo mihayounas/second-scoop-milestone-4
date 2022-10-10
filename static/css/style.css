@@ -110,10 +110,10 @@ nav ul li a {
 }
 
 #footer-text {
-    color: rgb(241, 97, 197);
+    color: white;
     font-family: 'lato', sans-serif;
     font-size: 20px;
-    margin-bottom: -250px;
+    margin-bottom: -350px;
     opacity: 0.9;
 }
 
@@ -372,7 +372,6 @@ nav ul li a {
     margin-bottom: 20px;
     background-color: black;
 
-
 }
 
 .swiper .swiper-button-prev,
@@ -386,7 +385,6 @@ nav ul li a {
     border-width: 18px;
     width: 700px;
 
-
 }
 
 .frame {
@@ -398,6 +396,7 @@ nav ul li a {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     background-color: black;
+    margin-right: -20px;
 
 }
 
@@ -747,12 +746,79 @@ nav ul li a {
     }
 }
 
+.container-slide {
+    width: 650px;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.swiper-slide img {
+    width: 530px;
+    height: 300px;
+}
+
+.swiper {
+    border-width: 13px;
+    width: 590px;
+}
+
+.frame {}
 
 /* For medium screen sizes from 950px wide and down */
 
-@media screen and (max-width: 950px) {}
+@media screen and (max-width: 950px) {
+    .container-slide {
+        width: 600px;
+        height: 330px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 200px;
+    }
+
+    .swiper-slide img {
+        width: 520px;
+        height: 270px;
+    }
+
+    .swiper {
+        border-width: 13px;
+        width: 550px;
+    }
+}
+
+.nav-link #blog {
+    margin-right: -10px;
+}
 
 /* For small screens sizes 800px and down*/
-@media screen and (max-width: 800px) {}
+@media screen and (max-width: 750px) {
+    .container-slide {
+        width: 600px;
+        height: 330px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 75px;
+    }
+}
 
-@media screen and (max-width: 500px) {}
+@media screen and (max-width: 600px) {
+    .container-slide {
+        width: 490px;
+        height: 270px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 50px;
+    }
+
+    .swiper-slide img {
+        width: 360px;
+        height: 250px;
+    }
+
+    .swiper {
+        border-width: 13px;
+        width: 420px;
+    }
+}
