@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
 body {
     padding-top: 20px;
     background-position: center;
@@ -120,11 +127,11 @@ nav ul li a {
 
 /* Create style the background image effect*/
 #main-img {
-    width: 1500px;
+    width: 1600px;
     height: 900px;
-    padding-bottom: 20px;
-    padding-left: 120px;
-    padding-right: 20px;
+    padding: 40px;
+    padding-top: 0;
+    object-fit: cover;
     align-items: center;
 
 }
@@ -769,6 +776,8 @@ nav ul li a {
 /* For medium screen sizes from 950px wide and down */
 
 @media screen and (max-width: 950px) {
+
+
     .container-slide {
         width: 600px;
         height: 330px;
@@ -820,5 +829,45 @@ nav ul li a {
     .swiper {
         border-width: 13px;
         width: 420px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .container-slide {
+        width: 400px;
+        height: 180px;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .swiper-slide img {
+        width: 320px;
+        height: 180px;
+    }
+
+    .swiper {
+        border-width: 13px;
+        width: 360px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .container-slide {
+        width: 300px;
+        height: 150px;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .swiper-slide img {
+        width: 220px;
+        height: 150px;
+    }
+
+    .swiper {
+        border-width: 13px;
+        width: 260px;
     }
 }
