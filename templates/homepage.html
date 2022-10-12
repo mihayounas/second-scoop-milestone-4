@@ -2,11 +2,12 @@
 {% load static %}
 {% block content %}
 
-<div><img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1662374379/second-scoop/icecreamy_woaomc.webp" alt="'ice-cream" id="main-img" style="margin-top:20px;"></div>
 
 <!-- USED SWIPER to create slideshow -->
 <div class="container-slide">
-    <h2><span style="font-family: 'Dancing Script', cursive;font-size:50px;">W</span>elcome <span style="font-family: 'Dancing Script', cursive;font-size:50px;">t</span>o <span style="font-family: 'Dancing Script', cursive;font-size:50px;">S</span>econd<span style="font-family: 'Dancing Script', cursive;font-size:50px;">S</span>coop!</h2>
+    <div id="welcome-scoop">
+        <h2><span style="font-family: 'Dancing Script', cursive;font-size:50px;">W</span>elcome <div style="font-family: 'Dancing Script', cursive;font-size:50px;">to</div> <span style="font-family: 'Dancing Script', cursive;font-size:50px;">S</span>econd<span style="font-family: 'Dancing Script', cursive;font-size:50px;">S</span>coop!</h2>
+    </div>
     <button type="button" class="btn btn-primary" id="button1"><a href="{% url 'post_view' %}" id="btn-a"><span style="font-family: 'Dancing Script', cursive;font-size:20px;">R</span>ead our <span style="font-family: 'Dancing Script', cursive;font-size:20px;">B</span>log</a></button>
     <div class="container-fluid signup-container">
         {% if user.is_authenticated %}
