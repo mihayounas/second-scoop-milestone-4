@@ -82,11 +82,10 @@ body {
     color: rgb(241, 97, 197)
 }
 
-.nav-link:hover {
-    color: rgb(241, 97, 197);
-    -webkit-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    transform: scale(1.3);
+
+
+#logout-dropdown {
+    color: black
 }
 
 #home:hover,
@@ -608,7 +607,6 @@ nav ul li a {
 .btn-primary {
     z-index: 99999;
     background-color: rgb(209, 41, 173);
-
     margin-top: 10px;
 }
 
@@ -719,22 +717,30 @@ nav ul li a {
     display: block;
     border: 20px dotted white;
     padding: 10px;
+
 }
 
 .reservation-wraper {
     border: 2px solid white;
-    width: 830px;
-    margin-left: 400px;
-    padding: 10px;
-    border-radius: 10px;
+
+    padding: 20px;
+    border-radius: 20px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
 }
 
 #add_reservations {
-    width: 400px;
-    margin-left: 600px;
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 40px;
     text-align: center;
+    background-color: black;
 }
 
 /* Media Queries */
