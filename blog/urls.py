@@ -4,6 +4,7 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.homepage, name='homepage'),
+
     path('menu', views.menu, name='menu'),
     path('reservations', views.ReservationRequest.as_view(), name='reservations'),
     path('reservation_view/', views.ReservationsView.as_view(),
@@ -22,7 +23,7 @@ urlpatterns = [
     path('contact/', views.ContactAdmin.as_view(), name='contact'),
     path('editing/<int:pk>',
          views.UpdateMessages.as_view(), name='update_messages'),
-     path('deleting/<int:pk>',
+    path('deleting/<int:pk>',
          views.DeleteMessages.as_view(), name='delete_messages'),
     path('messages/', views.MessagesList.as_view(), name='message_list'),
     path('update/<int:pk>', views.UpdatePost.as_view(), name='update_post'),

@@ -249,3 +249,7 @@ def error404_view(request, exception):
 
 def error500_view(request):
     return render(request, 'error.html', status=500)
+
+
+def admin(condition):
+    return redirect('admin:index')
