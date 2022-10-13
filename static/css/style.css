@@ -14,6 +14,12 @@ body {
     background-color: rgb(25, 24, 24);
 }
 
+.modal-content {
+    border: 10px dotted white;
+    border-radius: 80px;
+
+}
+
 .main-bg {
     background-image: url('https://res.cloudinary.com/df4j1glpo/image/upload/v1662374379/second-scoop/icecreamy_woaomc.webp');
     background-repeat: no-repeat;
@@ -539,6 +545,10 @@ nav ul li a {
     margin-bottom: 10px;
     transition: 0.1s;
     background-color: black;
+}
+
+#signout {
+    float: right;
 }
 
 .send-btn:hover {
