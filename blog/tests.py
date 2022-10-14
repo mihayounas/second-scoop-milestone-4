@@ -8,9 +8,6 @@ from .forms import CommentForm
 class CommentTestCase(TestCase):
     def test_name_required(self):
         form = CommentForm({'body': ''})
-        self.assertFalse(form.is_valid)
+        self.assertFalse(form.is_valid())
         self.asesertIn('body', forms.errors.keys())
-        self.assertEqual(form.errors['body'][0], 'This field is required')
-    
-
-
+        self.assertEqual(form.errors['body'][0], 'Please fill in this field.')

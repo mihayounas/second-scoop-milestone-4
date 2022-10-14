@@ -34,4 +34,4 @@ class ContactForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'slug', 'content')
+        fields = ('title', 'featured_image', 'slug', 'content')
