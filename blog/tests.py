@@ -1,13 +1,13 @@
 from django.test import TestCase
-from .models import Comment
-from .forms import CommentForm
+from .models import Reservation
+from .forms import Booking
 
 # Create your tests here.
 
 
-class CommentTestCase(TestCase):
+class ReservationsTestCase(TestCase):
     def test_name_required(self):
-        form = CommentForm({'body': ''})
+        form = Booking({'phone': ''})
         self.assertFalse(form.is_valid())
-        self.asesertIn('body', forms.errors.keys())
-        self.assertEqual(form.errors['body'][0], 'Please fill in this field.')
+        self.asesertIn('phone', forms.errors.keys())
+        self.assertEqual(form.errors['phone'][0], 'Please fill in this field.')

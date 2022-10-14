@@ -21,7 +21,7 @@ body {
 }
 
 .main-bg {
-    background-image: url('https://res.cloudinary.com/df4j1glpo/image/upload/v1662374379/second-scoop/icecreamy_woaomc.webp');
+    background-image: url('https://res.cloudinary.com/df4j1glpo/image/upload/v1664055216/second-scoop/reservations_ptk0c9.webp');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -46,8 +46,9 @@ body {
 }
 
 #welcome-scoop {
-    margin-left: 200px;
-    margin-top: -40px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }
 
 /* Style the nav bar and it's content*/
@@ -75,6 +76,10 @@ body {
     width: 300px;
     margin-left: 50px;
     margin-bottom: 10px;
+}
+
+#reservations_view {
+    background-color: black;
 }
 
 #blog {
@@ -371,12 +376,6 @@ nav ul li a {
     transform: scale(1.2);
 }
 
-#button1 {
-    height: 50px;
-    margin-top: 170px;
-    margin-left: -190px;
-}
-
 #btn-a,
 #btn2-a,
 #btn-d {
@@ -592,7 +591,6 @@ nav ul li a {
 /* Contact and reservation Button styled */
 
 #contact-btn,
-#reservation-btn,
 #messages-btn {
     margin-left: 245px;
 }
@@ -769,6 +767,7 @@ nav ul li a {
     #messages_view {
         font-size: smaller;
     }
+
 }
 
 .container-slide {
@@ -786,4 +785,91 @@ nav ul li a {
 .swiper {
     border-width: 13px;
     width: 590px;
+}
+
+@media screen and (max-width: 650px) {
+    .container-slide {
+        width: 450px;
+
+    }
+
+    .swiper-slide img {
+        width: 330px;
+        height: 250px;
+    }
+
+    .swiper {
+        width: 380px;
+    }
+
+    .col-sm {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 400px;
+        margin-left: 260px;
+    }
+
+    #reservations-form {
+        width:
+            450px;
+    }
+
+    #reservations-form h3 {
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .container-slide {
+        width: 380px;
+
+    }
+
+    .swiper-slide img {
+        width: 280px;
+        height: 220px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .swiper {
+        width: 320px;
+    }
+
+    .col-sm {
+        width: 250px;
+        margin-left: 280px;
+    }
+
+    #menu-page-title {
+        font-size: 10px;
+        text-align: center;
+
+
+    }
+
+    #reservations-form {
+        width: 350px;
+    }
+
+    #reservations-form h3 {
+        font-size: large;
+    }
+
+    #reservations-form input {
+        width: 280px;
+    }
+
+    #reservations-form textarea {
+        width: 280px;
+    }
+
+    #reservation-btn {
+        font-size: small;
+    }
 }
