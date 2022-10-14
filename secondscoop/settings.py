@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     'django_summernote',
     'blog',
     'djreservation',
-    'phone_field',
 ]
 
 SITE_ID = 1
