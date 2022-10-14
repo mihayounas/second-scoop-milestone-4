@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
 import datetime
-from phone_field import PhoneField
 from django.core.validators import RegexValidator, MinValueValidator
 
 
