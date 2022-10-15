@@ -4,11 +4,8 @@
 
 <!-- Main Post view page to display posts and read the blog -->
 <div class='headline'>
-    <h1 style="font-size: 40px;">Welcome to our Blog!</h1>
-    <h2 style="font-size: 40px;">Check out real opinions and experiences to discover your favourite flavour!
-    </h2>
-    <p style="font-size: 30px;">If you love our recipes or have suggestions </p>
-    <p style="font-size: 30px;">, please feel free to share it with us!</p>
+    <h1 style="font-size: 40px;color:black">Welcome to our Blog!</h1>
+
     <div class="row">
         <!-- Create new post option -->
         <a href="{% url 'add_new_post' %}" class="creating-post">CREATE NEW POST</a>
@@ -17,57 +14,34 @@
 
 
 <div class="container-fluid">
-    <div class="row">
 
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row" id="row-post">
-                {% for post in post_list %}
-                <div class="col-md-4" id="card-main">
-                    <div class="card mb-4">
-                        <div class="card-body mb-4">
-                            <div style="height:80px;width:100px" class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top" src="https://res.cloudinary.com/df4j1glpo/image/upload/v1665263427/media/second-scoop/bubble_sukbmc.jpg">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link" style="text-decoration:none">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
-
-                            </a>
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                                {{ post.number_of_likes }}</p>
-                        </div>
-                        <div><span id="post_edit"><a href="{% url 'update_post' post.pk %}" class="post-link">Edit</a></span>
-                            <span id="post_delete"><a href="{% url 'delete_post' post.pk %}" class="post-link">Delete Post</a></span></div>
-                    </div>
+    <!-- Blog Entries Column -->
+    <div class="posts-container">
+        {% for post in post_list %}
+        <div class="col-md-4 post-container">
+            <div class="image-container">
+                {% if "placeholder" in post.featured_image.url %}
+                <img class="post-image" src="https://res.cloudinary.com/df4j1glpo/image/upload/v1665263427/media/second-scoop/bubble_sukbmc.jpg">
+                {% else %}
+                <img class="post-image" src=" {{ post.featured_image.url }}">
+                {% endif %}
+                <div class="image-flash">
+                    <p class="author">Author: {{ post.author }}</p>
                 </div>
-                {% if forloop.counter|divisibleby:4 %}
             </div>
+            <a href="{% url 'post_detail' post.slug %}" class="post-link" style="text-decoration:none">
+                <h2 class="card-title">{{ post.title }}</h2>
+                <p class="card-text">{{ post.excerpt }}</p>
 
-            {% endif %}
-            {% endfor %}
-
+            </a>
+            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                {{ post.number_of_likes }}</p>
+            <div><span id="post_edit"><a href="{% url 'update_post' post.pk %}" class="post-link">Edit</a></span>
+                <span id="post_delete"><a href="{% url 'delete_post' post.pk %}" class="post-link">Delete Post</a></span></div>
         </div>
-    </div>
-    {% if is_paginated %}
-    <nav aria-label=" Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
 
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+        {% endfor %}
+    </div>
+
 </div>
 {%endblock%}

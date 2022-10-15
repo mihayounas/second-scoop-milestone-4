@@ -16,8 +16,14 @@ body {
 
 .modal-content {
     border: 10px dotted white;
-    border-radius: 80px;
+    border-radius: 40px;
 
+}
+
+.modal-dialog {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .main-bg {
@@ -175,10 +181,6 @@ nav ul li a {
     width: 800px;
 }
 
-.image-container {
-    width: 800px;
-}
-
 .post-title,
 .post-subtitle {
     color: rgb(241, 97, 197);
@@ -225,32 +227,44 @@ nav ul li a {
 }
 
 /* STYLE POST PAGE */
-
-.card-title {
-    font-size: 17px;
-    color: black;
-    text-decoration: none;
-
+.post-image {
+    display: block;
+    height: 100px;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.card-text {
-    font-size: 11px;
-    color: rgb(241, 97, 197);
-
+.posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
 }
 
-.card-body {
-    width: 250px;
-    height: 130px;
+.post-container {
+    background-color: black;
+    padding: 30px;
+    max-width: 400px;
     border-radius: 10px;
-    margin-left: 10px;
-    margin-top: 5px;
-    border: 13px solid white;
+
 }
+
+.author {
+    color: pink;
+}
+
+.comments-section {
+    background-color: pink;
+}
+
+/* inner posts*/
 
 #post-details-card,
 #post_comments {
-    width: 100%;
+
     margin: 0;
     color: rgb(241, 97, 197);
 }
@@ -271,31 +285,6 @@ nav ul li a {
     height: 450px;
     text-align: center;
     border: 4px solid white;
-}
-
-.card {
-    width: 300px;
-    height: 150px;
-    background-color: black;
-    border: 7px dotted white;
-    border-radius: 10px;
-    margin-top: 5px;
-}
-
-#card-main {
-    border: 5px solid white;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    width: 330px;
-    height: 215px;
-    margin-right: 5px;
-    margin-left: 20px;
-
-}
-
-#row-post {
-    margin-top: -50px;
-    margin-left: 70px;
 }
 
 .headline {
@@ -319,8 +308,7 @@ nav ul li a {
 
 .creating-post {
     text-decoration: none;
-    width: 180px;
-    height: 45px;
+    background-color: black;
     color: white;
     font-family: 'lato', sans-serif;
     font-size: 15px;
@@ -328,8 +316,6 @@ nav ul li a {
     border-radius: 10px;
     padding: 10px 20px;
     transition: 0.1s;
-    margin-left: 70px;
-
 }
 
 .creating-post:hover,
@@ -560,32 +546,15 @@ nav ul li a {
     background-color: aqua;
 }
 
-/* Map styled */
-
-.google-maps {
-    margin-top: -140px;
-    margin-left: 60px;
-
-}
 
 /* Contact Section */
 
-.form-style {
-    margin-left: 550px;
-    margin-top: -200px;
-}
+.details-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 
-
-#contact-container {
-    margin-left: -100px;
-    width: 300px;
-    margin-top: 30px;
-
-
-}
-
-.container h3 {
-    margin-left: -100px;
 }
 
 /* Contact and reservation Button styled */
@@ -648,7 +617,7 @@ nav ul li a {
     margin-left: 25px;
     border-radius: 10px;
     background-color: pink;
-
+    padding: 5px 10px;
 }
 
 #id_message {
@@ -656,12 +625,14 @@ nav ul li a {
     margin-left: 10px;
     border-radius: 10px;
     background-color: pink;
+    padding: 5px 10px;
 }
 
 #id_event {
     width: 378px;
     margin-left: 18px;
     border-radius: 10px;
+    padding: 5px 10px;
 
 }
 
@@ -669,6 +640,7 @@ nav ul li a {
     width: 380px;
     margin-left: 25px;
     border-radius: 10px;
+    padding: 5px 10px;
 }
 
 #reservations-pg {
@@ -683,7 +655,6 @@ nav ul li a {
     opacity: 0.8;
     margin-top: -970px;
     border-radius: 10px;
-
 }
 
 /*Thank you page*/
@@ -721,16 +692,14 @@ nav ul li a {
 /* Reservations view styled*/
 
 .reservation-container {
-    width: 800px;
     display: block;
     border: 20px dotted white;
     padding: 10px;
-
 }
 
 .reservation-wraper {
     border: 2px solid white;
-
+    margin: 10px;
     padding: 20px;
     border-radius: 20px;
     background-color: black;
@@ -768,6 +737,15 @@ nav ul li a {
         font-size: smaller;
     }
 
+}
+
+@media screen and (max-width: 780px) {
+
+    #reservations-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .container-slide {
@@ -814,14 +792,13 @@ nav ul li a {
     #reservations-form {
         width:
             450px;
+
     }
 
-    #reservations-form h3 {
-
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+    .container {
+        max-width: 100vw
     }
+
 }
 
 @media screen and (max-width: 430px) {
@@ -842,9 +819,17 @@ nav ul li a {
     }
 
     .col-sm {
-        width: 250px;
-        margin-left: 280px;
+        width: 300px;
+        margin-right: auto;
+        margin-left: auto;
+
     }
+
+    .container {
+        max-width: 100vw
+    }
+
+
 
     #menu-page-title {
         font-size: 10px;
