@@ -58,6 +58,12 @@ body {
 }
 
 /* Style the nav bar and it's content*/
+.login-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 
 #home,
 #menu,
@@ -75,12 +81,12 @@ body {
     border-radius: 10px;
     padding: 5px 20px;
     transition: 0.1s;
+    text-align: center;
 }
 
 #reservations_view,
 #messages_view {
     width: 300px;
-    margin-left: 50px;
     margin-bottom: 10px;
 }
 
@@ -348,6 +354,8 @@ nav ul li a {
 
 }
 
+
+
 #button2 {
     margin-right: 15px;
 
@@ -464,12 +472,13 @@ nav ul li a {
 }
 
 #menu-backgr-img {
-    width: 1500px;
+    width: 1900px;
     height: 900px;
-    padding-bottom: 20px;
+
     padding-left: 120px;
     padding-right: 20px;
     align-items: center;
+
 }
 
 
@@ -561,18 +570,16 @@ nav ul li a {
 
 #contact-btn,
 #messages-btn {
-    margin-left: 245px;
+    margin-left: 80px;
+
 }
 
-#img-contact {
-    height: 900px;
-    width: 1500px;
-    margin-left: 50px;
-    margin-bottom: 160px;
+#reservation-btn {
+    margin-left: 220px;
 }
 
 #main-c {
-    margin-top: -960px;
+    margin-top: 150px;
     position: relative;
     z-index: 9999;
     opacity: 0.8;
@@ -593,15 +600,11 @@ nav ul li a {
 #id_date,
 #id_message {
     background-color: pink;
-    width: 380px;
+
 }
 
 #form-position {
     margin-top: 50px;
-}
-
-#id_message {
-    height: 250px;
 }
 
 .container {
@@ -612,35 +615,19 @@ nav ul li a {
 
 #id_name,
 #id_phone,
-#id_email {
-    width: 375px;
-    margin-left: 25px;
-    border-radius: 10px;
-    background-color: pink;
-    padding: 5px 10px;
-}
-
-#id_message {
-    width: 370px;
-    margin-left: 10px;
-    border-radius: 10px;
-    background-color: pink;
-    padding: 5px 10px;
-}
-
+#id_email,
+#id_date,
+#id_number_of_people,
+#id_message,
 #id_event {
-    width: 378px;
-    margin-left: 18px;
     border-radius: 10px;
-    padding: 5px 10px;
+    background-color: pink;
+    width: 280px;
 
 }
 
-#id_date {
-    width: 380px;
-    margin-left: 25px;
-    border-radius: 10px;
-    padding: 5px 10px;
+#id_number_of_people {
+    width: 180px;
 }
 
 #reservations-pg {
@@ -653,7 +640,7 @@ nav ul li a {
 #reservations-form,
 #messages-form {
     opacity: 0.8;
-    margin-top: -970px;
+
     border-radius: 10px;
 }
 
@@ -737,6 +724,11 @@ nav ul li a {
         font-size: smaller;
     }
 
+    #reservation-btn {
+        margin-left: 180px;
+        ;
+    }
+
 }
 
 @media screen and (max-width: 780px) {
@@ -746,6 +738,11 @@ nav ul li a {
         flex-direction: column;
         align-items: center;
     }
+
+    #reservation-btn {
+        margin-left: 120px;
+    }
+
 }
 
 .container-slide {
@@ -790,9 +787,12 @@ nav ul li a {
     }
 
     #reservations-form {
-        width:
-            450px;
+        width: 450px;
 
+    }
+
+    #reservation-btn {
+        margin-left: 120px;
     }
 
     .container {
@@ -854,7 +854,10 @@ nav ul li a {
         width: 280px;
     }
 
+
+
     #reservation-btn {
-        font-size: small;
+        font-size: smaller;
+        margin-left: 100px;
     }
 }
