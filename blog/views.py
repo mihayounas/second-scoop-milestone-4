@@ -115,7 +115,7 @@ class UpdatePost(UpdateView):
     """
     model = Post
     template_name = 'update_posts.html'
-    fields = ['title', 'featured_image', 'content']
+    fields = ['title', 'featured_image', 'content', ]
 
 
 class DeletePost(DeleteView):
@@ -129,14 +129,7 @@ class DeletePost(DeleteView):
 
 def homepage(request):
     """ A view to go to the homepage page """
-    data = dict()
-    messages.success(
-        request, "Success: This is the sample success Flash message.")
-    messages.error(request, "Error: This is the sample error Flash message.")
-    messages.info(request, "Info: This is the sample info Flash message.")
-    messages.warning(
-        request, "Warning: This is the sample warning Flash message.")
-    return render(request, './homepage.html', data)
+    return render(request, './homepage.html')
 
 
 def menu(request):
@@ -185,8 +178,11 @@ class ReservationsList(generic.ListView):
     # simplified the queryset here - Ger
     def get_queryset(self):
         user = self.request.user
-        is_staff = admin
         return Reservation.objects.filter(user=user)
+
+    def test_func(self):
+        return self.request.user.is_superuser
+        
 
 
 class UpdateReservations(UpdateView):
