@@ -52,7 +52,6 @@
                             <a id="account" class="btn btn-secondary dropdown-toggle text-capitalize" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                                 {{ user.username }}'s Account
                             </a>
-
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{% url 'reservations_view' %}"><span style="font-family: 'Dancing Script', cursive;font-size:15px;">C</span>heck your <span style="font-family: 'Dancing Script', cursive;font-size:20px;">R</span>eservations</a>
                                 <a class="dropdown-item" href="{% url 'message_list' %}"><span style="font-family: 'Dancing Script', cursive;font-size:15px;">C</span>heck your <span style="font-family: 'Dancing Script', cursive;font-size:20px;">M</span>essages</a>
@@ -145,6 +144,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 </body>
 

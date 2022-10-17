@@ -2,12 +2,9 @@
 {% load static %}
 {% block content %}
 {% if user.is_authenticated %}
-
-
 <!-- Reservations request form -->
 <div><a class="nav-link" id="reservations_view" href="{% url 'reservations_view' %}">Check your reservations here</a></div>
 <div id=" reservations-pg">
-
     <div class="container" id="reservations-form">
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2">

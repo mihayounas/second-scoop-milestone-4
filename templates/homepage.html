@@ -20,12 +20,12 @@
                                     <p>Please log in here or register</p>
                                 </div>
                                 <div class="modal-body">
-                                    <strong> <a class="nav-link" href="{% url 'account_signup' %}">New User Register</a></strong>
-                                    <strong> <a class="nav-link" href="{% url 'account_login' %}">User Login</a></strong>
-                                    <strong> <a class="nav-link" href="{% url 'admin:index' %}">Admin Login</a></strong>
+                                    <strong> <a class="nav-link" href="{% url 'account_signup' %}">Register</a></strong>
+                                    <strong> <a class="nav-link" href="{% url 'account_login' %}">Login</a></strong>
+
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-signup" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
@@ -54,11 +54,5 @@
                         </div>
                     </div>
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination">
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
-
 
                 {%endblock%}

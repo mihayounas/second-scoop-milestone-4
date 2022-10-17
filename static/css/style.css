@@ -17,6 +17,7 @@ body {
 .modal-content {
     border: 10px dotted white;
     border-radius: 40px;
+    background-color: black;
 
 }
 

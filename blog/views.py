@@ -177,6 +177,7 @@ class ReservationsList(generic.ListView):
     # simplified the queryset here - Ger
     def get_queryset(self):
         user = self.request.user
+        is_staff = admin
         return Reservation.objects.filter(user=user)
 
 

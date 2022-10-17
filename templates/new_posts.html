@@ -15,10 +15,14 @@
             <form class="login" method="POST" enctype="multipartform-data">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button class=" btn btn-secondary">Create Post</button>
-            </form>
+                <div class="text-center">
+                    <button class=" btn btn-signup right">Create Post</button>
+                    <a class="btn btn-signup right" href="{% url 'post_view' %}">Cancel</a>
+                </div>
         </div>
+        </form>
     </div>
+</div>
 </div>
 {% else %}
 <div>
