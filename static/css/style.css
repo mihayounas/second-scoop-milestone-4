@@ -346,11 +346,9 @@ nav ul li a {
 #button1,
 #button2,
 #button3,
-#reservation-btn,
 #contact-btn,
 #btn-d,
-.dropdown-toggle,
-#messages-btn {
+.dropdown-toggle {
     background-color: black;
     font-family: 'lato', sans-serif;
     font-size: 20px;
@@ -575,18 +573,6 @@ nav ul li a {
 
 }
 
-/* Contact and reservation Button styled */
-
-#contact-btn,
-#messages-btn {
-    margin-left: 80px;
-
-}
-
-#reservation-btn {
-    margin-left: 220px;
-}
-
 #main-c {
     margin-top: 150px;
     position: relative;
@@ -733,11 +719,6 @@ nav ul li a {
         font-size: smaller;
     }
 
-    #reservation-btn {
-        margin-left: 180px;
-        ;
-    }
-
 }
 
 @media screen and (max-width: 780px) {
@@ -747,11 +728,6 @@ nav ul li a {
         flex-direction: column;
         align-items: center;
     }
-
-    #reservation-btn {
-        margin-left: 120px;
-    }
-
 }
 
 .container-slide {
@@ -798,10 +774,6 @@ nav ul li a {
     #reservations-form {
         width: 450px;
 
-    }
-
-    #reservation-btn {
-        margin-left: 120px;
     }
 
     .container {
@@ -861,12 +833,5 @@ nav ul li a {
 
     #reservations-form textarea {
         width: 280px;
-    }
-
-
-
-    #reservation-btn {
-        font-size: smaller;
-        margin-left: 100px;
     }
 }

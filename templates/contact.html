@@ -31,22 +31,25 @@
                 <form class="login-form" method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button class="btn btn-secondary" id="contact-btn">Send Request</button>
-                </form>
+                    <div class="" text-center>
+                        <button class="btn btn-signup right" type="submit">Send Request</button>
+                        <a class="btn btn-signup right" href="{% url 'message_list' %}">Cancel</a></div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% else %}
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mt-3 offset-md-2" style="text-align: center">
+                <h2>You need to be logged in to create a post.</h2>
+                <a class="nav-link" href="{% url 'account_signup' %}">Register?</a>
+                <a class="nav-link" href="{% url 'account_login' %}">Login?</a>
             </div>
         </div>
     </div>
-    {% else %}
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mt-3 offset-md-2" style="text-align: center">
-                    <h2>You need to be logged in to create a post.</h2>
-                    <a class="nav-link" href="{% url 'account_signup' %}">Register?</a>
-                    <a class="nav-link" href="{% url 'account_login' %}">Login?</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endif %}
-    {%endblock%}
+</div>
+{% endif %}
+{%endblock%}

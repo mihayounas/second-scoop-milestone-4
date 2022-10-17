@@ -8,7 +8,7 @@
 <!-- Reservations request form -->
 <div><a class="nav-link" id="reservations_view" href="{% url 'reservations_view' %}">Check your reservations here</a></div>
 <div id=" reservations-pg">
-    <img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1664053287/second-scoop/icec_jlz2ec.png" id="img-contact">
+
     <div class="container" id="reservations-form">
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2">
@@ -19,25 +19,29 @@
             <div class="col-md-8 mt-3 offset-md-2">
                 <form class="login" method="POST">
                     {% csrf_token %}
+
                     <strong>Are you sure you want to delete your reservation?</strong>
-                    <a href="{% url 'reservations_view' %}">Cancel</a>
-                    <button class="btn btn-secondary" id="reservation-btn">Delete</button>
-                </form>
+                    <div class="text-center">
+                        <button class="btn btn-signup right">Delete</button>
+                        <a class="btn btn-signup right" href="{% url 'reservations_view'%}">Cancel</a>
+                    </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% else %}
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mt-3 offset-md-2" style="text-align: center">
+                <h2>You need to be logged in to create a reservation request.</h2>
+                <a class="nav-link" href="{% url 'account_login' %}">Login?</a>
             </div>
         </div>
     </div>
-    {% else %}
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mt-3 offset-md-2" style="text-align: center">
-                    <h2>You need to be logged in to create a reservation request.</h2>
-                    <a class="nav-link" href="{% url 'account_login' %}">Login?</a>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
 
-    {% endif %}
+{% endif %}
 
-    {%endblock%}
+{%endblock%}

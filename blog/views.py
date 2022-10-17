@@ -105,8 +105,6 @@ class AddPostView(CreateView):
     def form_valid(self, form):
         """ adding the username automatically for the reservation """
         form.instance.author = self.request.user
-        instance.featured_image = self.request.FILES[form.featured_image.name]
-        uploaded_image = cloudinary.uploader.upload(featured_image)
         return super().form_valid(form)
 
 

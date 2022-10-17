@@ -7,7 +7,6 @@
 <!-- Reservations request form -->
 <div><a class="nav-link" href="{% url 'message_list' %}">Check your messages here</a></div>
 <div>
-    <img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1664053287/second-scoop/icec_jlz2ec.png" id="img-contact">
     <div class="container">
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2">
@@ -19,8 +18,10 @@
                 <form class="login" method="POST">
                     {% csrf_token %}
                     <strong>Are you sure you want to delete your message?</strong>
-                    <a class="btn btn-signup right" href="{% url 'message_list' %}">Cancel</a>
-                    <button class="btn btn-secondary" id="messages-btn">Delete</button>
+
+                    <div class="text-center">
+                        <button class="btn btn-signup right">Delete</button>
+                        <a class="btn btn-signup right" href="{% url 'message_list' %}">Cancel</a></div>
                 </form>
             </div>
         </div>
