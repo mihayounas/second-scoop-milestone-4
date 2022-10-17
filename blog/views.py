@@ -7,6 +7,7 @@ from .models import Post, Reservation, Contact, Profile
 from .forms import CommentForm, Booking, ContactForm, PostForm
 import datetime
 from django.urls import reverse_lazy
+from django.contrib import messages
 
 
 class PostList(generic.ListView):
@@ -128,7 +129,14 @@ class DeletePost(DeleteView):
 
 def homepage(request):
     """ A view to go to the homepage page """
-    return render(request, './homepage.html')
+    data = dict()
+    messages.success(
+        request, "Success: This is the sample success Flash message.")
+    messages.error(request, "Error: This is the sample error Flash message.")
+    messages.info(request, "Info: This is the sample info Flash message.")
+    messages.warning(
+        request, "Warning: This is the sample warning Flash message.")
+    return render(request, './homepage.html', data)
 
 
 def menu(request):
