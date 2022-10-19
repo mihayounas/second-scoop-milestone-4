@@ -12,7 +12,9 @@
                 <h1 class="post-title"></h1>
 
                 <!-- Post author-->
+                {% if request.user == reservation.pk %}
                 <p class="post-subtitle">{{ reservation.name }} | {{ reservation.date }}</p>
+                {% endif %}
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
 

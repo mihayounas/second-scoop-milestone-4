@@ -8,7 +8,7 @@
         {% if user.is_authenticated %}
         {% for message in object_list %}
         <ul class="list-group">
-            <li class="list-group-item">{{ message.name }} | <span> Email:{{ message.email }}</span> | <span> Event :{{ message.message }}</span>
+            <li class="list-group-item">{{ message.name }} || <span> Says:{{ message.message }}</span>
                 {% if reservation.approved == True %}
                 <i class="fa-sharp fa-solid fa-check" style="color:green"></i>
                 {%else%}

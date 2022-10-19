@@ -206,6 +206,11 @@ class ReservationsViewDetails(CreateView):
     template_name = 'reservation_view_details.html'
     fields = ['phone', 'date', 'event', 'message']
 
+    def form_valid(self, form):
+        reservation = form.save()
+        reservation_id = reservation.pk
+        return reservation.pk
+
 
 class ContactAdmin(CreateView):
     """
