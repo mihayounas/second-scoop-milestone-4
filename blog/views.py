@@ -201,10 +201,10 @@ class DeleteReservations(DeleteView):
     success_url = reverse_lazy('reservations_view')
 
 
-class ReservationsViewDetails(generic.ListView):
+class ReservationsViewDetails(CreateView):
     model = Reservation
     template_name = 'reservation_view_details.html'
-
+    fields = ['phone', 'date', 'event', 'message']
 
 
 class ContactAdmin(CreateView):
@@ -228,10 +228,12 @@ class MessagesList(generic.ListView):
     model = Contact
     template_name = "message_view.html"
 
-    # simplified the queryset here - Ger
     def get_queryset(self):
-        client = self.request.user
-        return Contact.objects.filter(client=client)
+        user = self.request.user
+        if user.is_superuser:
+            return Reservation.objects.all()
+        else:
+            return Reservation.objects.filter(user=user)
 
 
 class UpdateMessages(UpdateView):

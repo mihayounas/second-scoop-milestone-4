@@ -7,7 +7,6 @@
     <div class='reservation-container'>
         {% if user.is_authenticated %}
         {% for message in object_list %}
-        {% if request.user == message.client %}
         <ul class="list-group">
             <li class="list-group-item">{{ message.name }} | <span> Email:{{ message.email }}</span> | <span> Event :{{ message.message }}</span>
                 {% if reservation.approved == True %}
@@ -18,7 +17,6 @@
                 <a href="{% url 'update_messages' message.pk %}">Edit</a>
                 <a href="{% url 'delete_messages' message.pk %}">Delete</a>
             </li>
-            {%endif%}
             {%endfor%}
         </ul>
         {%endif%}

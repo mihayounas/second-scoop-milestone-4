@@ -7,20 +7,20 @@
     <div class='reservation-container'>
         {% if user.is_authenticated %}
         {% for reservation in object_list %}
-        <a href=" {% url 'reservation_view_details' %}">
-            <ul class="list-group">
-                <li class="list-group-item">{{ reservation.name }} | <span> Requested date:{{ reservation.date }}</span> | <span> Event :{{ reservation.event }}</span><span>
-                        {% if reservation.approved == True %}
-                        <i class=" fa-sharp fa-solid fa-check" style="color:green"></i>
-                        {%else%}
-                        <span style="color:red">Waiting approval...</span>
-                        {%endif%}
-                        <a href="{% url 'update_reservations' reservation.pk %}">Edit</a>
-                        <a href="{% url 'delete_reservations' reservation.pk %}">Delete</a>
-                </li>
 
-            </ul>
-        </a>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="{% url 'reservation_view_details' reservation.pk %}">{{ reservation.name }} </a>|<span> Requested date : {{ reservation.date }}</span> | <span> Event :{{ reservation.event }}</span><span>
+                    {% if reservation.approved == True %}
+                    <i class=" fa-sharp fa-solid fa-check" style="color:green"></i>
+                    {%else%}
+                    <span style="color:red">Waiting approval...</span>
+                    {%endif%}
+                    <a href="{% url 'update_reservations' reservation.pk %}">Edit</a>
+                    <a href="{% url 'delete_reservations' reservation.pk %}">Delete</a>
+            </li>
+
+        </ul>
+
         {%endfor%}
         {%endif%}
     </div>
