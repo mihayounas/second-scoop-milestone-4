@@ -175,14 +175,12 @@ class ReservationsList(generic.ListView):
     model = Reservation
     template_name = "reservations_details.html"
 
-    # simplified the queryset here - Ger
     def get_queryset(self):
         user = self.request.user
-        return Reservation.objects.filter(user=user)
-
-    def test_func(self):
-        return self.request.user.is_superuser
-        
+        if user.is_superuser:
+            return Reservation.objects.all()
+        else:
+            return Reservation.objects.filter(user=user)
 
 
 class UpdateReservations(UpdateView):
@@ -201,6 +199,12 @@ class DeleteReservations(DeleteView):
     model = Reservation
     template_name = 'delete_reservations.html'
     success_url = reverse_lazy('reservations_view')
+
+
+class ReservationsViewDetails(generic.ListView):
+    model = Reservation
+    template_name = 'reservation_view_details.html'
+
 
 
 class ContactAdmin(CreateView):
