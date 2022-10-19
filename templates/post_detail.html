@@ -81,6 +81,7 @@
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
+
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
                         <!-- The commenter's name goes here. -->
@@ -93,17 +94,31 @@
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
                 </div>
+                {% if user.is_superuser %}
+                <a href="{% url 'delete_comment' comment.pk %}">Delete</a>
+                {% else %}
+                {% if request.user == comment.author %}
+                <a href="{% url 'delete_comment' comment.pk %}">Delete</a>
+                {% endif%}
+                {% endif%}
+
+
                 <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 card mb-4  mt-3 comment-card">
+        <div class=" col-md-4 card mb-4 mt-3 comment-card">
             <div class="card-body">
                 <!-- For later -->
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
                     Thanks for your comment!
                 </div>
+                <form method="post" style="margin-top: 1.3em;">
+                    {{ comment_form | crispy }}
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                </form>
                 {{ comment.body }}
                 {% else %}
                 {% if user.is_authenticated %}

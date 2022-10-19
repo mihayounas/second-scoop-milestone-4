@@ -19,6 +19,8 @@ urlpatterns = [
          views.DeleteReservations.as_view(), name='delete_reservations'),
     path('thanks', views.thanks, name='thanks'),
     path('post_view', views.PostList.as_view(), name="post_view"),
+    path('delete_comment/<int:pk>',
+         views.DeleteComment.as_view(), name='delete_comment'),
     path('<slug:slug>', views.PostDetail.as_view(), name="post_detail"),
     path('<slug:slug>', views.PostLike.as_view(), name="post_like"),
     path('add_new_post/', views.AddPostView.as_view(), name='add_new_post'),

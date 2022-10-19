@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
-from .models import Post, Reservation, Contact, Profile
+from .models import Post, Reservation, Contact, Profile, Comment
 from .forms import CommentForm, Booking, ContactForm, PostForm
 import datetime
 from django.urls import reverse_lazy
@@ -52,7 +52,7 @@ class PostDetail(View):
 
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
+        comments = post.comments.filter(approved=False).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -77,7 +77,20 @@ class PostDetail(View):
                 "comment_form": comment_form,
                 "liked": liked
             },
+
         )
+
+    def get_queryset(self):
+        user = self.request.user
+
+
+class DeleteComment(DeleteView):
+    """
+    A view to delete a reservations.
+    """
+    model = Comment
+    template_name = 'delete_comment.html'
+    success_url = reverse_lazy('post_view')
 
 
 class PostLike(View):

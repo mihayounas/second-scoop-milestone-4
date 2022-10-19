@@ -12,9 +12,9 @@
                 <h1 class="post-title"></h1>
 
                 <!-- Post author-->
-                {% if request.user == reservation.pk %}
+
                 <p class="post-subtitle">{{ reservation.name }} | {{ reservation.date }}</p>
-                {% endif %}
+
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
 
@@ -31,7 +31,7 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">
-                    {{ reservation.message | safe }}
+                    {{ reservation.message }}
                 </p>
 
             </div>
