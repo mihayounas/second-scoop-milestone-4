@@ -5,10 +5,10 @@
 
 <div class="reservation-wraper">
     <div class='reservation-container'>
-        {% if user.is_authenticated %}
         {% for message in object_list %}
         <ul class="list-group">
-            <li class="list-group-item">{{ message.name }} || <span> Says:{{ message.message }}</span>
+            <li class="list-group-item"><a href="{% url 'message_details' message.pk %}">{{ message.name }}
+                </a>|
                 {% if reservation.approved == True %}
                 <i class="fa-sharp fa-solid fa-check" style="color:green"></i>
                 {%else%}
@@ -19,7 +19,7 @@
             </li>
             {%endfor%}
         </ul>
-        {%endif%}
+
 
     </div>
 </div>

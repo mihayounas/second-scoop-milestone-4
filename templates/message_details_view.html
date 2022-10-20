@@ -2,14 +2,12 @@
 {% load static %}
 {% block content %}
 {% load crispy_forms_tags %}
-
-<!-- Every post can be seen by clicking on it and will didplay more information -->
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Reservation Content-->
-                <h1 class="post-title">{{ reservation.name }} | {{ reservation.date }}</h1>
+                <h1 class="post-title"> {{ message.name }}</h1>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
             </div>
@@ -25,7 +23,7 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">
-                    {{ reservation.message }}
+                    Says: {{ reservation.message }}
                 </p>
 
             </div>
@@ -38,5 +36,4 @@
     </div>
 
 </div>
-
-{% endblock content %}
+{%endblock%}

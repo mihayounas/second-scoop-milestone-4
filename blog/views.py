@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.contrib.auth import authenticate
 from django.views import generic, View
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from django.http import HttpResponseRedirect
 from .models import Post, Reservation, Contact, Profile, Comment
 from .forms import CommentForm, Booking, ContactForm, PostForm
@@ -214,15 +214,14 @@ class DeleteReservations(DeleteView):
     success_url = reverse_lazy('reservations_view')
 
 
-class ReservationsViewDetails(CreateView):
+class ReservationsViewDetails(DetailView):
     model = Reservation
     template_name = 'reservation_view_details.html'
     fields = ['phone', 'date', 'event', 'message']
 
-    def form_valid(self, form):
-        reservation = form.save()
-        reservation_id = reservation.pk
-        return reservation.pk
+    def get_id(self, request):
+        user = self.request.user
+        reservation = Reservation.objects.filter(id=id)
 
 
 class ContactAdmin(CreateView):
@@ -252,6 +251,16 @@ class MessagesList(generic.ListView):
             return Reservation.objects.all()
         else:
             return Reservation.objects.filter(user=user)
+
+
+class MessageDetails(DetailView):
+    model = Contact
+    template_name = 'message_details_view.html'
+    fields = ['name', 'message']
+
+    def get_message_id(self, request):
+        user = self.request.user
+        message = Contact.objects.filter(id=id)
 
 
 class UpdateMessages(UpdateView):
