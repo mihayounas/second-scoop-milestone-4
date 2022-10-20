@@ -33,6 +33,7 @@ class ContactForm(forms.ModelForm):
         def form_valid(self, form):
             self.object.save()
             messages.success(self.request, 'Form submission successful')
+            
 
 
 class PostForm(forms.ModelForm):

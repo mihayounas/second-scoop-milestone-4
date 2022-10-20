@@ -3,7 +3,7 @@
 {% block content %}
 <!-- If user is logged in then the new edit form will load -->
 {% if user.is_authenticated %}
-{% if user.is_superuser %}
+
 <div class="container deleting-post">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
@@ -22,6 +22,6 @@
         </div>
     </div>
 </div>
-{% endif %}
+
 {% endif %}
 {%endblock%}

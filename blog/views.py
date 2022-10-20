@@ -253,16 +253,6 @@ class MessagesList(generic.ListView):
             return Reservation.objects.filter(user=user)
 
 
-class MessageDetails(DetailView):
-    model = Contact
-    template_name = 'message_details_view.html'
-    fields = ['name', 'message']
-
-    def get_message_id(self, request):
-        user = self.request.user
-        message = Contact.objects.filter(id=id)
-
-
 class UpdateMessages(UpdateView):
     """
     A view to edit and update a message.
@@ -291,3 +281,5 @@ def error500_view(request):
 
 def admin(condition):
     return redirect('admin:index')
+
+
