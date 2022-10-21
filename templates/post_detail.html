@@ -13,6 +13,10 @@
 
                 <!-- Post author-->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                {% if request.user == comment.author %}
+                <a class='edit-post' href="{% url 'update_post' post.pk %}" class="post-link">Edit Post</a>
+                {% endif%}
+
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
@@ -25,7 +29,7 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
 
             </div>
-            <a href="{% url 'update_post' post.pk %}" class="post-link">Edit</a>
+
         </div>
     </div>
 </div>
@@ -84,7 +88,7 @@
 
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
-                        <!-- The commenter's name goes here. -->
+                        <!-- The commenter' s name goes here. -->
                         {{ comment.name }}
                         <span class=" text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->
@@ -93,14 +97,16 @@
                     </p>
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
+                    <hr>
+                    {% if user.is_superuser %}
+                    <a class='edit-post' href="{% url 'delete_comment' comment.pk %}">Delete </a>
+                    {% else %}
+                    {% if request.user == comment.author %}
+                    <a class='edit-post' href="{% url 'delete_comment' comment.pk %}">Delete</a>
+                    {% endif%}
+                    {% endif%}
                 </div>
-                {% if user.is_superuser %}
-                <a href="{% url 'delete_comment' comment.pk %}">Delete</a>
-                {% else %}
-                {% if request.user == comment.author %}
-                <a href="{% url 'delete_comment' comment.pk %}">Delete</a>
-                {% endif%}
-                {% endif%}
+
 
 
                 <!-- Our for loop ends here -->

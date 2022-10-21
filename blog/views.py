@@ -281,5 +281,3 @@ def error500_view(request):
 
 def admin(condition):
     return redirect('admin:index')
-
-
