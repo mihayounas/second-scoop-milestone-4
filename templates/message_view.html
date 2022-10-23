@@ -4,28 +4,18 @@
 <div><a class="nav-link" id="add_reservations" href=" {% url 'contact' %}">Send New Message</a></div>
 
 <div class="reservation-wraper">
-
     <div class='reservation-container'>
+        {% if user.is_authenticated %}
         {% for message in object_list %}
-        {% if user.is_superuser %}
-        <div>
-            <li class="list-group-item">{{ message.name }} Says:{{ message.message }}
-                {% if reservation.approved == True %}
-                <i class="fa-sharp fa-solid fa-check" style="color:green"></i>
-                {%else%}
-                <span style="color:red">| Not read yet...</span>
-                {%endif%}
-                <a href="{% url 'delete_messages' message.pk %}">Delete</a>
-                {% else %}
-                <a href="{% url 'update_messages' message.pk %}">Edit</a>
-                <a href="{% url 'delete_messages' message.pk %}">Delete</a>
+        <ul class="list-group">
+            <li class="list-group-item">{{ message.name }}|<span> Says : {{ message.message }}</span>
+                <a class="edit-delete" href="{% url 'delete_messages' message.pk %}">Delete</a>
+                <a class="edit-delete" href=" {% url 'update_messages' message.pk %}">Edit</a>
+
             </li>
-            {% endif %}
-            {%endfor%}
-
-
-        </div>
-
+        </ul>
+        {%endfor%}
+        {%endif%}
     </div>
 </div>
 {%endblock%}

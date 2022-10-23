@@ -19,7 +19,7 @@ class Booking(forms.ModelForm):
     class Meta:
         model = Reservation
         fields = ('name', 'phone',
-                  'event', 'date', 'number_of_people', 'message')
+                  'event', 'date', 'number_of_people', 'message','approved')
         widgets = {
             'date': DateInput(),
         }
@@ -28,7 +28,7 @@ class Booking(forms.ModelForm):
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ('name', 'email', 'message')
+        fields = ('name', 'email', 'message',)
 
         def form_valid(self, form):
             self.object.save()

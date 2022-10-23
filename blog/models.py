@@ -71,6 +71,7 @@ class Reservation(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="reservation_request", null=True)
     name = models.CharField(max_length=100)
+    created_at = models.DateTimeField(auto_now_add=True)
     date = models.DateField(null=False, validators=[MinValueValidator(datetime.date.today), RegexValidator(
         "(\d{4})-(\d{2})-(\d{2})"
     )])

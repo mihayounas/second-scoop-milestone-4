@@ -37,7 +37,7 @@ class ReservationAdmin(admin.ModelAdmin):
 
 @admin.register(Contact)
 class ContactUs(admin.ModelAdmin):
-    list_display = ('name', 'email', 'message')
+    list_display = ('name', 'email', 'message',)
     search_fields = ('name', 'email', 'message')
     actions = ['respond_message']
 

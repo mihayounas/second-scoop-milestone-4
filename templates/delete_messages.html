@@ -18,7 +18,6 @@
                 <form class="login" method="POST">
                     {% csrf_token %}
                     <strong>Are you sure you want to delete your message?</strong>
-
                     <div class="text-center">
                         <button class="btn btn-signup right">Delete</button>
                         <a class="btn btn-signup right" href="{% url 'message_list' %}">Cancel</a></div>

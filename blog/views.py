@@ -175,7 +175,6 @@ class ReservationRequest(CreateView):
 
 
 class ReservationsView(CreateView):
-
     model = Reservation
     template_name = 'reservations_details.html'
     fields = ['date', 'event', 'approved', 'message']
@@ -188,6 +187,8 @@ class ReservationsList(generic.ListView):
     """
     model = Reservation
     template_name = "reservations_details.html"
+
+    ordering = ['-created-on']
 
     def get_queryset(self):
         user = self.request.user
@@ -203,7 +204,10 @@ class UpdateReservations(UpdateView):
     """
     model = Reservation
     template_name = "update_reservation.html"
-    fields = ['phone', 'date', 'event', 'message']
+    fields = ['phone', 'date', 'event', 'message', 'approved']
+
+    def get_approval(self, request):
+        user = self.request.user
 
 
 class DeleteReservations(DeleteView):
@@ -249,9 +253,9 @@ class MessagesList(generic.ListView):
     def get_queryset(self):
         user = self.request.user
         if user.is_superuser:
-            return Reservation.objects.all()
+            return Contact.objects.all()
         else:
-            return Reservation.objects.filter(user=user)
+            return Contact.objects.filter(user=user)
 
 
 class UpdateMessages(UpdateView):
@@ -259,8 +263,10 @@ class UpdateMessages(UpdateView):
     A view to edit and update a message.
     """
     model = Contact
+    form_class = ContactForm
     template_name = "edit_messages.html"
-    fields = ['name', 'email', 'message']
+
+    
 
 
 class DeleteMessages(DeleteView):

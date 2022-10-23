@@ -9,47 +9,32 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Reservation Content-->
-                <h1 class="post-title">{{ reservation.name }} | {{ reservation.date }} | </h1>
+                <h1 class="post-title">{{ reservation.name }} | {{ reservation.date }} </h1>
+                <h2> {{ reservation.event }} </h2>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
             </div>
 
             <div><a href="" class="edit-delete">Delete Reservation</a>
             </div>
-            <form action="" method="POST">
-                {% csrf_token %}
+            <div class=" container">
+                <div class="">
+                    <div class="col card mb-4  mt-3 left  top">
+                        <div class="card-body">
+                            <!-- The post content goes inside the card-text. -->
+                            <!-- Use the | safe filter inside the template tags -->
+                            <p class="card-text ">
+                                {{ reservation.message }} </p>
 
-                {% if user.is_superuser %}
-                {% if reservation.approved %}
-                <div class='form-check'>
-                    <input class="form-check-input" type="checkbox" checked="checked" value={{reservation.pk}} named="boxes">
-                </div>
-                {%else%}
-                <input class="form-check-input" type="checkbox" value={{reservation.pk}} named="boxes">
-
-                {% endif %}
-                <button class="btn btn-signup">Approve</button>
-            </form>
-        </div>
-        {% endif %}
-        <div class=" container">
-            <div class="">
-                <div class="col card mb-4  mt-3 left  top">
-                    <div class="card-body">
-                        <!-- The post content goes inside the card-text. -->
-                        <!-- Use the | safe filter inside the template tags -->
-                        <p class="card-text ">
-                            {{ reservation.message }} </p>
-
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <hr>
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
                 </div>
+
             </div>
 
-        </div>
-
-        {% endblock  %}
+            {% endblock  %}
