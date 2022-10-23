@@ -179,6 +179,17 @@ class ReservationsView(CreateView):
     template_name = 'reservations_details.html'
     fields = ['date', 'event', 'approved', 'message']
 
+    def form_validation(request):
+        if request.method == "POST":
+            form = Booking(user=request.user, data=request.POST)
+            if form.is_valid():
+                form.save()
+                update_session_auth_hash(request.form.data)
+                messages.success(request, "Thanks for request")
+                return redirect('reservations_view')
+            else:
+                return redirect('/')
+
 
 class ReservationsList(generic.ListView):
     """
@@ -196,6 +207,17 @@ class ReservationsList(generic.ListView):
             return Reservation.objects.all()
         else:
             return Reservation.objects.filter(user=user)
+
+    def form_validation(request):
+        if request.method == "POST":
+            form = Booking(user=request.user, data=request.POST)
+            if form.is_valid():
+                form.save()
+                update_session_auth_hash(request.form.data)
+                messages.success(request, "Thanks for request")
+                return redirect('reservations_view')
+            else:
+                return redirect('/')
 
 
 class UpdateReservations(UpdateView):
@@ -251,11 +273,11 @@ class MessagesList(generic.ListView):
     template_name = "message_view.html"
 
     def get_queryset(self):
-        user = self.request.user
-        if user.is_superuser:
+        client = self.request.user
+        if client.is_superuser:
             return Contact.objects.all()
         else:
-            return Contact.objects.filter(user=user)
+            return Contact.objects.filter(client=client)
 
 
 class UpdateMessages(UpdateView):
@@ -265,8 +287,6 @@ class UpdateMessages(UpdateView):
     model = Contact
     form_class = ContactForm
     template_name = "edit_messages.html"
-
-    
 
 
 class DeleteMessages(DeleteView):

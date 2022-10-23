@@ -88,7 +88,7 @@ class Reservation(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('thanks')
+        return reverse('reservations_view')
 
 
 class Contact(models.Model):

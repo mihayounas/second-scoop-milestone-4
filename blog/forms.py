@@ -29,12 +29,7 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ('name', 'email', 'message',)
-
-        def form_valid(self, form):
-            self.object.save()
-            messages.success(self.request, 'Form submission successful')
             
-
 
 class PostForm(forms.ModelForm):
     class Meta:
