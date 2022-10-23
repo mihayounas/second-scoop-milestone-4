@@ -1,31 +1,83 @@
 # **_Second Scoop_**
 
-
 <a href="#" target="_blank" rel="noopener">Second Scoop</a>(press for Live DEMO) is a website where users can make event reservations,or blog their opinions about an imaginary desserts restaurant.
 
+# Table of contents
+1. <strong>[Objective](#objective)</strong>
+2. <strong>[User Experience UX](#experience)</strong>:
+    * [User Stories](#user)
+    * [FlowChart](#flow)
+    * [Site Structure](#structure)
+    * [Typography](#typo)
+    * [Color Scheme](#color) 
+    * [Project Management](#management)
+3. <strong>[Existing Features(User)](#user-features)</strong>:
+    * [Site Navigation](#nav)
+    * [Welcome Modal](#modal)
+    * [Registration for user](#user-reg)
+    * [Presentation Slider](#slider)
+    * [Menu Page](#menu)
+    * [Events Reservations](#events)
+    * [Contact page](#contact)
+    * [Dropdown Account button](#dropdown)
+    * [Blog](#blog) 
+4. <strong>[Existing Features(Admin)]</strong>:
+    * [Admin Panel](#admin)
+    * [View All Reservations](#view-reservations)
+    * [View All Messages](#view-messages)
+    * [Delete Comments](#delete)
+5. <strong>[Future Features](#future-features)</strong>:
+    * [Improve Reservations Features](#improve)
+    * [Add Automatic Emails](#emails)
+    * [Better User Profile](#better-profile)
+    * [More features for Admin section](#more-feat)
+6. <strong>[Technologies Used](#technologies)</strong>
+7. <strong>[Python Packages](#packages)</strong>
+8. <strong>[Testing](#testing)</strong>
+9. <strong>[Deployment To Heroku](#deploy)</strong>
+10. <strong>[Cloning This Project](#clone)</strong>
+11. <strong>[Credits](#credits)</strong>:
+    * [Content](#content-credits)
+    * [Media](#media)
+12. <strong>[Acknowledgments](#acknoledge)</strong>
 
- # Flowchart
+
+
+# Objective <a name="objective"></a>
+
+# UX
+
+## User Stories <a name="experience"></a>
+
+## Flowchart <a name="flow"></a>
 
  The Flowchart for Second Scoop was made in Lucidchart.
-
  ![lucidchart]()
-
- # Site Structure
+ 
+## Site Structure <a name="structure"></a>
 
  Second Scoop purpose is to bring together all dessert lovers and improve their services through customer opinions and interactions,offering blog option and also reservation system so users can experience themselvesthe delicious desserts .
 
- # Features
+## Typography <a name="typo"></a>
 
- Second Scoop is set up to be easy to use . It contains features that a user would be fimiliar with such as user login,user log out,reservations and contact forms, blog posts all offering options to create,read,update and delete(CRUD).
 
- ## Existing Features
+## Color Scheme <a name="color"></a>
 
+## Project Management <a name="management"></a>
+
+## Existing Features(User) <a name="user"></a>
+ 
+Second Scoop is set up to be easy to use . It contains features that a user would be fimiliar with such as user login,user log out,reservations and contact forms, blog posts all offering options to create,read,update and delete(CRUD).
+
+## Site Navigation
  * ## Heading and Title
+ 
+## Modal <a name="modal"></a>
  * Displays Modals of Welcome to direct user to log in or create a new account.
 
  ![modal]()
 
-
+## Slider  <a name="slider"></a>
  * Includes the name of the website and a slider showing their delicious desserts .
 
  ![slider]()
