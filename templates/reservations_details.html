@@ -2,13 +2,7 @@
 {% load static %}
 {% block content %}
 <div><a class="nav-link" id="add_reservations" href=" {% url 'reservations' %}">Add New Reservation Request</a></div>
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li class="{{ message.tags }}">{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
+
 <div class="reservation-wraper">
     <div class='reservation-container'>
         {% if user.is_authenticated %}

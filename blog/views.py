@@ -184,11 +184,8 @@ class ReservationsView(CreateView):
             form = Booking(user=request.user, data=request.POST)
             if form.is_valid():
                 form.save()
-                update_session_auth_hash(request.form.data)
                 messages.success(request, "Thanks for request")
                 return redirect('reservations_view')
-            else:
-                return redirect('/')
 
 
 class ReservationsList(generic.ListView):
