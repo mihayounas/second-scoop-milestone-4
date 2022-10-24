@@ -120,6 +120,8 @@ class AddPostView(CreateView):
     def form_valid(self, form):
         """ adding the username automatically for the reservation """
         form.instance.author = self.request.user
+        messages.success(
+            self.request, 'Thank You!Your Post will be revised by Admin!')
         return super().form_valid(form)
 
 
@@ -205,6 +207,11 @@ class UpdateReservations(UpdateView):
     def get_approval(self, request):
         user = self.request.user
 
+    def form_valid(self, form):
+        messages.success(
+            self.request, 'Updated successfully!')
+        return super().form_valid(form)
+
 
 class DeleteReservations(DeleteView):
     """
@@ -213,6 +220,7 @@ class DeleteReservations(DeleteView):
     model = Reservation
     template_name = 'delete_reservations.html'
     success_url = reverse_lazy('reservations_view')
+
     def get_success_url(self):
         messages.success(self.request, "Deleted Successfully")
         return reverse('reservations_view')
