@@ -17,7 +17,6 @@ urlpatterns = [
          views.UpdateReservations.as_view(), name='update_reservations'),
     path('delete/<int:pk>/',
          views.DeleteReservations.as_view(), name='delete_reservations'),
-    path('thanks', views.thanks, name='thanks'),
     path('post_view', views.PostList.as_view(), name="post_view"),
     path('delete_comment/<int:pk>',
          views.DeleteComment.as_view(), name='delete_comment'),
