@@ -102,4 +102,4 @@ class Contact(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('thanks')
+        return reverse('message_list')

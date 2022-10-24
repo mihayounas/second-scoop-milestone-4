@@ -176,16 +176,16 @@ class ReservationRequest(CreateView):
 
 class ReservationsView(CreateView):
     model = Reservation
+    form_class = Booking
     template_name = 'reservations_details.html'
     fields = ['date', 'event', 'approved', 'message']
 
-    def form_validation(request):
-        if request.method == "POST":
-            form = Booking(user=request.user, data=request.POST)
-            if form.is_valid():
-                form.save()
-                messages.success(request, "Thanks for request")
-                return redirect('reservations_view')
+    def form_valid(self, form):
+        """ adding the username automatically for the message """
+        form.instance.user = self.request.user
+        messages.success(
+            self.request, 'Thank you for your message,we will get back to you shortly!')
+        return super().form_valid(form)
 
 
 class ReservationsList(generic.ListView):
@@ -204,17 +204,6 @@ class ReservationsList(generic.ListView):
             return Reservation.objects.all()
         else:
             return Reservation.objects.filter(user=user)
-
-    def form_validation(request):
-        if request.method == "POST":
-            form = Booking(user=request.user, data=request.POST)
-            if form.is_valid():
-                form.save()
-                update_session_auth_hash(request.form.data)
-                messages.success(request, "Thanks for request")
-                return redirect('reservations_view')
-            else:
-                return redirect('/')
 
 
 class UpdateReservations(UpdateView):
@@ -259,6 +248,8 @@ class ContactAdmin(CreateView):
     def form_valid(self, form):
         """ adding the username automatically for the message """
         form.instance.client = self.request.user
+        messages.success(
+            self.request, 'Thank you for your message,we will get back to you shortly!')
         return super().form_valid(form)
 
 
