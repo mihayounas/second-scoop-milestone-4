@@ -53,7 +53,6 @@
 * User
 
 | As a User | I can directly create reservations so that I can book a place.                                      |
-|-----------|-----------------------------------------------------------------------------------------------------|
 | As a User | I can directly contact the admin so that I can solve any issue I encounter                          |
 | As a User | I can book an eventso that I can have a reservation for a specific date with a high number of guests|
 | As a User | I can view all the menu items so that I can decide what I would like to try                         |
@@ -66,7 +65,6 @@
 * Admin 
 
 | As a Admin | I can directly create reservations so that I can book a place.                                      |
-|------------|-----------------------------------------------------------------------------------------------------|
 | As a Admin | I can create, read, update and delete posts so that I can manage my blog content                    |
 | As a Admin | I can approve or disapprove reservations so that I can make sure we are not overbooked              |
 | As a Admin | I can approve or disapprove comments so that I can filter out inappropriate comments.               |
