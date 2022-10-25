@@ -40,7 +40,7 @@ body {
 }
 
 #logo-name {
-    color: rgb(241, 191, 97);
+    color: rgb(242, 207, 141);
     font-family: 'Dancing Script', cursive;
     font-size: 70px;
     background-color: rgb(26, 25, 25);
@@ -457,7 +457,6 @@ nav ul li a {
 
 .container {
 
-    padding: 5px;
     width: 900px;
     background-color: black;
 }

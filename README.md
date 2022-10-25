@@ -1,6 +1,6 @@
 # **_Second Scoop_**
 
-<a href="#" target="_blank" rel="noopener">Second Scoop</a>(press for Live DEMO) is a website where users can make event reservations,or blog their opinions about an imaginary desserts restaurant.
+<a href="#" target="_blank" rel="noopener">Second Scoop</a>(press for Live DEMO) is a website designed as a "real world application", the website is devided into two parts. One part is for users to see a appealing front-end website which shows them information about the restaurant, allows them to create an account, make a reservations, write a post, contact the admin and more. The other part of the website is a management system for admin of SecondScoop. If an account has the correct permissions, the admin will be able to see special features which will allow them to manage posts,reservations,comments and approve reservations.
 
 # Table of contents
 1. <strong>[Objective](#objective)</strong>
@@ -45,6 +45,8 @@
 
 # Objective <a name="objective"></a>
 
+* The major goal is to prove  a high level of expertise in HTML, CSS, JavaScript, Python, and the Django Framework, as well as how important it is to conduct testing throughout.
+
 # UX
 
 ## User Stories <a name="experience"></a>
@@ -62,7 +64,8 @@
 
 
 ## Color Scheme <a name="color"></a>
-
+Color scheme was created on <a href="https://coolors.co/">Coolors</a>
+![color-scheme](/templates/images/colors.png)
 ## Project Management <a name="management"></a>
 
 ## Existing Features(User) <a name="user"></a>
@@ -75,24 +78,23 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
 ## Modal <a name="modal"></a>
  * Displays Modals of Welcome to direct user to log in or create a new account.
 
- ![modal]()
+ ![modal](/templates/images/modal.png)
 
 ## Slider  <a name="slider"></a>
  * Includes the name of the website and a slider showing their delicious desserts .
 
- ![slider]()
+ ![slider](/templates/images/slider.png)
 
  * ## User Area
- * # Modal
 
  * User Registration -  has built-in authentication and authorization to check certain criteria is met before an account is validated. All passwords are hidden for security purposes.
  ![register]()
  * Log In - existing users will ahve to pass authorisation with entering their current username and password to match the database.
- ![login]()
+ ![login](/templates/images/signin.png)
  * Log Out - Users can log out easily and a warning message will be displayed .
- ![logout]()
+ ![logout](/templates/images/signout.png)
 
- Once logged in user will see:
+ Once logged in, user will see:
 
  * Menu - a display of some of their recipes with pictures gallery and description.
  * Event Reservations -CRUD - offering options to create new request with authorisations criteria including : name,date(as a pop up calendar),phone number,number of guests,and message. Once created the reservations will show in Check reservations,there will show if it was approved by the admin or not and also giving options of updated or delete it .
