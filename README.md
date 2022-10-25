@@ -109,7 +109,7 @@ Color scheme was created on <a href="https://coolors.co/">Coolors</a>
 Second Scoop is set up to be easy to use . It contains features that a user would be fimiliar with such as user login,user log out,reservations and contact forms, blog posts all offering options to create,read,update and delete(CRUD).
 
 ## Site Navigation
- * ## Heading and Title
+ * ## Heading and Title<a name='nav'></a>
  
 ## Modal <a name="modal"></a>
  * Displays Modals of Welcome to direct user to log in or create a new account.
@@ -121,7 +121,7 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
 
  ![slider](/static/images/slider.png)
 
- * ## User Area
+ * ## User Area <a name="user-reg"></a>
 
  * User Registration -  has built-in authentication and authorization to check certain criteria is met before an account is validated. All passwords are hidden for security purposes.
  ![register]()
@@ -132,29 +132,29 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
 
  Once logged in, user will see:
 
- * Menu - a display of some of their recipes with pictures gallery and description.
- * Event Reservations -CRUD - offering options to create new request with authorisations criteria including : name,date(as a pop up calendar),phone number,number of guests,and message. Once created the reservations will show in Check reservations,there will show if it was approved by the admin or not and also giving options of updated or delete it .
+ * Menu <a name="menu"></a> - a display of some of their recipes with pictures gallery and description.
+ * Event Reservations <a name="events"></a>  -CRUD - offering options to create new request with authorisations criteria including : name,date(as a pop up calendar),phone number,number of guests,and message. Once created the reservations will show in Check reservations,there will show if it was approved by the admin or not and also giving options of updated or delete it .
 
  ![events-page](/static/images/events.png)
 
-* Contact page - CRUD - displaying a map, offering option of sending a message, after the message is sent in the check you messages tab user can see the messages send and if it was read by admin or not, also can edit or delete any message. 
+* Contact page <a name="contact"></a> - CRUD - displaying a map, offering option of sending a message, after the message is sent in the check you messages tab user can see the messages send and if it was read by admin or not, also can edit or delete any message. 
 
 ![contact-page](/static/images/contact.png)
 
 ![messages-page](/static/images/messages.png)
 
-* A Drop Down button with specific username and under that tab will be options to check event,messages or LogOut.
+* A Drop Down <a name="dropdown"></a>  button with specific username and under that tab will be options to check event,messages or LogOut.
 
 ![dropdown](/static/images/drop.png)
 
-* Blog - CRUD - this button will display all the posts by other users and each post will have details and offer comment sections to allow users to interact. Every comment or post will be approved by the user before displayed.Users can delete or edit their own post only.
+* Blog <a name="blog"></a>  - CRUD - this button will display all the posts by other users and each post will have details and offer comment sections to allow users to interact. Every comment or post will be approved by the user before displayed.Users can delete or edit their own post only.
 ![posts-page](/static/images/posts.png)
 
 
- * ## Admin Area - SuperUser
+ * ## Admin Area - SuperUser <a name="admin"></a> 
  * From the Pop Up Modal Admin can LogIn .
  * As Admin :
- 1.Can manage all the users.
+ 1.Can manage all the user requests.
  2.Can check and approve or disapprove posts.
  3.Can answer messages.
  4.Can approve events for specific number of guests
@@ -165,8 +165,8 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
  * Adding a booking fee.
  * Better Code Structure and organisation.
 
- * ## Technologies Used
-# FRONT-END:
+ # Technologies Used <a name="technologies"></a>
+## FRONT-END:
 * [HTML5](https://www.w3schools.com/html/) - provides the content and structure for the website.
 * [CSS](https://www.w3.org/Style/CSS/Overview.en.html) - provides the styling.
 *[BOOTSTRAP](https://getbootstrap.com/) - provides specific styling.
@@ -175,7 +175,7 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
 * [Github](https://github.com/) - used to host and edit the website.
 
 
-# BACK-END:
+## BACK-END:
 * [PYTHON](https://www.w3schools.com/python/) to get details from the user and validate the inputs with python logic.
 # Heroku : used for app hosting.
 
@@ -221,7 +221,7 @@ SecondScoop site was tested on the following browsers with no visible issues for
 * Error in Css testing solved.
 ![Error-css](/static/images/csserror.png)
 
-# Deployment: 
+# Deployment: <a name="deploy"></a>
 The site was deployed to Heroku pages.
 1. First we have to create our app on heroku website.
 ![createapp]())
@@ -254,7 +254,7 @@ The site was deployed to Heroku pages.
 # Credits
 
 ### Content
-* Tutors for directing me for some of the functions.
+* Tutors were very helpful in making me understand the issues I have encountered throughout.
 * Some of the code ideas came from  [Stack Overflow](https://stackoverflow.com/).
 
 
