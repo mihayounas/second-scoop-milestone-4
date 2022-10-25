@@ -240,11 +240,24 @@ nav ul li a {
 }
 
 #id_username,
-#id_password1,
-#id_password2 {
-    width: 450px;
+#id_password1 {
+    width: 260px;
     background-color: rgb(245, 191, 90);
+    border-radius: 20px;
 
+}
+
+
+#id_password1,
+#id_username {
+    margin-left: 10px;
+}
+
+#id_email,
+#id_password2 {
+    width: 240px;
+    background-color: rgb(245, 191, 90);
+    border-radius: 20px;
 }
 
 /* STYLE POST PAGE */
@@ -532,27 +545,6 @@ nav ul li a {
 }
 
 /* STYLE SIGN IN FORM*/
-
-#id_username {
-    width:
-        360px;
-}
-
-#id_email {
-    width:
-        320px;
-}
-
-#id_password1 {
-    width:
-        370px;
-}
-
-#id_password2 {
-    width:
-        315px;
-}
-
 .btn-signup,
 .send-btn,
 #updates {
@@ -574,7 +566,7 @@ nav ul li a {
 
 .send-btn:hover {
     background-color: black;
-    border: solid 1pxrgb(245, 191, 90);
+    border: solid 1px rgb(245, 191, 90);
 }
 
 #id_login,
@@ -763,8 +755,9 @@ nav ul li a {
     }
 
     .container {
-        max-width: 100vw
+        max-width: 100vw;
     }
+
 
 }
 
@@ -796,12 +789,9 @@ nav ul li a {
         max-width: 100vw
     }
 
-
-
     #menu-page-title {
         font-size: 10px;
         text-align: center;
-
 
     }
 
@@ -813,11 +803,16 @@ nav ul li a {
         font-size: large;
     }
 
-    #reservations-form input {
+    #reservations-form input,
+    #reservations-form textarea {
         width: 280px;
     }
 
-    #reservations-form textarea {
+    #id_username,
+    #id_password1 {
         width: 280px;
+        background-color: rgb(245, 191, 90);
+        border-radius: 20px;
+
     }
 }

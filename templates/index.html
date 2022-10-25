@@ -38,17 +38,13 @@
                 {{ post.number_of_likes }}</p>
 
             {% if user.is_superuser %}
-            {% if request.user == post.author %}
             <div>
-                <span><a href="{% url 'update_post' post.pk %}" class="post-link edit-delete ">Edit</a></span>
                 <span><a href="{% url 'delete_post' post.pk %}" class="post-link edit-delete">Delete Post</a></span>
             </div>
             {% endif%}
-            {% else %}
             {% if request.user == post.author %}
             <div><span><a href="{% url 'update_post' post.pk %}" class="post-link edit-delete">Edit</a></span>
                 <span><a href="{% url 'delete_post' post.pk %}" class="post-link edit-delete">Delete Post</a></span></div>
-            {% endif%}
             {% endif%}
 
         </div>
