@@ -7,13 +7,19 @@
     <div class='reservation-container'>
         {% if user.is_authenticated %}
         {% for message in object_list %}
+        {% if user.is_superuser %}
         <ul class="list-group">
             <li class="list-group-item">{{ message.name }}|<span> Says : {{ message.message }}</span>
                 <a class="edit-delete" href="{% url 'delete_messages' message.pk %}">Delete</a>
+                <a class="edit-delete" href="">Reply</a>
+            </li>
+            {% else %}
+            <li class="list-group-item">{{ message.name }}|<span> Says : {{ message.message }}</span>
+                <a class="edit-delete" href="{% url 'delete_messages' message.pk %}">Delete</a>
                 <a class="edit-delete" href=" {% url 'update_messages' message.pk %}">Edit</a>
-
             </li>
         </ul>
+        {%endif%}
         {%endfor%}
         {%endif%}
     </div>

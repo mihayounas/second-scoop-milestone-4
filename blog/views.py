@@ -115,6 +115,7 @@ class AddPostView(CreateView):
     model = Post
     template_name = 'new_posts.html'
     form_class = PostForm
+    success_url = '/'
 
     def form_valid(self, form):
         """ adding the username automatically for the reservation """
