@@ -50,6 +50,7 @@ body {
 
 #scoops {
     height: 60px;
+    width: 60px;
 }
 
 #welcome-scoop {
@@ -239,7 +240,6 @@ nav ul li a {
 }
 
 #id_username,
-#id_email,
 #id_password1,
 #id_password2 {
     width: 450px;
@@ -625,6 +625,10 @@ nav ul li a {
     background-color: rgb(247, 203, 122);
     width: 280px;
 
+}
+
+#id_date {
+    margin-left: 10px;
 }
 
 #id_number_of_people {

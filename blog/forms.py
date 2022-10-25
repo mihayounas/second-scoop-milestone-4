@@ -19,17 +19,18 @@ class Booking(forms.ModelForm):
     class Meta:
         model = Reservation
         fields = ('name', 'phone',
-                  'event', 'date', 'number_of_people', 'message','approved')
+                  'event', 'date', 'number_of_people', 'message', 'approved')
         widgets = {
             'date': DateInput(),
         }
+        exclude = ('approved',)
 
 
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ('name', 'email', 'message',)
-            
+
 
 class PostForm(forms.ModelForm):
     class Meta:

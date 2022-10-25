@@ -202,7 +202,24 @@ class UpdateReservations(UpdateView):
     """
     model = Reservation
     template_name = "update_reservation.html"
-    fields = ['phone', 'date', 'event', 'message', 'approved']
+    fields = ['phone', 'date', 'event', 'message',]
+
+    def get_approval(self, request):
+        user = self.request.user
+
+    def form_valid(self, form):
+        messages.success(
+            self.request, 'Updated successfully!')
+        return super().form_valid(form)
+
+
+class UpdateReservationsAdmin(UpdateView):
+    """
+    A view to edit and update a reservations.
+    """
+    model = Reservation
+    template_name = "update_reservation.html"
+    fields = ['approved']
 
     def get_approval(self, request):
         user = self.request.user

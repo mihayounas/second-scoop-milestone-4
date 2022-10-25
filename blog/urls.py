@@ -15,6 +15,8 @@ urlpatterns = [
          name="reservation_view_details"),
     path('edit/<int:pk>/',
          views.UpdateReservations.as_view(), name='update_reservations'),
+     path('edit-admin/<int:pk>/',
+         views.UpdateReservationsAdmin.as_view(), name='update_reservations_admin'),
     path('delete/<int:pk>/',
          views.DeleteReservations.as_view(), name='delete_reservations'),
     path('post_view', views.PostList.as_view(), name="post_view"),

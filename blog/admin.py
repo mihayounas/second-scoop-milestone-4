@@ -26,7 +26,7 @@ class CommentAdmin(admin.ModelAdmin):
 
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone', 'event', 'date', 'message')
+    list_display = ('name', 'phone', 'event', 'date', 'message', 'approved')
     search_fields = ('name', 'phone', 'email', 'event', 'date', 'message')
     actions = ['approve_reservation']
 

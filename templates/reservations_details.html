@@ -14,8 +14,13 @@
                     {%else%}
                     <span style="color:red">Waiting approval...</span>
                     {%endif%}
+                    {% if user.is_superuser %}
+                    <a class="edit-delete" href="{% url 'delete_reservations' reservation.pk %}">Delete</a>
+                    <a class="edit-delete" href=" {% url 'update_reservations_admin' reservation.pk %}">Approve Reservation</a>
+                    {% else %}
                     <a class="edit-delete" href="{% url 'delete_reservations' reservation.pk %}">Delete</a>
                     <a class="edit-delete" href=" {% url 'update_reservations' reservation.pk %}">Edit</a>
+                    {%endif%}
 
             </li>
         </ul>
