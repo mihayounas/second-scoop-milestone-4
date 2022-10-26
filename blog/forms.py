@@ -29,7 +29,8 @@ class Booking(forms.ModelForm):
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = ('name', 'email', 'message',)
+        fields = ('name', 'email', 'message', 'reply', 'checked')
+        exclude = ('reply', 'checked')
 
 
 class PostForm(forms.ModelForm):

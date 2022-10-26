@@ -28,6 +28,10 @@ urlpatterns = [
     path('contact/', views.ContactAdmin.as_view(), name='contact'),
     path('edit_message/<int:pk>/',
          views.UpdateMessages.as_view(), name='update_messages'),
+     path('reply_message/<int:pk>/',
+         views.ReplyMessagesAdmin.as_view(), name='reply_messages'),
+     path('view_message/<int:pk>/',
+         views.MessagesViewDetails.as_view(), name='view_messages'),
     path('delete_message/<int:pk>/',
          views.DeleteMessages.as_view(), name='delete_messages'),
     path('messages/', views.MessagesList.as_view(), name='message_list'),
@@ -35,3 +39,4 @@ urlpatterns = [
     path('<int:pk>/delete', views.DeletePost.as_view(), name='delete_post'),
 
 ]
+

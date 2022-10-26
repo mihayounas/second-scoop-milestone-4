@@ -52,7 +52,7 @@ class PostDetail(View):
 
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=False).order_by("-created_on")
+        comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -91,6 +91,10 @@ class DeleteComment(DeleteView):
     model = Comment
     template_name = 'delete_comment.html'
     success_url = reverse_lazy('post_view')
+
+    def get_success_url(self):
+        messages.success(self.request, "Comment Deleted Successfully")
+        return reverse('post_view')
 
 
 class PostLike(View):
@@ -141,6 +145,9 @@ class DeletePost(DeleteView):
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('post_view')
+    def get_success_url(self):
+        messages.success(self.request, "Deleted Successfully")
+        return reverse('post_view')
 
 
 def homepage(request):
@@ -202,7 +209,7 @@ class UpdateReservations(UpdateView):
     """
     model = Reservation
     template_name = "update_reservation.html"
-    fields = ['phone', 'date', 'event', 'message',]
+    fields = ['phone', 'date', 'event', 'message', ]
 
     def get_approval(self, request):
         user = self.request.user
@@ -296,6 +303,26 @@ class UpdateMessages(UpdateView):
         messages.success(
             self.request, 'Your message has been updates successfully!')
         return super().form_valid(form)
+
+
+class ReplyMessagesAdmin(UpdateView):
+    """
+    A view to edit and update a message.
+    """
+    model = Contact
+    fields = ['reply', 'checked']
+    template_name = "reply_messages.html"
+
+    def form_valid(self, form):
+        messages.success(
+            self.request, 'Reply sent successfully!')
+        return super().form_valid(form)
+
+
+class MessagesViewDetails(DetailView):
+    model = Contact
+    template_name = 'message_details.html'
+    context_object_name = 'message'
 
 
 class DeleteMessages(DeleteView):

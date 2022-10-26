@@ -291,8 +291,8 @@ nav ul li a {
     color: white;
 }
 
-.comments-section {
-    background-color: white;
+.comments {
+    color: black
 }
 
 .card-title {
@@ -307,13 +307,6 @@ nav ul li a {
     background-color: rgb(242, 212, 157);
     margin: 0;
     color: black;
-}
-
-#comments-outer {
-    border: 8px dotted white;
-    width: 455px;
-    border-radius: 10px;
-
 }
 
 #post_comments {

@@ -1,43 +1,31 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 {% load crispy_forms_tags %}
 
-<!-- Every post can be seen by clicking on it and will display more information -->
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <!-- Post title-->
+                <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
-
-                <!-- Post author-->
+                <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
-                {% if request.user == comment.author %}
-                <a class='edit-post' href="{% url 'update_post' post.pk %}" class="post-link">Edit Post</a>
-                {% endif%}
-
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://res.cloudinary.com/df4j1glpo/image/upload/v1665263427/media/second-scoop/bubble_sukbmc.jpg" width="100%">
+                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
                 {% else %}
                 <img src=" {{ post.featured_image.url }}" width="100%">
                 {% endif %}
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-
-            </div>
-
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="">
+    <div class="row">
         <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body" id="post-details-card">
+            <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">
@@ -80,15 +68,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 comment-card">
+        <div class="col-md-8 card mb-4  mt-3 ">
             <h3>Comments:</h3>
             <div class="card-body">
-                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+                <!-- Loop to iterate through each comment in comments -->
                 {% for comment in comments %}
-
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
-                        <!-- The commenter' s name goes here. -->
+                        <!-- The commenter's name goes here.-->
                         {{ comment.name }}
                         <span class=" text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->
@@ -96,32 +83,20 @@
                         </span> wrote:
                     </p>
                     <!-- The body of the comment goes before the | -->
-                    {{ comment.body | linebreaks }}
-                    <hr>
-                    {% if user.is_superuser %}
-                    <a class='edit-post' href="{% url 'delete_comment' comment.pk %}">Delete </a>
-                    {% else %}
-                    {% if request.user == comment.author %}
+                    {{ comment.body }}
+
                     <a class='edit-post' href="{% url 'delete_comment' comment.pk %}">Delete</a>
-                    {% endif%}
-                    {% endif%}
                 </div>
                 {% endfor %}
             </div>
         </div>
-        <div class=" col-md-4 card mb-4 mt-3 comment-card">
+
+        <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-                <!-- For later -->
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
-                    Thanks for your comment!
+                    Thank you for your comment!
                 </div>
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                </form>
-                {{ comment.body }}
                 {% else %}
                 {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>

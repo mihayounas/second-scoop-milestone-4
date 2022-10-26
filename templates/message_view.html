@@ -11,17 +11,32 @@
         <ul class="list-group">
             <li class="list-group-item">{{ message.name }}|<span> Says : {{ message.message }}</span>
                 <a class="edit-delete" href="{% url 'delete_messages' message.pk %}">Delete</a>
-                <a class="edit-delete" href="">Reply</a>
+                <a class="edit-delete" href="{% url 'reply_messages' message.pk %}">Reply</a>
+                <a class="edit-delete" href="{% url 'view_messages' message.pk %}">View Conversation</a>
             </li>
+            {% if message.checked == True %}
+            <i class=" fa-sharp fa-solid fa-check" style="color:green">Replyed</i>
+            {%else%}
+            <span style="color:red">Not Read...</span>
+            {%endif%}
             {% else %}
+
             <li class="list-group-item">{{ message.name }}|<span> Says : {{ message.message }}</span>
                 <a class="edit-delete" href="{% url 'delete_messages' message.pk %}">Delete</a>
                 <a class="edit-delete" href=" {% url 'update_messages' message.pk %}">Edit</a>
+                <a class="edit-delete" href="{% url 'view_messages' message.pk %}">View Conversation</a>
             </li>
+            {% if message.checked == True %}
+            <i class=" fa-sharp fa-solid fa-check" style="color:green">Replyed</i>
+            {%else%}
+            <span style="color:red">Not Read...</span>
+            {%endif%}
         </ul>
+
         {%endif%}
         {%endfor%}
         {%endif%}
+
     </div>
 </div>
 {%endblock%}

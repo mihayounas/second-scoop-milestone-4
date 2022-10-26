@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<!-- Every message can be seen by clicking on it and will display more information -->
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <!-- Message Content-->
+                <div>
+                    <h2 class="post-title">{{ message.name }} says: {{ message.message }} </h2>
+                    <a class="edit-delete" href="{% url 'delete_messages' message.pk %}">Delete</a>
+
+                    <a class="edit-delete" href="">Reply</a>
+                </div>
+                <hr>
+                <h3>Replyed : {{ message.reply }}</h3>
+            </div>
+            <div class="d-none d-md-block col-md-6 masthead-image">
+            </div>
+        </div>
+
+        {% endblock  %}
