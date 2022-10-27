@@ -86,17 +86,17 @@
  Second Scoop purpose is to bring together all dessert lovers and improve their services through customer opinions and interactions,offering blog option and also reservation system so users can experience themselvesthe delicious desserts .
 
 * User :
-        * Home, Menu , Event Reservation , Contact, Profile dropdown - Check reservations, check messages and Logout .
-        * Blog for users to connect and share experieneces .
-        * Welcoming Design to attact users.
-        * Simple forms with solid validation .
-        * Easy way to manage reservations, messages,and posts.
+    * Home, Menu , Event Reservation , Contact, Profile dropdown - Check reservations, check messages and Logout .
+    * Blog for users to connect and share experieneces .
+    * Welcoming Design to attact users.
+    * Simple forms with solid validation .
+    * Easy way to manage reservations, messages,and posts.
 
 * Admin :
-        * Navigation is similar to the User but has speacial features :
-                * View all the reservations
-                * View all the messages
-                * Approve reservations
+    * Navigation is similar to the User but has speacial features :
+        * View all the reservations
+        * View all the messages
+        * Approve reservations
 
 ## Typography <a name="typo"></a>
 * A combination of 'Dancing Script' , 'lato' and 'sans-serif' has been user for a better looking site.
