@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
-    'django_extensions',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
@@ -55,6 +54,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'blog',
     'djreservation',
+    'django_extensions',
 
 ]
 
