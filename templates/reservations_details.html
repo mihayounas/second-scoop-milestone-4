@@ -16,7 +16,12 @@
                     {%endif%}
                     {% if user.is_superuser %}
                     <a class="edit-delete" href="{% url 'delete_reservations' reservation.pk %}">Delete</a>
+                    {% if reservation.approved == True %}
+                    <a class="edit-delete" href=" {% url 'update_reservations_admin' reservation.pk %}">Reservation Confirmed</a>
+
+                    {% else %}
                     <a class="edit-delete" href=" {% url 'update_reservations_admin' reservation.pk %}">Approve Reservation</a>
+                    {%endif%}
                     {% else %}
                     <a class="edit-delete" href="{% url 'delete_reservations' reservation.pk %}">Delete</a>
                     <a class="edit-delete" href=" {% url 'update_reservations' reservation.pk %}">Edit</a>

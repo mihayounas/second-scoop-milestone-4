@@ -2,6 +2,8 @@
 
 <a href="#" target="_blank" rel="noopener">Second Scoop</a>(press for Live DEMO) is a website designed as a "real world application", the website is devided into two parts. One part is for users to see a appealing front-end website which shows them information about the restaurant, allows them to create an account, make a reservations, write a post, contact the admin and more. The other part of the website is a management system for admin of SecondScoop. If an account has the correct permissions, the admin will be able to see special features which will allow them to manage posts,reservations,comments and approve reservations.
 
+![mockups](/static/images/flat-devices-mockup.png)
+
 # Table of contents
 1. <strong>[Objective](#objective)</strong>
 2. <strong>[User Experience UX](#experience)</strong>:
@@ -78,12 +80,12 @@
 
  The Flowchart for Second Scoop was made in Lucidchart.
  ![lucidchart](/static/images/flowchart.png)
- 
+ # Existing Features <a name="user-features"></a>
 ## Site Structure <a name="structure"></a>
 
  Second Scoop purpose is to bring together all dessert lovers and improve their services through customer opinions and interactions,offering blog option and also reservation system so users can experience themselvesthe delicious desserts .
 
- * User :
+* User :
         * Home, Menu , Event Reservation , Contact, Profile dropdown - Check reservations, check messages and Logout .
         * Blog for users to connect and share experieneces .
         * Welcoming Design to attact users.
@@ -103,10 +105,14 @@
 Color scheme was created on <a href="https://coolors.co/">Coolors</a>
 ![color-scheme](/static/images/colors.png)
 ## Project Management <a name="management"></a>
+* Database
+        * To create the database schema, I used an graph modelling tool Graph Models which shows the entire relationship between all models in the database.I would like to mention that djreservations was not used on this ocassion and I am planning for better structure.
+        After following the steps required to install Graph Models, I then used <a href="https://dreampuf.github.io">dreampuf</a> to present the data in a clear way. 
+![color-scheme](/static/images/graphviz.png)
 
 ## Existing Features(User) <a name="user"></a>
  
-Second Scoop is set up to be easy to use . It contains features that a user would be fimiliar with such as user login,user log out,reservations and contact forms, blog posts all offering options to create,read,update and delete(CRUD).
+Second Scoop is set up to be easy to use . It contains features that a user would be fimiliar with such as user login,user log out,book reservations and contact forms, blog posts all offering options to create,read,update and delete(CRUD).
 
 ## Site Navigation
  * ## Heading and Title<a name='nav'></a>
@@ -154,10 +160,13 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
  * ## Admin Area - SuperUser <a name="admin"></a> 
  * From the Pop Up Modal Admin can LogIn .
  * As Admin :
- 1.Can manage all the user requests.
- 2.Can check and approve or disapprove posts.
- 3.Can answer messages.
- 4.Can approve events for specific number of guests
+ 1. Can manage all the user requests.
+ 2. Can check and approve or disapprove posts.
+ 3. Can answer messages.
+ 4. Can approve events for specific number of guests
+![admin-page](/static/images/admin1.png)
+![admin-page](/static/images/adminview.png)
+![admin-page](/static/images/adminress.png)
 
  # Future Features
  * In future I am planning on adding Gallery page for images from specific events to attract users.
@@ -173,13 +182,13 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
 * [JavaScript](https://www.w3schools.com/js/)-provides interactivity.
 * [Gitpod](https://www.gitpod.io/#get-started) - used to deploy the website.
 * [Github](https://github.com/) - used to host and edit the website.
+* [Cloudinary](https://cloudinary.com/) - used to store pictures .
+* [Mockupbro](https://mockupbro.com/mockup/flat-devices-mockup) - user to create mockups.
 
 
 ## BACK-END:
 * [PYTHON](https://www.w3schools.com/python/) to get details from the user and validate the inputs with python logic.
 # Heroku : used for app hosting.
-
-
 # Testing:
 SecondScoop website has been properly tested ,all the code has been run through the W3C html Validator,W3C CSS Validator and JavaScript Validator. Minor errors were found on the first About us page. After fixing and retesting, no errors were found .
  ### CSS validator results are below:
@@ -222,34 +231,18 @@ SecondScoop site was tested on the following browsers with no visible issues for
 ![Error-css](/static/images/csserror.png)
 
 # Deployment: <a name="deploy"></a>
-The site was deployed to Heroku pages.
+
+<details open>
+<summary>The site was deployed to Heroku pages.</summary>
+<br>
 1. First we have to create our app on heroku website.
-![createapp]())
+![createapp](/static/images/create-app.png)
 2. Name the app.
-![create2]()
+![create2](/static/images/create1.png)
 
-3. Setup config vars.
-![config]()
-
-4. Select Buildpacks.
-![buildpacks]()
-
-5. Choose Deploy Section and Heroku CLI.
-![heroku]()
-
-7. Follow the steps bellow.
-   To install into terminal:
-   Log into heroku : heroku login - i
-   * Next command : heroku apps
-   * Next command: <app-name> with the actual app name and remove <> : heroku git: remote -a <app_name>
-   * Now we have remote control over the app and we can push our changes straight to heroku terminal.
-   * MFA/2FA enabled? - click Account setting on heroku website.
-                - scroll down to API and click Reveal and Copy the key.
-                - command: heroku config and enter api key
-                -enter heroku username
-                enter api key and press entered.
-    After installation I followed the next steps:
-![deploy2](/images/deploycli.png)
+3. Choose Deploy Section and Connect to Github.
+![heroku](/static/images/deploy.png)
+</details>
 
 # Credits
 

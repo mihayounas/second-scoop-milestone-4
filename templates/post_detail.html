@@ -84,8 +84,9 @@
                     </p>
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body }}
-
+                    {% if user.is_superuser %}
                     <a class='edit-post' href="{% url 'delete_comment' comment.pk %}">Delete</a>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
