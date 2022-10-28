@@ -118,7 +118,7 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
 
 ## Site Navigation
  * ## Heading and Title<a name='nav'></a>
- 
+ ![heasder](/static/images/header.png)
 ## Modal <a name="modal"></a>
  * Displays Modals of Welcome to direct user to log in or create a new account.
 
