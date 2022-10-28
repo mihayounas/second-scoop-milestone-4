@@ -91,6 +91,11 @@ body {
     text-align: center;
 }
 
+.card-body {
+    color: black;
+    font-size: larger;
+}
+
 #reservations_view,
 #messages_view {
     width: 300px;

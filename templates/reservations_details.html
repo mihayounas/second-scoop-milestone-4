@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<!-- Adding new reservation request button  -->
 <div><a class="nav-link" id="add_reservations" href=" {% url 'reservations' %}">Add New Reservation Request</a></div>
-
 <div class="reservation-wraper">
     <div class='reservation-container'>
         {% if user.is_authenticated %}
+        <!-- Loop to iterate through each reservation in object list -->
         {% for reservation in object_list %}
         <ul class="list-group">
             <li class="list-group-item"><a href="{% url 'reservation_view_details' reservation.pk %}">{{ reservation.name }} </a>|<span> Requested date : {{ reservation.date }}</span> | <span> Event :{{ reservation.event }}</span><span>
@@ -14,14 +15,16 @@
                     {%else%}
                     <span style="color:red">Waiting approval...</span>
                     {%endif%}
+                    <!-- If user is admin he can delete a reservation -->
                     {% if user.is_superuser %}
                     <a class="edit-delete" href="{% url 'delete_reservations' reservation.pk %}">Delete</a>
+                    <!-- if reservation is approved then status is changed to Reservation confirmed so admin will know what is pending approval -->
                     {% if reservation.approved == True %}
                     <a class="edit-delete" href=" {% url 'update_reservations_admin' reservation.pk %}">Reservation Confirmed</a>
-
                     {% else %}
                     <a class="edit-delete" href=" {% url 'update_reservations_admin' reservation.pk %}">Approve Reservation</a>
                     {%endif%}
+                    <!-- If logged in as user will be able to edit or delete their reservation request -->
                     {% else %}
                     <a class="edit-delete" href="{% url 'delete_reservations' reservation.pk %}">Delete</a>
                     <a class="edit-delete" href=" {% url 'update_reservations' reservation.pk %}">Edit</a>
