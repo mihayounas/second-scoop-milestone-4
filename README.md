@@ -232,9 +232,9 @@ SecondScoop site was tested on the following browsers with no visible issues for
 
 # Deployment: <a name="deploy"></a>
 
-<details open>
-<summary>The site was deployed to Heroku pages.</summary>
-<br>
+
+The site was deployed to Heroku pages.
+
 1. First we have to create our app on heroku website.
 ![createapp](/static/images/create-app.png)
 2. Name the app.
