@@ -3,13 +3,13 @@
 {% load crispy_forms_tags %}
 {% block content %}
 {% if user.is_superuser %}
-<!-- Update Reservations request form -->
+<!-- Reply by admin form -->
 <div><a class="nav-link" id="messages_view" href="{% url 'message_list' %}">Reply</a></div>
 <div>
     <div class="container" id="messages-form">
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2">
-                <h3>Edit Message</h3>
+                <h3>Reply with Message:</h3>
             </div>
         </div>
         <div class="row">
@@ -22,18 +22,5 @@
             </div>
         </div>
     </div>
-    {% else %}
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mt-3 offset-md-2" style="text-align: center">
-                    <h2>You need to be logged in.</h2>
-                    <a class="nav-link" href="{% url 'account_login' %}">Login?</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     {% endif %}
-
     {%endblock%}

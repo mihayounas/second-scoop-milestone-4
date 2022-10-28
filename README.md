@@ -45,8 +45,6 @@
     * [Media](#media)
 12. <strong>[Acknowledgments](#acknoledge)</strong>
 
-
-
 # Objective <a name="objective"></a>
 
 * The major goal is to prove  a high level of expertise in HTML, CSS, JavaScript, Python, and the Django Framework, as well as how important it is to conduct testing throughout.
@@ -111,6 +109,8 @@ Color scheme was created on <a href="https://coolors.co/">Coolors</a>
         * To create the database schema, I used an graph modelling tool Graph Models which shows the entire relationship between all models in the database.I would like to mention that djreservations was not used on this ocassion and I am planning for better structure.
         After following the steps required to install Graph Models, I then used <a href="https://dreampuf.github.io">dreampuf</a> to present the data in a clear way. 
 ![color-scheme](/static/images/graphviz.png)
+
+<a name="#objective" >Back to Top </a>
 
 ## Existing Features(User) <a name="user"></a>
  
@@ -264,3 +264,5 @@ The site was deployed to Heroku pages.
 The site was completed as a Portfolio 4 Project  Full Stack Software Developer at the [Code Institute](https://codeinstitute.net/). As such I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) and Code Institute Tutor Support for their help and support.
 
 Mihaela Younas 2022.
+
+<a href="#objective" dir='auto'>Back to Top </a>

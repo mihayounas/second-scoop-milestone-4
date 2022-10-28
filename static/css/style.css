@@ -42,15 +42,15 @@ body {
 #logo-name {
     color: rgb(242, 207, 141);
     font-family: 'Dancing Script', cursive;
-    font-size: 70px;
+    font-size: 4.37rem;
     background-color: rgb(26, 25, 25);
 
 
 }
 
 #scoops {
-    height: 60px;
-    width: 60px;
+    height: 3.75rem;
+    width: 3.75rem;
 }
 
 #welcome-scoop {
@@ -98,7 +98,7 @@ body {
 
 #reservations_view,
 #messages_view {
-    width: 300px;
+    width: 18.75rem;
     margin-bottom: 10px;
 }
 
@@ -180,9 +180,9 @@ nav ul li a {
 
 /* Create style the background image effect*/
 #main-img {
-    width: 1600px;
-    height: 900px;
-    padding: 40px;
+    width: 100rem;
+    height: 56.25rem;
+    padding: 2.5rem;
     padding-top: 0;
     object-fit: cover;
     align-items: center;
@@ -204,13 +204,13 @@ nav ul li a {
 }
 
 #img-container {
-    width: 580px;
-    height: 400px;
+    width: 36.25rem;
+    height: 25rem;
     margin-left: -180px;
 }
 
 .container {
-    width: 800px;
+    width: 50rem;
 }
 
 .post-title,
@@ -298,7 +298,7 @@ nav ul li a {
 .post-container {
     background-color: black;
     padding: 30px;
-    max-width: 400px;
+    max-width: 25rem;
     border-radius: 15px;
     border: 5px solid rgb(245, 191, 90);
 
@@ -431,14 +431,14 @@ nav ul li a {
 /* Slider*/
 .container-slide {
     color: rgb(245, 191, 90);
-    width: 950px;
+    width: 59.37rem;
     flex-wrap: wrap;
     text-align: center;
 }
 
 .swiper-slide img {
-    width: 780px;
-    height: 400px;
+    width: 48.75rem;
+    height: 25rem;
     border: 2px solid rgb(245, 191, 90);
     margin-top: 20px;
     margin-bottom: 20px;
@@ -450,7 +450,7 @@ nav ul li a {
     border-style: dotted;
     border-color: white;
     border-width: 23px;
-    width: 850px;
+    width: 53.1rem;
 
 }
 
@@ -475,12 +475,11 @@ nav ul li a {
 #main-container {
     background-image: url("https://res.cloudinary.com/df4j1glpo/image/upload/v1662374379/second-scoop/icecreamy_woaomc.webp");
     background-repeat: no-repeat;
-    width: 1500px;
+    width: 93.75rem;
 }
 
 .container {
-
-    width: 900px;
+    width: 56.25rem;
     background-color: black;
 }
 

@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
 {% if user.is_authenticated %}
-<!-- Update Reservations request form -->
+<!-- Update Messages request form -->
 <div><a class="nav-link" id="messages_view" href="{% url 'message_list' %}">Check your messages here</a></div>
 <div>
     <div class="container" id="messages-form">
@@ -17,11 +17,13 @@
                 <form class="login" method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
+                    <!-- Save Updates -->
                     <button class="btn btn-secondary">Save</button>
                 </form>
             </div>
         </div>
     </div>
+    <!-- User has to be logged in to update his own messages -->
     {% else %}
     <div>
         <div class="container">

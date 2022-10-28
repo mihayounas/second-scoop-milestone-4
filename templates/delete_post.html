@@ -1,9 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<!-- If user is logged in then the new edit form will load -->
+<!-- If user is logged in he can delete his own posts -->
 {% if user.is_authenticated %}
-
 <div class="container deleting-post">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
@@ -17,7 +16,6 @@
                 <strong>Are you sure?</strong><br />
                 <a class="btn btn-signup right" href="{% url 'post_view' %}">Cancel</a>
                 <button class="btn btn-signup right">Delete Post</button>
-
             </form>
         </div>
     </div>

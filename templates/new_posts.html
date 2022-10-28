@@ -1,9 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<!-- If user is logged in then the new post form will load -->
+<!-- If user is logged in then the add new post form will load -->
 {% if user.is_authenticated %}
-
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">

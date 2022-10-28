@@ -75,14 +75,14 @@
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
-                        <!-- The commenter's name.-->
+                        <!-- The user's name.-->
                         {{ comment.name }}
                         <span class=" text-muted font-weight-normal">
-                            <!-- The comment's created date goes here -->
+                            <!--creation date-->
                             {{ comment.created_on }}
                         </span> wrote:
                     </p>
-                    <!-- The body of the comment  -->
+                    <!-- comment content -->
                     {{ comment.body }}
                     {% if request.user == comment.user %}
                     <a class='edit-post' href="{% url 'delete_comment' comment.pk %}">Delete</a>
@@ -94,7 +94,6 @@
                 {% endfor %}
             </div>
         </div>
-
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 {% if commented %}

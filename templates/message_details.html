@@ -14,7 +14,7 @@
                 <a class="edit-post" href="{% url 'delete_messages' message.pk %}">Delete</a>
             </div>
             <hr>
-
+            <!-- If Message has reply -->
             <h3>Replyed :
                 {% if message.checked == True  %}
                 {{ message.reply }}
@@ -22,8 +22,6 @@
                 <p>No reply from Admin yet...</p>
                 {% endif%}
             </h3>
-
-
             <div class="d-none d-md-block col-md-6 masthead-image">
             </div>
         </div>

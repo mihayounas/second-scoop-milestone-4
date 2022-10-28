@@ -4,9 +4,9 @@
 {% block content %}
 {% if user.is_authenticated %}
 <!-- Update Reservations request form -->
-<div><a class="nav-link" id="reservations_view" href="{% url 'reservations_view' %}">Check your reservations here</a></div>
+<div><a class="nav-link" href="{% url 'reservations_view' %}">Check your reservations here</a></div>
 <div>
-    <div class="container" id="reservations-form">
+    <div class="container">
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2">
                 <h3 class="text-center">Update Reservation</h3>

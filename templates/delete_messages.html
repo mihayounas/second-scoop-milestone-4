@@ -2,14 +2,13 @@
 {% load static %}
 {% block content %}
 {% if user.is_authenticated %}
-
-
-<!-- Reservations request form -->
+<!-- Messages form -->
 <div><a class="nav-link" href="{% url 'message_list' %}">Check your messages here</a></div>
 <div>
     <div class="container">
         <div class="row">
             <div class="col-md-8 mt-3 offset-md-2">
+                <!-- If user presses delete will be given an option if he wants to cancel -->
                 <h3>Delete Message</h3>
             </div>
         </div>
@@ -25,18 +24,6 @@
             </div>
         </div>
     </div>
-    {% else %}
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mt-3 offset-md-2" style="text-align: center">
-                    <h2>You need to be logged in.</h2>
-                    <a class="nav-link" href="{% url 'account_login' %}">Login?</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     {% endif %}
 
     {%endblock%}

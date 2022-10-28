@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<!-- If user is logged in then the new edit form will load -->
 {% if user.is_authenticated %}
 
 <div class="container deleting-post">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
+            <!-- If user presses delete will be given an option if he wants to cancel -->
             <h3> Delete comment?</h3>
         </div>
     </div>
