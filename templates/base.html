@@ -51,7 +51,7 @@
                         {{ user.username }}'s Account
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{% url 'reservations_view' %}"><span style="font-family: 'Dancing Script', cursive;font-size:15px;">C</span>heck your <span style="font-family: 'Dancing Script', cursive;font-size:20px;">R</span>eservations</a>
+                        <a class="dropdown-item" href="{% url 'reservations_view' %}">Check Your Reservations</a>
                         <a class="dropdown-item" href="{% url 'message_list' %}"><span style="font-family: 'Dancing Script', cursive;font-size:15px;">C</span>heck your <span style="font-family: 'Dancing Script', cursive;font-size:20px;">M</span>essages</a>
                         <a class="dropdown-item" id="logout-dropdown" href="{% url 'account_logout' %}">Logout</a>
                     </div>
@@ -137,7 +137,7 @@
 
         });
     </script>
-    <script type="text/javascript">
+    <script>
         $(window).on('load', function() {
             $('#myModal').modal('show');
         });
