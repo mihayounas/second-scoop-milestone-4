@@ -25,7 +25,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
-        User, related_name='post_like', blank=True)
+        User, related_name='blogpost_like', blank=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -73,11 +73,11 @@ class Reservation(models.Model):
     name = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     date = models.DateField(null=False, validators=[MinValueValidator(datetime.date.today), RegexValidator(
-        "(\d{4})-(\d{2})-(\d{2})"
+        "(\d+{4})-(\d{2})-(\d{2})"
     )])
-    phone = models.CharField(max_length=11, validators=[RegexValidator(
-        "^((\+44)|(0)) ?\d{4} ?\d{6}$"
-    )])
+    phone = models.CharField(
+        max_length=11, validators=[
+            RegexValidator("^((\+44)|(0)) ?\d+{4} ?\d{6}$")])
     number_of_people = models.PositiveIntegerField(
         validators=[MinValueValidator(1)])
     event = models.CharField(max_length=100)
@@ -93,7 +93,9 @@ class Reservation(models.Model):
 
 class Contact(models.Model):
     client = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="contact_message", null=True)
+        User, on_delete=models.CASCADE,
+        related_name="contact_message", null=True
+    )
     name = models.CharField(max_length=100)
     email = models.EmailField()
     message = models.TextField()
@@ -105,5 +107,3 @@ class Contact(models.Model):
 
     def get_absolute_url(self):
         return reverse('message_list')
-
-

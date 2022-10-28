@@ -185,6 +185,18 @@ nav ul li a {
 }
 
 /* Post styling  */
+.btn-like {
+    color: rgb(245, 191, 90);
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
+}
 
 #img-container {
     width: 580px;

@@ -197,8 +197,19 @@ SecondScoop website has been properly tested ,all the code has been run through 
  ### Javascript Validator results are below:
  ![Testing3](/static/images/jshint.png)
 
- ### The app was tested in [PEP8](http://pep8online.com).No errors were found.
- ![Testing4]()
+ ### The app was tested with PEP8 called Pycodestyle.No major errors were found.
+ <details open>
+<summary>Pep8 Results</summary>
+<br>
+ ![Testing4](/static/images/pep1.png)
+ ![Testing4](/static/images/pep2.png)
+ ![Testing4](/static/images/pep3.png)
+ ![Testing4](/static/images/pep4.png)
+ ![Testing4](/static/images/pep5.png)
+ ![Testing4](/static/images/pep6.png)
+ ![Testing4](/static/images/pep7.png)
+</details>
+
 # Lighthouse
 
 The website was tested using [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome Developer Tools to test each of the pages for:
@@ -215,13 +226,6 @@ SecondScoop site was tested on the following browsers with no visible issues for
 2. Safari 
 3. Mozilla Firefox
 * Appearance, functionality and responsiveness were consistent throughout for a range of browsers and device sizes. 
-
-## Responsiveness Test
-
-* The responsive design tests were carried out manually with [Responsive Design Checker](https://www.responsivedesignchecker.com/) ,I can confirm that all the tests were passed.
-![Responsive-design-checker-image-desktop]()
-![Responsive-design-checker-image-mobile]()
-* The testing was also done through Google Chrome Dev Tools by selecting a device of your choice as follows :
 
 # Known bugs:
 

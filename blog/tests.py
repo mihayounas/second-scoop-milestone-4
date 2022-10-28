@@ -1,17 +1,10 @@
 from django.test import TestCase
-from .models import Reservation,Post
-from .forms import Booking,PostForm
+from .models import Reservation, Post
+from .forms import Booking, PostForm
 
 # Create your tests here.
-
-
 # class TestPost(TestCase):
-
-
 # class TestComment(TestCase):
-
-
-
 
 
 class ReservationsTestCase(TestCase):
@@ -23,12 +16,12 @@ class ReservationsTestCase(TestCase):
         form = Booking()
         self.assertEqual(form.Meta.fields, ('name', 'phone', 'event',
                          'date', 'number_of_people', 'message', 'approved'))
-                        
+
 
 class PostTesting(TestCase):
     def test_items_are_required(self):
-        form= PostForm({'slug':''})
+        form = PostForm({'slug': ''})
         self.assertFalse(form.is_valid())
-        
+
 
 # class TestContact(TestCase):

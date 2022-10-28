@@ -4,12 +4,14 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.homepage, name='homepage'),
-
     path('menu', views.menu, name='menu'),
-    path('reservations', views.ReservationRequest.as_view(), name='reservations'),
-    path('reservation_view/', views.ReservationsView.as_view(),
-         name='reservations_view'),
-    path('reservations_view', views.ReservationsList.as_view(),
+    path('reservations', 
+    views.ReservationRequest.as_view(), name='reservations'),
+    path('reservation_view/', 
+    views.ReservationsView.as_view(),
+    name='reservations_view'),
+    path('reservations_view', 
+    views.ReservationsList.as_view(),
          name="reservations_view"),
     path('reservations_view_details/<int:pk>', views.ReservationsViewDetails.as_view(),
          name="reservation_view_details"),
