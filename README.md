@@ -191,14 +191,19 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
 ## BACK-END:
 * [PYTHON](https://www.w3schools.com/python/) to get details from the user and validate the inputs with python logic.
 # Heroku : used for app hosting.
+
 # Testing:
 SecondScoop website has been properly tested ,all the code has been run through the W3C html Validator,W3C CSS Validator and JavaScript Validator. Minor errors were found on the first About us page. After fixing and retesting, no errors were found .
+### HTML validator results are below:
+![errors-html](/static/images/htmlcheck.png)
+
  ### CSS validator results are below:
  ![Testing2](/static/images/css.png)
 
  ### Javascript Validator results are below:
  ![Testing3](/static/images/jshint.png)
 
+<p href="#objective" dir='auto'>Back to Top </p>
  ### The app was tested with PEP8 called Pycodestyle.No major errors were found.
  Pep8 Results
  ![Testing4](/static/images/pep1.png)
@@ -231,7 +236,8 @@ SecondScoop site was tested on the following browsers with no visible issues for
 * Favicon icon not loading.
 * Error in Css testing solved.
 ![Error-css](/static/images/csserror.png)
-
+* Errors in HTML solved.
+![errors-html](/static/images/htmlerror.png)
 # Deployment: <a name="deploy"></a>
 
 
