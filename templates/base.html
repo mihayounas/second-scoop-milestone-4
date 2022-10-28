@@ -47,12 +47,12 @@
                 </ul>
                 {% if user.is_authenticated %}
                 <div class="dropdown nav-link">
-                    <a class="btn btn-secondary dropdown-toggle text-capitalize" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <a class="btn btn-secondary dropdown-toggle text-capitalize" role="button" data-toggle="dropdown" aria-expanded="false">
                         {{ user.username }}'s Account
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{% url 'reservations_view' %}">Check Your Reservations</a>
-                        <a class="dropdown-item" href="{% url 'message_list' %}"><span style="font-family: 'Dancing Script', cursive;font-size:15px;">C</span>heck your <span style="font-family: 'Dancing Script', cursive;font-size:20px;">M</span>essages</a>
+                        <a class="dropdown-item" href="{% url 'message_list' %}">Check Your Messages</a>
                         <a class="dropdown-item" id="logout-dropdown" href="{% url 'account_logout' %}">Logout</a>
                     </div>
                 </div>
