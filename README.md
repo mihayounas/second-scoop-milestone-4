@@ -201,7 +201,6 @@ SecondScoop website has been properly tested ,all the code has been run through 
  Pep8 Results
  ![Testing4](/static/images/pep1.png)
  ![Testing4](/static/images/pep2.png)
- ![Testing4](/static/images/pep3.png)
  ![Testing4](/static/images/pep4.png)
  ![Testing4](/static/images/pep5.png)
  ![Testing4](/static/images/pep6.png)
