@@ -203,7 +203,7 @@ SecondScoop website has been properly tested ,all the code has been run through 
  ### Javascript Validator results are below:
  ![Testing3](/static/images/jshint.png)
 
-<p href="#objective" dir='auto'>Back to Top </p>
+<a href="#objective" dir='auto'>Back to Top </a>
  ### The app was tested with PEP8 called Pycodestyle.No major errors were found.
  Pep8 Results
  ![Testing4](/static/images/pep1.png)
