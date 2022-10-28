@@ -23,13 +23,15 @@
     * [Contact page](#contact)
     * [Dropdown Account button](#dropdown)
     * [Blog](#blog) 
-4. <strong>[Existing Features(Admin)]</strong>:
+4. <strong>[Existing Features(Admin)](#features)</strong>:
     * [Admin Panel](#admin)
-    * [View All Reservations](#view-reservations)
-    * [View All Messages](#view-messages)
+    * [View/Approve/Delete All Reservations](#view-reservations)
+    * [View/Reply/Delete All Messages](#view-messages)
     * [Delete Comments](#delete)
 5. <strong>[Future Features](#future-features)</strong>:
     * [Improve Reservations Features](#improve)
+    * [Add Reply into the view conversation](#add_reply)
+    * [Planning to use DJ Reservation as on this occasion I did not use it](#djreservation)
     * [Add Automatic Emails](#emails)
     * [Better User Profile](#better-profile)
     * [More features for Admin section](#more-feat)
@@ -248,10 +250,11 @@ The site was deployed to Heroku pages.
 
 ### Content
 * Tutors were very helpful in making me understand the issues I have encountered throughout.
+* Please note that the Post model is inspired by the walkthrough project done with Code Institute.
 * Some of the code ideas came from  [Stack Overflow](https://stackoverflow.com/).
 
 
  # Acknowledgements
-The site was completed as a Portfolio 4 Project  Full Stack Software Developer at the [Code Institute](https://codeinstitute.net/). As such I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) ,Code Institute Tutor Support for their help and support.
+The site was completed as a Portfolio 4 Project  Full Stack Software Developer at the [Code Institute](https://codeinstitute.net/). As such I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) and Code Institute Tutor Support for their help and support.
 
 Mihaela Younas 2022.
