@@ -198,9 +198,7 @@ SecondScoop website has been properly tested ,all the code has been run through 
  ![Testing3](/static/images/jshint.png)
 
  ### The app was tested with PEP8 called Pycodestyle.No major errors were found.
- <details open>
-<summary>Pep8 Results</summary>
-<br>
+ Pep8 Results
  ![Testing4](/static/images/pep1.png)
  ![Testing4](/static/images/pep2.png)
  ![Testing4](/static/images/pep3.png)
@@ -208,7 +206,6 @@ SecondScoop website has been properly tested ,all the code has been run through 
  ![Testing4](/static/images/pep5.png)
  ![Testing4](/static/images/pep6.png)
  ![Testing4](/static/images/pep7.png)
-</details>
 
 # Lighthouse
 
