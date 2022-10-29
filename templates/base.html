@@ -3,8 +3,8 @@
 <html lang="en">
 
 <head class="h-100">
+    <!-- Title -->
     <title>Second Scoop</title>
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
@@ -45,6 +45,8 @@
                         <a class="nav-link " id="contact" href="{% url 'contact' %}">Contact Us</a>
                     </li>
                 </ul>
+
+                <!-- Personalised dropdown button for logged in user/admin -->
                 {% if user.is_authenticated %}
                 <div class="dropdown nav-link">
                     <a class="btn btn-secondary dropdown-toggle text-capitalize" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -65,12 +67,12 @@
                     </a>
                 </div>
                 {% endif %}
-
-
                 <span class="navbar-text text-muted">
                     Ready for next scoop?
                 </span>
             </div>
+
+            <!-- Blog Button -->
             <span><a class="nav-link" href="{% url 'post_view' %} " id='blog'>Blog</a></span>
         </div>
     </nav>
@@ -99,6 +101,8 @@
             <i class="fab fa-instagram-square ms-3"></i>
             <i class="fab fa-youtube-square ms-3"></i></p>
     </footer>
+
+    <!-- Alert function to display flash messages to user -->
     <script>
         setTimeout(function() {
             let messages = document.getElementById('msg');
@@ -110,6 +114,7 @@
     <!--Font Awesome script below-->
     <script src="https://kit.fontawesome.com/e8e79d1989.js" crossorigin="anonymous"></script>
 
+    <!-- Swiper slider function -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
@@ -137,6 +142,7 @@
 
         });
     </script>
+    <!-- Modal pop up on landing page -->
     <script>
         $(window).on('load', function() {
             $('#myModal').modal('show');
@@ -149,6 +155,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
-
 
 </html>
