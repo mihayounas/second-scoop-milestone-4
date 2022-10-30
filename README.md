@@ -23,6 +23,7 @@
     * [Contact page](#contact)
     * [Dropdown Account button](#dropdown)
     * [Blog](#blog) 
+    * [Errors 404 and 500](#error)
 4. <strong>[Existing Features(Admin)](#features)</strong>:
     * [Admin Panel](#admin)
     * [View/Approve/Delete All Reservations](#view-reservations)
@@ -133,7 +134,9 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
  * ## User Area <a name="user-reg"></a>
 
  * User Registration -  has built-in authentication and authorization to check certain criteria is met before an account is validated. All passwords are hidden for security purposes.
- ![register]()
+
+ ![register](/static/images/register.png)
+
  * Log In - existing users will ahve to pass authorisation with entering their current username and password to match the database.
  ![login](/static/images/signin.png)
  * Log Out - Users can log out easily and a warning message will be displayed .
@@ -142,11 +145,15 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
  Once logged in, user will see:
 
  * Menu <a name="menu"></a> - a display of some of their recipes with pictures gallery and description.
+  ![login](/static/images/menu.png)
+  
  * Event Reservations <a name="events"></a>  -CRUD - offering options to create new request with authorisations criteria including : name,date(as a pop up calendar),phone number,number of guests,and message. Once created the reservations will show in Check reservations,there will show if it was approved by the admin or not and also giving options of updated or delete it .
 
  ![events-page](/static/images/events.png)
 
 * Contact page <a name="contact"></a> - CRUD - displaying a map, offering option of sending a message, after the message is sent in the check you messages tab user can see the messages send and if it was read by admin or not, also can edit or delete any message. 
+
+![contact-page](/static/images/contact2.png)
 
 ![contact-page](/static/images/contact.png)
 
@@ -159,6 +166,9 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
 * Blog <a name="blog"></a>  - CRUD - this button will display all the posts by other users and each post will have details and offer comment sections to allow users to interact. Every comment or post will be approved by the user before displayed.Users can delete or edit their own post only.
 ![posts-page](/static/images/posts.png)
 
+### Error 404 and 500 Page.<a name="error"></a> 
+
+![error](/static/images/error.png)
 
  * ## Admin Area - SuperUser <a name="admin"></a> 
  * From the Pop Up Modal Admin can LogIn .
@@ -270,14 +280,11 @@ The steps to deploy a site are as follows:
   1. In the GitHub repository, navigate to the **Settings** tab.
   2. Once in Settings, navigate to the **Pages** on the left side menu.
 
-  ![Deploying](/assets/images/git.png)
-
- The live link to the Github repository can be found here : https://mihayounas.github.io/javascript-project2-game/ .
+ The live link to the Github repository can be found here :https://github.com/mihayounas/second-scoop-milestone-4 .
 
  ### **To create a local clone of this project**<a name="clone"></a>
 The method from cloning a project from GitHub is below:
 1. Under the repository’s name, click on the **code** tab.
-![Clone-img](/assets/images/clone.png)
 2. In your preffered IDE open **Git Bash**
 3. Change the working directory with the location where you would like your clone to be created .
 4. Type **git clone** and the paste the URL copied previously.
