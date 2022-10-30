@@ -54,24 +54,24 @@
 ## User Stories <a name="user"></a>
 * User
 
-| As a User | I can directly create reservations so that I can book a place.                                      -[x]|
-|-----------|--------------------------------------------------------------------------------------------------------|
-| As a User | I can directly contact the admin so that I can solve any issue I encounter                          -[x]|
-| As a User | I can book an eventso that I can have a reservation for a specific date with a high number of guests-[x]|
-| As a User | I can view all the menu items so that I can decide what I would like to try                         -[x]|
-| As a User | I can view the number of likes on each post so that I can see which is the most popular             -[x]|
-| As a User | I can view comments on an individual post so that I can read the conversation                       -[x]|
-| As a User |  I can view a list of posts so that I can select them                                               -[x]|
-| As a User |  I can register an account so that I can comment, like and make reservations.                       -[x]|
+| As a User | I can directly create reservations so that I can book a place.                                      - [x] |
+|-----------|-----------------------------------------------------------------------------------------------------------|
+| As a User | I can directly contact the admin so that I can solve any issue I encounter                          - [x] |
+| As a User | I can book an eventso that I can have a reservation for a specific date with a high number of guests- [x] |
+| As a User | I can view all the menu items so that I can decide what I would like to try                         - [x] |
+| As a User | I can view the number of likes on each post so that I can see which is the most popular             - [x] |
+| As a User | I can view comments on an individual post so that I can read the conversation                       - [x] |
+| As a User |  I can view a list of posts so that I can select them                                               - [x] |
+| As a User |  I can register an account so that I can comment, like and make reservations.                       - [x] |
 
 
 * Admin 
 
-| As a Admin | I can directly create reservations so that I can book a place.                                      -[x]|
-|------------|--------------------------------------------------------------------------------------------------------|
-| As a Admin | I can create, read, update and delete posts so that I can manage my blog content                    -[x]|
-| As a Admin | I can approve or disapprove reservations so that I can make sure we are not overbooked              -[x]|
-| As a Admin | I can approve or disapprove comments so that I can filter out inappropriate comments.               -[x]|
+| As a Admin | I can directly create reservations so that I can book a place.                                      - [x] |
+|------------|-----------------------------------------------------------------------------------------------------------|
+| As a Admin | I can create, read, update and delete posts so that I can manage my blog content                    - [x] |
+| As a Admin | I can approve or disapprove reservations so that I can make sure we are not overbooked              - [x] |
+| As a Admin | I can approve or disapprove comments so that I can filter out inappropriate comments.               - [x] |
 
 
 ![userstories](/static/images/userstory.png)
