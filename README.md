@@ -31,7 +31,6 @@
 5. <strong>[Future Features](#future-features)</strong>:
     * [Improve Reservations Features](#improve)
     * [Add Reply into the view conversation](#add_reply)
-    * [Planning to use DJ Reservation as on this occasion I did not use it](#djreservation)
     * [Add Automatic Emails](#emails)
     * [Better User Profile](#better-profile)
     * [More features for Admin section](#more-feat)
@@ -172,7 +171,8 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
 ![admin-page](/static/images/adminview.png)
 ![admin-page](/static/images/adminress.png)
 
- # Future Features
+ # Future Features<a name="future-features"></a> 
+ * Planning to use DJ Reservation as on this occasion I did not use it.
  * In future I am planning on adding Gallery page for images from specific events to attract users.
  * Adding special events where you can book your spot through the site.
  * Adding a booking fee.
@@ -190,7 +190,7 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
 * [Mockupbro](https://mockupbro.com/mockup/flat-devices-mockup) - user to create mockups.
 
 
-## BACK-END:
+## BACK-END:<a name="packages"></a>
 * [PYTHON](https://www.w3schools.com/python/) to get details from the user and validate the inputs with python logic.
 # Heroku : used for app hosting.
 
@@ -263,7 +263,6 @@ SecondScoop site was tested on the following browsers with no visible issues for
 
 3. Choose Deploy Section and Connect to Github.
 ![heroku](/static/images/deploy.png)
-</details>
 
  
 * The site was deployed to GitHub pages. 
@@ -275,7 +274,7 @@ The steps to deploy a site are as follows:
 
  The live link to the Github repository can be found here : https://mihayounas.github.io/javascript-project2-game/ .
 
- ### **To create a local clone of this project**
+ ### **To create a local clone of this project**<a name="clone"></a>
 The method from cloning a project from GitHub is below:
 1. Under the repository’s name, click on the **code** tab.
 ![Clone-img](/assets/images/clone.png)
@@ -285,24 +284,25 @@ The method from cloning a project from GitHub is below:
 5. **Enter** button to be pressed and the clone will be created.
 
 
-# Credits
+# Credits<a name="credits"></a>
 
 * Tutors were very helpful in making me understand the issues I have encountered throughout.
 * Please note that the Post model is inspired by the walkthrough project done with Code Institute.
 * Some of the code ideas came from  [Stack Overflow](https://stackoverflow.com/).
 
-### Content
+### Content<a name="content"></a>
 
 * The font came from [Google Fonts](https://fonts.google.com/).
-* The colour scheme was made by [Colormind](http://colormind.io/).
-* Sound effect came from [Notification Sounds](https://notification-sounds.com/)
+* The colour scheme was made by [Coolors](https://coolors.co/).
 * The icons came from [Favicon icon](https://favicon.io/).
-* Moqup was done on [Moqups](https://app.moqups.com/).
 * Wireframes schetch [Lucidchart](https://lucid.app/).
 * Some of the code ideas came from  [Stack Overflow](https://stackoverflow.com/).
 * Some more research on Slack .
 
- # Acknowledgements
+### Media<a name="media"></a>
+* Pictures were taken from Pexels(https://www.pexels.com/)
+
+ # Acknowledgements <a name="acknoledge"></a>
 The site was completed as a Portfolio 4 Project  Full Stack Software Developer at the [Code Institute](https://codeinstitute.net/). As such I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) and Code Institute Tutor Support for their help and support.
 
 Mihaela Younas 2022.
