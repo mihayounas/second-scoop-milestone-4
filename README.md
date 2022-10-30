@@ -51,7 +51,7 @@
 
 # UX
 
-## User Stories <a name="experience"></a>
+## User Stories <a name="user"></a>
 * User
 
 | As a User | I can directly create reservations so that I can book a place.                                      [x]|
