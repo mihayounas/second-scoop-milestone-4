@@ -57,7 +57,7 @@
 | As a User | I can directly create reservations so that I can book a place.                                       :white_check_mark: |
 |-----------|-----------------------------------------------------------------------------------------------------------|
 | As a User | I can directly contact the admin so that I can solve any issue I encounter                           :white_check_mark: |
-| As a User | I can book an eventso that I can have a reservation for a specific date with a high number of guests :white_check_mark: |
+| As a User | I can book an event so that I can have a reservation for a specific date with a high number of guests :white_check_mark: |
 | As a User | I can view all the menu items so that I can decide what I would like to try                          :white_check_mark: |
 | As a User | I can view the number of likes on each post so that I can see which is the most popular              :white_check_mark: |
 | As a User | I can view comments on an individual post so that I can read the conversation                        :white_check_mark: |
