@@ -111,6 +111,8 @@ class DeleteReservations(DeleteView):
 
 
 class ReservationsViewDetails(DetailView):
+    """
+    A view to show reservation details """
     model = Reservation
     template_name = 'reservation_view_details.html'
     fields = ['phone', 'date', 'event', 'message']
@@ -167,7 +169,7 @@ class UpdateMessages(UpdateView):
 
 class ReplyMessagesAdmin(UpdateView):
     """
-    A view to edit and update a message.
+    A view to approve the reservations for admin.
     """
     model = Contact
     fields = ['reply', 'checked']

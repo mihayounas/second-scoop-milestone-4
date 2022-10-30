@@ -84,12 +84,12 @@ body {
 }
 
 .contact-form label,
-.login label {
+.login p {
     text-align: left;
 }
 
 .contact-form input,
-.login input {
+.login p input {
     background-color: rgba(247, 203, 122);
     border-radius: 4px;
     padding: 5px 10px;

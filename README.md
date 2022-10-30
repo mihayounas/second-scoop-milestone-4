@@ -1,6 +1,6 @@
 # **_Second Scoop_**
 
-<a href="#" target="_blank" rel="noopener">Second Scoop</a>(press for Live DEMO) is a website designed as a "real world application", the website is devided into two parts. One part is for users to see a appealing front-end website which shows them information about the restaurant, allows them to create an account, make a reservations, write a post, contact the admin and more. The other part of the website is a management system for admin of SecondScoop. If an account has the correct permissions, the admin will be able to see special features which will allow them to manage posts,reservations,comments and approve reservations.
+<a href="https://second-scoop.herokuapp.com/" target="_blank" rel="noopener">Second Scoop</a>(press for Live DEMO) is a website designed as a "real world application", the website is devided into two parts. One part is for users to see a appealing front-end website which shows them information about the restaurant, allows them to create an account, make a reservations, write a post, contact the admin and more. The other part of the website is a management system for admin of SecondScoop. If an account has the correct permissions, the admin will be able to see special features which will allow them to manage posts,reservations,comments and approve reservations.
 
 ![mockups](/static/images/flat-devices-mockup.png)
 
@@ -80,9 +80,10 @@
 
  The Flowchart for Second Scoop was made in Lucidchart.
  ![lucidchart](/static/images/flowchart.png)
- # Existing Features <a name="user-features"></a>
-## Site Structure <a name="structure"></a>
+The wireframe also made in Lucidchart
+![lucidchart2](/static/images/wire.png)
 
+## Site Structure <a name="structure"></a>
  Second Scoop purpose is to bring together all dessert lovers and improve their services through customer opinions and interactions,offering blog option and also reservation system so users can experience themselvesthe delicious desserts .
 
 * User :
@@ -112,6 +113,7 @@ Color scheme was created on <a href="https://coolors.co/">Coolors</a>
 
 <a name="#objective" >Back to Top </a>
 
+ # Existing Features <a name="user-features"></a>
 ## Existing Features(User) <a name="user"></a>
  
 Second Scoop is set up to be easy to use . It contains features that a user would be fimiliar with such as user login,user log out,book reservations and contact forms, blog posts all offering options to create,read,update and delete(CRUD).
@@ -180,7 +182,7 @@ Second Scoop is set up to be easy to use . It contains features that a user woul
 ## FRONT-END:
 * [HTML5](https://www.w3schools.com/html/) - provides the content and structure for the website.
 * [CSS](https://www.w3.org/Style/CSS/Overview.en.html) - provides the styling.
-*[BOOTSTRAP](https://getbootstrap.com/) - provides specific styling.
+* [BOOTSTRAP](https://getbootstrap.com/) - provides specific styling.
 * [JavaScript](https://www.w3schools.com/js/)-provides interactivity.
 * [Gitpod](https://www.gitpod.io/#get-started) - used to deploy the website.
 * [Github](https://github.com/) - used to host and edit the website.
@@ -223,6 +225,16 @@ The website was tested using [Google Lighthouse](https://developers.google.com/w
 
 ![lighthouse](/static/images/lighthouse.png)
 
+
+## Responsiveness Test
+
+* The responsive design tests were carried out manually with [Website Planet](https://www.websiteplanet.com/) ,I can confirm that all the tests were passed.
+![web-planet-image-desktop](/static/images/desktop.png)
+![web-planet-image-mobile](/static/images/mobile.png)
+* The testing was also done through Google Chrome Dev Tools by selecting a device of your choice as follows :
+![dev-test](/static/images/dev1tool1.png)
+![dev-test](/static/images/dev2.png)
+
 # Browser Compatibility
 SecondScoop site was tested on the following browsers with no visible issues for the user:
 1. Google Chrome 
@@ -238,10 +250,11 @@ SecondScoop site was tested on the following browsers with no visible issues for
 ![Error-css](/static/images/csserror.png)
 * Errors in HTML solved.
 ![errors-html](/static/images/htmlerror.png)
+
+
 # Deployment: <a name="deploy"></a>
 
-
-The site was deployed to Heroku pages.
+* The site was deployed to Heroku pages.
 
 1. First we have to create our app on heroku website.
 ![createapp](/static/images/create-app.png)
@@ -252,13 +265,42 @@ The site was deployed to Heroku pages.
 ![heroku](/static/images/deploy.png)
 </details>
 
+ 
+* The site was deployed to GitHub pages. 
+The steps to deploy a site are as follows:
+  1. In the GitHub repository, navigate to the **Settings** tab.
+  2. Once in Settings, navigate to the **Pages** on the left side menu.
+
+  ![Deploying](/assets/images/git.png)
+
+ The live link to the Github repository can be found here : https://mihayounas.github.io/javascript-project2-game/ .
+
+ ### **To create a local clone of this project**
+The method from cloning a project from GitHub is below:
+1. Under the repository’s name, click on the **code** tab.
+![Clone-img](/assets/images/clone.png)
+2. In your preffered IDE open **Git Bash**
+3. Change the working directory with the location where you would like your clone to be created .
+4. Type **git clone** and the paste the URL copied previously.
+5. **Enter** button to be pressed and the clone will be created.
+
+
 # Credits
 
-### Content
 * Tutors were very helpful in making me understand the issues I have encountered throughout.
 * Please note that the Post model is inspired by the walkthrough project done with Code Institute.
 * Some of the code ideas came from  [Stack Overflow](https://stackoverflow.com/).
 
+### Content
+
+* The font came from [Google Fonts](https://fonts.google.com/).
+* The colour scheme was made by [Colormind](http://colormind.io/).
+* Sound effect came from [Notification Sounds](https://notification-sounds.com/)
+* The icons came from [Favicon icon](https://favicon.io/).
+* Moqup was done on [Moqups](https://app.moqups.com/).
+* Wireframes schetch [Lucidchart](https://lucid.app/).
+* Some of the code ideas came from  [Stack Overflow](https://stackoverflow.com/).
+* Some more research on Slack .
 
  # Acknowledgements
 The site was completed as a Portfolio 4 Project  Full Stack Software Developer at the [Code Institute](https://codeinstitute.net/). As such I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) and Code Institute Tutor Support for their help and support.
