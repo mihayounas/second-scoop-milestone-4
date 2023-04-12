@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-ALLOWED_HOSTS = ["second-scoop.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["https://secondscoop.onrender.com", "localhost"]
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 # Application definition
