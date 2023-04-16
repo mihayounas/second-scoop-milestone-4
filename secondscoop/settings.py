@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-ALLOWED_HOSTS = ["https://secondscoop.onrender.com ", "localhost"]
+ALLOWED_HOSTS = ["second-scoop.herokuapp.com", "localhost"]
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 # Application definition
@@ -115,7 +115,6 @@ WSGI_APPLICATION = 'secondscoop.wsgi.application'
 # Database
 
 
-
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # DATABASES = {
@@ -128,7 +127,7 @@ WSGI_APPLICATION = 'secondscoop.wsgi.application'
 DATABASE_URL = os.getenv('DATABASE_URL')
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL')),
- }
+}
 
 
 # Password validation
